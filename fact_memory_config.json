@@ -1,0 +1,16 @@
+{
+  "general": "AI_Memory_Stores/general_facts.jsonl",
+  "opinions": "AI_Memory_Stores/opinions.jsonl",
+  "math": "AI_Memory_Stores/math_facts.jsonl",
+  "emotion": "AI_Memory_Stores/emotion_facts.jsonl",
+  "history": "AI_Memory_Stores/historical_facts.jsonl",
+  "science": "AI_Memory_Stores/science_facts.jsonl",
+  "philosophy": "AI_Memory_Stores/philosophy_facts.jsonl",
+  "technology": "AI_Memory_Stores/technology_facts.jsonl",
+  "biography": "AI_Memory_Stores/biography_facts.jsonl",
+  "geography": "AI_Memory_Stores/geography_facts.jsonl",
+  "culture": "AI_Memory_Stores/culture_facts.jsonl",
+  "physics": "AI_Memory_Stores/physics_facts.jsonl",
+  "chemistry": "AI_Memory_Stores/chemistry_facts.jsonl",
+  "compounds": "AI_Memory_Stores/known_compounds.jsonl"
+}

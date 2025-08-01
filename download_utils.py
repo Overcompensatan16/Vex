@@ -10,40 +10,40 @@ import urllib.request
 from urllib.parse import urlparse, unquote
 from typing import List, Dict
 
-DEFAULT_DUMP_BASE = r"E:/dumps"
-LOG_PATH = os.path.join(DEFAULT_DUMP_BASE, "download_log.jsonl")
+DEFAULT_DUMP_BASE = os.path.normpath(
+    os.getenv("DUMP_BASE", os.path.join(".", "dumps"))
+)
+LOG_PATH = os.path.normpath(os.path.join(DEFAULT_DUMP_BASE, "download_log.jsonl"))
 
 # Directory containing the current download manifest. This allows relative
 # ``file:`` URLs to resolve correctly when downloading from different manifests.
 MANIFEST_DIR: str | None = None
 
 
-def save_dump(data: bytes, source: str, name: str, dump_base: str = DEFAULT_DUMP_BASE) -> str:
-    """Persist raw downloaded data and return file path."""
-    dest_dir = os.path.join(dump_base, source)
+def save_dump(data: bytes, src_name: str, file_name: str, base_path: str = DEFAULT_DUMP_BASE) -> str:
+    dest_dir = os.path.normpath(os.path.join(base_path, src_name))
     os.makedirs(dest_dir, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    filename = f"{name}_{ts}.txt"
-    path = os.path.join(dest_dir, filename)
+    filename = f"{file_name}_{ts}.txt"
+    path = os.path.normpath(os.path.join(dest_dir, filename))
     with open(path, "wb") as fh:
         fh.write(data)
     return path
 
 
-def log_metadata(source: str, file_path: str, domain: str, dump_base: str = DEFAULT_DUMP_BASE) -> None:
-    """Append metadata entry for a raw dump to the global log."""
+def log_metadata(src_name: str, file_path: str, domain: str, base_path: str = DEFAULT_DUMP_BASE) -> None:
     with open(file_path, "rb") as fh:
         digest = hashlib.sha256(fh.read()).hexdigest()
 
     entry = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "source": source,
+        "source": src_name,
         "file": file_path,
         "hash": digest,
         "domain": domain,
     }
 
-    os.makedirs(dump_base, exist_ok=True)
+    os.makedirs(base_path, exist_ok=True)
     with open(LOG_PATH, "a", encoding="utf-8") as log_fh:
         log_fh.write(json.dumps(entry) + "\n")
 
