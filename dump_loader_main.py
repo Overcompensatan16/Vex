@@ -24,14 +24,12 @@ def chunk_list(items: List[Dict], size: int) -> List[List[Dict]]:
 def main(manifest_path: str = MANIFEST_PATH) -> None:
     manifest = load_manifest(manifest_path)
     enabled = [m for m in manifest if m.get("enabled", True)]
-    for batch in chunk_list(enabled, BATCH_SIZE):
-        downloaded = download_files(batch, dump_base=DEFAULT_DUMP_BASE, manifest_path=manifest_path)
-    process_batch(downloaded)
+    batches = chunk_list(enabled, BATCH_SIZE)  # ← define it here
     for idx, batch in enumerate(batches):
         start = idx * BATCH_SIZE
         end = start + len(batch) - 1
         print(f"[DumpLoader] Batch {start}-{end} starting download...")
-        downloaded = download_files(batch, dump_base=DEFAULT_DUMP_BASE)
+        downloaded = download_files(batch, dump_base=DEFAULT_DUMP_BASE, manifest_path=manifest_path)
         print(f"[DumpLoader] Batch {start}-{end} downloaded {len(downloaded)} files")
         print(f"[DumpLoader] Batch {start}-{end} processing...")
         parsed = process_batch(downloaded)
@@ -40,4 +38,3 @@ def main(manifest_path: str = MANIFEST_PATH) -> None:
 
 if __name__ == "__main__":
     main()
-    
