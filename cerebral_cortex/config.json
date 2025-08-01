@@ -1,0 +1,5 @@
+{
+  "abstract_threshold": 0.7,
+  "spatial_confidence_weight": 0.5,
+  "visual_pattern_sensitivity": 0.8
+}

@@ -1,0 +1,17 @@
+{"test": "success"}
+{"fact": "test", "score": 1.0}
+{"time": "2025-06-20T18:08:55.764488", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:09:16.910750", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:12:00.062585", "fact": "test_fact_1", "score": 0.9990099811087213, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:17:11.387231", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:30:02.263093", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:30:24.122589", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:39:20.671607", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:39:42.240101", "fact": "test_fact_1", "score": 0.9990039930189601, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:44:08.156182", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:46:49.167780", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:48:12.144639", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:48:19.073974", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:51:50.694314", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:53:35.890182", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}
+{"time": "2025-06-20T18:53:41.750779", "fact": "test_fact_1", "score": 1.0, "reason": "capacity", "tags": ["trump:TheStar:1", "suit:Memory"], "source": "test"}

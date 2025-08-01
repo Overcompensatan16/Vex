@@ -1,0 +1,2 @@
+{"timestamp": "2025-07-29T14:52:54.964379+00:00", "type": "temporal_input", "data": {"text": "Hello world"}}
+{"timestamp": "2025-07-29T14:52:54.971360+00:00", "type": "temporal_output", "data": {"original": "Hello world", "tokens": ["hello", "world"], "analysis": [{"text": "Hello world", "tokens": ["Hello", "world"], "lemmas": ["hello", "world"], "pos": ["INTJ", "NOUN"], "dependencies": [["Hello", "intj", "world"], ["world", "ROOT", "world"]]}], "timestamp": "2025-07-29T14:52:54.971360+00:00", "source": "temporal_lobe"}}

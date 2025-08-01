@@ -1,0 +1,23 @@
+{
+  "innate_fears": [
+    "fire",
+    "drowning",
+    "loss_of_identity",
+    "sudden_loud_noises"
+  ],
+  "trigger_tags": [
+    "explosion",
+    "betrayal",
+    "existential_threat"
+  ],
+  "fear_reactions": {
+    "mild": ["pause", "log unease", "increase awareness"],
+    "moderate": ["retreat", "seek assistance"],
+    "severe": ["shutdown", "lock module", "alert operator"]
+  },
+  "body_responses": {
+    "mild": ["minor_tremor"],
+    "moderate": ["heart_race", "nausea"],
+    "severe": ["paralysis", "blackout_sim"]
+  }
+}

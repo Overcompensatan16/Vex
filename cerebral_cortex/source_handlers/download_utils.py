@@ -1,0 +1,89 @@
+"""Utility helpers for saving dumps and recording download metadata."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from datetime import datetime, timezone
+import urllib.request
+from typing import List, Dict
+
+DEFAULT_DUMP_BASE = r"E:/dumps"
+LOG_PATH = os.path.join(DEFAULT_DUMP_BASE, "download_log.jsonl")
+
+
+def save_dump(data: bytes, source: str, name: str, dump_base: str = DEFAULT_DUMP_BASE) -> str:
+    """Persist raw downloaded data and return file path."""
+    dest_dir = os.path.join(dump_base, source)
+    os.makedirs(dest_dir, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    filename = f"{name}_{ts}.txt"
+    path = os.path.join(dest_dir, filename)
+    with open(path, "wb") as fh:
+        fh.write(data)
+    return path
+
+
+def log_metadata(source: str, file_path: str, domain: str, dump_base: str = DEFAULT_DUMP_BASE) -> None:
+    """Append metadata entry for a raw dump to the global log."""
+    with open(file_path, "rb") as fh:
+        digest = hashlib.sha256(fh.read()).hexdigest()
+
+    entry = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "source": source,
+        "file": file_path,
+        "hash": digest,
+        "domain": domain,
+    }
+
+    os.makedirs(dump_base, exist_ok=True)
+    with open(LOG_PATH, "a", encoding="utf-8") as log_fh:
+        log_fh.write(json.dumps(entry) + "\n")
+
+
+def simple_download(url: str, timeout: int = 20) -> bytes:
+    """Return raw bytes from a URL."""
+    with urllib.request.urlopen(url, timeout=timeout) as resp:
+        return resp.read()
+
+
+def download_from_manifest(manifest_path: str, dump_base: str = DEFAULT_DUMP_BASE) -> None:
+    """Download all enabled entries in a manifest."""
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+
+    for source, info in config.items():
+        if not info.get("enabled", True):
+            continue
+        url = info.get("url")
+        if not url:
+            continue
+        try:
+            data = simple_download(url)
+        except Exception:
+            continue
+        name = os.path.basename(url)
+        path = save_dump(data, source, name, dump_base)
+        log_metadata(source, path, source)
+
+
+def download_files(records: List[Dict], dump_base: str = DEFAULT_DUMP_BASE) -> List[Dict]:
+    """Download multiple files defined by a list of record dicts."""
+    results: List[Dict] = []
+    for rec in records:
+        url = rec.get("url")
+        src = rec.get("source", "generic")
+        domain = rec.get("domain", src)
+        if not url:
+            continue
+        try:
+            data = simple_download(url)
+        except Exception:
+            continue
+        name = os.path.basename(url)
+        path = save_dump(data, src, name, dump_base)
+        log_metadata(src, path, domain, dump_base)
+        results.append({**rec, "path": path})
+    return results
