@@ -1,0 +1,14 @@
+{
+  "hippocampus": {
+    "max_facts": 1000,
+    "persistence_path": "memory_store.json",
+    "external_memory_path": null,
+    "prune_strategy": "priority"
+  },
+  "reasoning": {
+    "mode": "verbose"
+  },
+  "audit": {
+    "log_path": "audit_log.json"
+  }
+}

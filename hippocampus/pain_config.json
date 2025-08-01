@@ -1,0 +1,11 @@
+{
+  "pain_thresholds": {
+    "default_priority_weight": 5,
+    "hazard_trigger_priority": 3,
+    "reasoning_failure_priority": 2,
+    "moral_dissonance_priority": 1,
+    "max_pain_priority": 0,
+    "min_pain_priority": 10
+  },
+  "pain_decay_time_sec": 3600
+}

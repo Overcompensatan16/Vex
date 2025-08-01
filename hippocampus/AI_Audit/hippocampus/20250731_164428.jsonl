@@ -1,0 +1,2 @@
+{"timestamp": "2025-07-31T16:44:28.834141+00:00", "type": "store_record", "data": {"summary": "Harness test fact"}}
+{"timestamp": "2025-07-31T16:44:28.836137+00:00", "type": "write_success", "data": {"category": "linguistic", "path": ".\\external_memory.jsonl"}}
