@@ -163,25 +163,140 @@ Separate chemistry tag logic into chemistry_classifier.py
 
 SUBJECT PARSERS
 
-STANDARD PARSER INTERFACE
-Each parser module should export:
-python
-CopyEdit
-def parse_<domain>_text(text: str) -> List[Dict[str, Any]]:
-    # Structured fact dicts
-    return [{
-        "subject": "...",
-        "predicate": "...",
-        "value": "...",
-        "tags": ["<domain>"],
-        "confidence": 0.9,
-    }]
+# parsers/template_parser.py
 
-Integrated into generate_facts() via loop:
-python
-CopyEdit
-for parser in all_subject_parsers:
-    facts.extend(parser(sentence))
+from __future__ import annotations
+
+import os
+import re
+import json
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Literal, Optional, Tuple
+
+# Optional: plug into your transformer layer
+try:
+    from transformers import pipeline
+    rebel_pipe = pipeline("text2text-generation", model="Babelscape/rebel-large")
+except ImportError:
+    rebel_pipe = None
+
+AUDIT_PATH = os.path.join("external_store", "audit", "<domain>_audit.jsonl")
+
+# --- Known terms/config ---
+KNOWN_CONSTANTS = {"<const_symbol>": "<const_name>"}
+<DOMAIN>_KEYWORDS = ["<term1>", "<term2>", "<term3>"]
+NAMED_LAWS = ["<Law Name 1>", "<Law Name 2>"]
+
+# --- Regex primitives ---
+EQUATION_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9]*)\s*=\s*([^\s=]+(?:\s*[^\s=]+)*)\b")
+SPO_RE = re.compile(r"^(?P<subject>.+?)\s+(is|are|was|means|describes|states|defines|equals)\s+(?P<object>.+)$")
+
+
+# --- Audit storage (optional) ---
+def _write_audit(record: Dict[str, Any]) -> None:
+    os.makedirs(os.path.dirname(AUDIT_PATH), exist_ok=True)
+    with open(AUDIT_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record) + "\n")
+
+
+# --- Domain classifier ---
+def classify_equation(lhs: str, rhs: str, sentence: str) -> Literal["<domain>", "math"]:
+    if any(unit in rhs for unit in ["<unit1>", "<unit2>"]) or any(k in sentence for k in KNOWN_CONSTANTS):
+        return "<domain>"
+    if any(op in rhs for op in ["\u222B", "\u2211", "^", "lim"]) or "function" in sentence:
+        return "math"
+    return "<domain>"  # Default to <domain>
+
+
+# --- Transformer SPO fallback ---
+def extract_spo_transformer(text: str) -> List[Dict]:
+    if not rebel_pipe:
+        return []
+    out = rebel_pipe("extract relations: " + text, max_length=128)[0]["generated_text"]
+    triples = []
+    for match in re.finditer(r"\(.*?\)", out):
+        parts = match.group(0).strip("()").split(";")
+        if len(parts) == 3:
+            triples.append({
+                "subject": parts[0].strip(),
+                "predicate": parts[1].strip(),
+                "value": parts[2].strip(),
+                "confidence": 0.85,
+                "source": "transformer",
+            })
+    return triples
+
+
+# --- Main entrypoint ---
+def parse_<domain>_text(
+    text: str,
+    *,
+    use_transformer: bool = False,
+    context: Optional[Dict] = None,
+) -> List[Dict[str, Any]]:
+    """Extract structured <domain> facts from raw text."""
+    sentences = [s.strip() for s in re.split(r"[.!?]+", text) if len(s.strip()) > 8]
+    results: List[Dict] = []
+
+    for sent in sentences:
+        if use_transformer:
+            results.extend(extract_spo_transformer(sent))
+            continue
+
+        for law in NAMED_LAWS:
+            if law.lower() in sent.lower():
+                results.append({
+                    "subject": law,
+                    "predicate": "states that",
+                    "value": sent.replace(law, "").strip(": ."),
+                    "subtype": "law",
+                    "domain": "<domain>",
+                    "origin_sentence": sent,
+                    "confidence": 0.9,
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "source": "<domain>_parser",
+                    "context": context or {},
+                })
+
+        match = EQUATION_RE.search(sent)
+        if match:
+            lhs, rhs = match.group(1), match.group(2)
+            domain = classify_equation(lhs, rhs, sent)
+            results.append({
+                "subject": lhs,
+                "predicate": "equals",
+                "value": rhs,
+                "subtype": "equation",
+                "domain": domain,
+                "constants": [k for k in KNOWN_CONSTANTS if k in sent],
+                "origin_sentence": sent,
+                "confidence": 0.8,
+                "symbolic": True,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "source": "<domain>_parser",
+                "context": context or {},
+            })
+
+        spo = SPO_RE.match(sent)
+        if spo and any(k in sent.lower() for k in <DOMAIN>_KEYWORDS):
+            results.append({
+                "subject": spo.group("subject"),
+                "predicate": "is",
+                "value": spo.group("object"),
+                "subtype": "concept",
+                "domain": "<domain>",
+                "origin_sentence": sent,
+                "confidence": 0.7,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "source": "<domain>_parser",
+                "context": context or {},
+            })
+
+    for r in results:
+        _write_audit(r)
+
+    return results
+
 
 
 🔬 CORE SCIENCE PARSERS
@@ -427,4 +542,5 @@ Ensure:
 - Output still includes assert failures as normal, but also prints captured warnings even if the test passes.
 
 Use `warnings.catch_warnings(record=True)` and `warnings.simplefilter("always")` to capture warnings during each test.
+
 
