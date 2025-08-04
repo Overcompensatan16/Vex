@@ -1,0 +1,9 @@
+{"label": "login_button", "keywords": ["log in", "sign in", "login"], "actions": [{"type": "click", "target": "center_of_box"}], "context": ["web", "auth"], "priority": 0.95, "added_by": "user"}
+{"label": "logout_button", "keywords": ["log out", "sign out", "logout"], "actions": [{"type": "click", "target": "center_of_box"}], "context": ["web", "auth"], "priority": 0.9, "added_by": "user"}
+{"label": "submit_form", "keywords": ["submit", "send", "confirm"], "actions": [{"type": "click", "target": "center_of_box"}], "context": ["web", "form"], "priority": 0.85, "added_by": "user"}
+{"label": "cancel_button", "keywords": ["cancel", "abort", "exit"], "actions": [{"type": "click", "target": "center_of_box"}], "context": ["web", "form"], "priority": 0.8, "added_by": "user"}
+{"label": "search_box", "keywords": ["search", "find", "lookup"], "actions": [{"type": "focus", "target": "box"}], "context": ["web", "query"], "priority": 0.88, "added_by": "user"}
+{"label": "file_upload", "keywords": ["upload", "choose file", "browse"], "actions": [{"type": "click", "target": "center_of_box"}], "context": ["web", "file"], "priority": 0.9, "added_by": "user"}
+{"label": "math_equation", "keywords": ["=", "+", "-", "*", "/", "^"], "actions": [{"type": "tag", "target": "math_block"}], "context": ["code", "math"], "priority": 0.7, "added_by": "system"}
+{"label": "python_syntax", "keywords": ["import", "def", "class"], "actions": [{"type": "tag", "target": "python_code"}], "context": ["code", "python"], "priority": 0.7, "added_by": "system"}
+{"label": "proof_language", "keywords": ["proof", "lemma", "theorem"], "actions": [{"type": "tag", "target": "math_theory"}], "context": ["math", "logic"], "priority": 0.7, "added_by": "system"}

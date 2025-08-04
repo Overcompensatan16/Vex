@@ -1,0 +1,15 @@
+{
+  "wiki": {
+    "name": "English Wikipedia (Math & Science)",
+    "url": "https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2",
+    "enabled": true,
+    "source": "wiki"
+  },
+  "arxiv": {
+    "name": "arXiv RSS Physics",
+    "url": "http://export.arxiv.org/rss/physics",
+    "enabled": true,
+    "source": "arxiv",
+     "notes": "Falls back to OAI-PMH ListRecords when Atom feed is incomplete"
+  }
+}

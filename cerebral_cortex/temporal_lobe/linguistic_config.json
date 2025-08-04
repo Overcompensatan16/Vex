@@ -1,0 +1,5 @@
+{
+  "context_size": 10,
+  "audit_log_path": "cerebral_cortex/temporal_lobe/temporal_audit_log.jsonl",
+  "context_store_path": "cerebral_cortex/temporal_lobe/context_store.json"
+}

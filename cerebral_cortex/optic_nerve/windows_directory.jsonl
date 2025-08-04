@@ -1,0 +1,60 @@
+[
+  {
+    "label": "notepad",
+    "match_keywords": ["notepad", "untitled", "notes"],
+    "preferred_title": "Untitled - Notepad",
+    "purpose": "text_editing",
+    "allowed_actions": ["read", "type"],
+    "priority": 0.8
+  },
+  {
+    "label": "wordpad",
+    "match_keywords": ["wordpad", "document", "rich text"],
+    "preferred_title": "Document - WordPad",
+    "purpose": "basic_word_processing",
+    "allowed_actions": ["read", "type", "format"],
+    "priority": 0.7
+  },
+  {
+    "label": "opera_gx",
+    "match_keywords": ["opera", "gx", "browser"],
+    "preferred_title": "GX Corner - Opera",
+    "purpose": "internet_access",
+    "allowed_actions": ["read", "click", "scroll", "type"],
+    "priority": 1.0
+  },
+  {
+    "label": "paint",
+    "match_keywords": ["paint", "untitled", "mspaint"],
+    "preferred_title": "Untitled - Paint",
+    "purpose": "visual_sketching",
+    "allowed_actions": ["draw", "observe"],
+    "priority": 0.6
+  },
+  {
+    "label": "file_explorer",
+    "match_keywords": ["file explorer", "this pc", "documents", "downloads"],
+    "preferred_title": "This PC",
+    "purpose": "file_navigation",
+    "allowed_actions": ["read", "open", "search"],
+    "priority": 0.75
+  },
+  [
+  {
+    "label": "discord",
+    "match_keywords": ["discord"],
+    "priority": 10,
+    "allowed_actions": ["switch_to", "parse_screen", "listen"],
+    "requires_toggle": true,
+    "notes": "Requires toggle hotkey (ctrl+alt+d) to bring to foreground"
+  },
+  {
+    "label": "opera_gx",
+    "match_keywords": ["opera gx", "opera", "gx"],
+    "priority": 9,
+    "allowed_actions": ["switch_to", "parse_screen", "read_text", "click"],
+    "requires_toggle": true,
+    "notes": "Opera GX used as primary browser, supports direct switching"
+  }
+  ]
+]
