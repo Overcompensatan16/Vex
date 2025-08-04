@@ -1,0 +1,33 @@
+{
+  "wiki.general": "E:/AI_Memory_Stores/Wikipedia_Store/General_Knowledge/general_facts.jsonl",
+  "wiki.historical": "E:/AI_Memory_Stores/Wikipedia_Store/Historical_Knowledge/historical_facts.jsonl",
+  "wiki.scientific": "E:/AI_Memory_Stores/Wikipedia_Store/Scientific_Knowledge/scientific_facts.jsonl",
+
+  "physics.astrophysics": "E:/AI_Memory_Stores/Arxiv_Store/Physics/Astrophysics/facts.jsonl",
+  "physics.atomic": "E:/AI_Memory_Stores/Arxiv_Store/Physics/Atomic_Physics/facts.jsonl",
+  "physics.condensed_matter": "E:/AI_Memory_Stores/Arxiv_Store/Physics/Condensed_Matter/facts.jsonl",
+  "physics.general": "E:/AI_Memory_Stores/Arxiv_Store/Physics/General_Physics/facts.jsonl",
+  "physics.optics": "E:/AI_Memory_Stores/Arxiv_Store/Physics/Optics/facts.jsonl",
+  "physics.quantum": "E:/AI_Memory_Stores/Arxiv_Store/Physics/Quantum_Physics/facts.jsonl",
+
+  "math.algebra": "E:/AI_Memory_Stores/Arxiv_Store/Math/Algebra/facts.jsonl",
+  "math.analysis": "E:/AI_Memory_Stores/Arxiv_Store/Math/Analysis/facts.jsonl",
+  "math.combinatorics": "E:/AI_Memory_Stores/Arxiv_Store/Math/Combinatorics/facts.jsonl",
+  "math.geometry": "E:/AI_Memory_Stores/Arxiv_Store/Math/Geometry/facts.jsonl",
+  "math.number_theory": "E:/AI_Memory_Stores/Arxiv_Store/Math/Number_Theory/facts.jsonl",
+
+  "cs.ai": "E:/AI_Memory_Stores/Arxiv_Store/CS/AI/facts.jsonl",
+  "cs.cv": "E:/AI_Memory_Stores/Arxiv_Store/CS/CV/facts.jsonl",
+  "cs.ml": "E:/AI_Memory_Stores/Arxiv_Store/CS/ML/facts.jsonl",
+  "cs.hci": "E:/AI_Memory_Stores/Arxiv_Store/CS/HCI/facts.jsonl",
+  "cs.cr": "E:/AI_Memory_Stores/Arxiv_Store/CS/Cryptography/facts.jsonl",
+  "cs.pl": "E:/AI_Memory_Stores/Arxiv_Store/CS/Programming_Languages/facts.jsonl",
+
+  "quant_bio": "E:/AI_Memory_Stores/Arxiv_Store/Quant_Bio/facts.jsonl",
+  "quant_finance": "E:/AI_Memory_Stores/Arxiv_Store/Quant_Finance/facts.jsonl",
+  "statistics": "E:/AI_Memory_Stores/Arxiv_Store/Statistics/facts.jsonl",
+  "eess": "E:/AI_Memory_Stores/Arxiv_Store/EE_Systems/facts.jsonl",
+  "economics": "E:/AI_Memory_Stores/Arxiv_Store/Economics/facts.jsonl",
+
+  "general": "E:/AI_Memory_Stores/general/general_facts.jsonl"
+}

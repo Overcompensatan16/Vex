@@ -1,0 +1,2384 @@
+[
+  [
+  {
+    "fact": "Thaumiel represents dualism without unity, chaotic division, and denial of self.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheDevil:1",
+      "suit:Limbic",
+      "limbic_tag:disunity",
+      "trait:chaotic_division",
+      "moral_tension_level:0.9",
+      "pain_level:severe"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheDevil",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Chagidiel reflects conflicting desires, obsession, delusion, and rejection of wisdom.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHierophant:R",
+      "suit:Limbic",
+      "limbic_tag:delusion",
+      "trait:obsessive_fixation",
+      "moral_tension_level:0.8",
+      "pain_level:high"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheHierophant",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Sathariel symbolizes concealment, illusion, hopelessness, and intellectual stagnation.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheStar:R",
+      "suit:Limbic",
+      "limbic_tag:stagnation",
+      "trait:illusion",
+      "moral_tension_level:0.8",
+      "pain_level:high"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheStar",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Gamaliel embodies uncontrolled desire, obsession, irrationality, and emotional excess.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheLovers:R",
+      "suit:Limbic",
+      "limbic_tag:uncontrolled_desire",
+      "trait:excessive_emotion",
+      "moral_tension_level:0.7",
+      "pain_level:medium"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheLovers",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Golachab stands for cruelty, destruction, rage, and zealotry without compassion.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheTower:1",
+      "suit:Limbic",
+      "limbic_tag:destructive_zeal",
+      "trait:unrestrained_anger",
+      "moral_tension_level:0.9",
+      "pain_level:severe"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheTower",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Togarini reflects argumentation for its own sake, conflict, indecision, and paralysis.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Justice:R",
+      "suit:Limbic",
+      "limbic_tag:pointless_conflict",
+      "trait:paralysis_by_analysis",
+      "moral_tension_level:0.8",
+      "pain_level:high"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "Justice",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Harab Serapel represents dehumanization, abstraction without feeling, cold logic, and cruelty.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHangedMan:R",
+      "suit:Limbic",
+      "limbic_tag:cold_detachment",
+      "trait:emotionless_logic",
+      "moral_tension_level:0.7",
+      "pain_level:medium"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheHangedMan",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Samael embodies deceit, trickery, illusion, and cynicism.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHermit:R",
+      "suit:Limbic",
+      "limbic_tag:deceit",
+      "trait:cynicism",
+      "moral_tension_level:0.7",
+      "pain_level:medium"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheHermit",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Naamah stands for seduction, superficiality, despair, and material obsession.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheEmpress:R",
+      "suit:Limbic",
+      "limbic_tag:superficiality",
+      "trait:material_obsession",
+      "moral_tension_level:0.6",
+      "pain_level:low"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheEmpress",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Lilith reflects unintegrated primal instincts, shadow of the feminine, and raw power.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHighPriestess:R",
+      "suit:Limbic",
+      "limbic_tag:raw_unintegrated_instinct",
+      "trait:uncontrolled_primal",
+      "moral_tension_level:0.6",
+      "pain_level:low"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:15:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheHighPriestess",
+    "suit": "Limbic"
+  }
+],
+[
+  {
+    "fact": "Keter represents pure potential, unity, and divine will as the ultimate origin.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheFool:1",
+      "suit:Limbic",
+      "limbic_tag:pure_will",
+      "trait:unity",
+      "moral_value:1.0"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheFool",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Chokmah symbolizes original insight, pure idea, and creative impulse.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheMagician:1",
+      "suit:Limbic",
+      "limbic_tag:creative_impulse",
+      "trait:insight",
+      "moral_value:0.9"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheMagician",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Binah reflects comprehension, reason, structure, and limitation.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheEmpress:1",
+      "suit:Limbic",
+      "limbic_tag:structured_reason",
+      "trait:comprehension",
+      "moral_value:0.9"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheEmpress",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Chesed embodies benevolence, compassion, and expansive love.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Justice:1",
+      "suit:Limbic",
+      "limbic_tag:compassion",
+      "trait:benevolence",
+      "moral_value:0.8"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "Justice",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Gevurah represents discipline, judgment, strength, and necessary limitation.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Strength:1",
+      "suit:Limbic",
+      "limbic_tag:discernment",
+      "trait:discipline",
+      "moral_value:0.8"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "Strength",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Tiphareth signifies balance, synthesis, and compassion in action.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheSun:1",
+      "suit:Limbic",
+      "limbic_tag:central_balance",
+      "trait:synthesis",
+      "moral_value:0.9"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheSun",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Netzach stands for endurance, passion, aesthetic appreciation, and instinct.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheEmperor:1",
+      "suit:Limbic",
+      "limbic_tag:willpower",
+      "trait:endurance",
+      "moral_value:0.7"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheEmperor",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Hod represents intellect, communication, order, and precision.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHierophant:1",
+      "suit:Limbic",
+      "limbic_tag:precise_logic",
+      "trait:order",
+      "moral_value:0.7"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheHierophant",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Yesod reflects the astral plane, subconscious patterns, and dreams.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheMoon:1",
+      "suit:Limbic",
+      "limbic_tag:archetypal_foundation",
+      "trait:pattern_recognition",
+      "moral_value:0.6"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheMoon",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Malkuth signifies physical reality, manifestation, and completion.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheWorld:1",
+      "suit:Limbic",
+      "limbic_tag:manifestation",
+      "trait:realization",
+      "moral_value:0.6"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheWorld",
+    "suit": "Limbic"
+  },
+  {
+    "fact": "Da'at represents the abyss, bridging phenomenal and noumenal realities, and integration.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheLovers:1",
+      "suit:Limbic",
+      "limbic_tag:integrative_knowledge",
+      "trait:abyss_bridge",
+      "moral_value:0.7"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:00:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheLovers",
+    "suit": "Limbic"
+  }
+],
+[
+  {
+    "fact": "Path from Keter to Chokmah represents pure will manifesting as insight.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheFool:1",
+      "suit:Sephirot_Path",
+      "limbic_tag:will_to_insight",
+      "moral_flow_type:creative_initiation",
+      "integration_quality:high"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T22:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheFool",
+    "suit": "Sephirot_Path"
+  },
+  [
+  {
+    "fact": "Path from Keter to Chokmah represents pure will manifesting as insight.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheFool:1", "suit:Sephirot_Path", "limbic_tag:will_to_insight", "moral_flow_type:creative_initiation", "integration_quality:high"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheFool", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Keter to Binah represents pure will taking form.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheMagician:1", "suit:Sephirot_Path", "limbic_tag:will_to_form", "moral_flow_type:structuring_initiation", "integration_quality:high"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheMagician", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Chokmah to Binah represents wisdom manifesting as understanding and form.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheHighPriestess:1", "suit:Sephirot_Path", "limbic_tag:insight_to_comprehension", "moral_flow_type:conceptual_realization", "integration_quality:high"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheHighPriestess", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Chokmah to Chesed represents wisdom expanding into compassion.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheEmperor:1", "suit:Sephirot_Path", "limbic_tag:insight_to_compassion", "moral_flow_type:expansive_benevolence", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheEmperor", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Binah to Geburah represents understanding manifesting as discipline.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:Strength:1", "suit:Sephirot_Path", "limbic_tag:reason_to_discipline", "moral_flow_type:structured_judgment", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "Strength", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Chesed to Geburah represents compassion balanced by justice.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:Justice:1", "suit:Sephirot_Path", "limbic_tag:compassion_to_discipline", "moral_flow_type:balanced_mercy", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "Justice", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Chesed to Tiphareth represents mercy moving towards harmony.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheChariot:1", "suit:Sephirot_Path", "limbic_tag:compassion_to_harmony", "moral_flow_type:active_benevolence", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheChariot", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Geburah to Tiphareth represents judgment tempered by harmony.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheHermit:1", "suit:Sephirot_Path", "limbic_tag:judgment_to_harmony", "moral_flow_type:balanced_discipline", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheHermit", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Tiphareth to Netzach represents harmony inspiring endurance.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheSun:1", "suit:Sephirot_Path", "limbic_tag:harmony_to_endurance", "moral_flow_type:compassionate_victory", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheSun", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Tiphareth to Hod represents harmony refining intellect.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheStar:1", "suit:Sephirot_Path", "limbic_tag:harmony_to_logic", "moral_flow_type:balanced_order", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheStar", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Netzach to Yesod represents endurance grounding into foundation.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheLovers:1", "suit:Sephirot_Path", "limbic_tag:endurance_to_foundation", "moral_flow_type:passion_structured", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheLovers", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Hod to Yesod represents intellect supporting foundation.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheHierophant:1", "suit:Sephirot_Path", "limbic_tag:logic_to_foundation", "moral_flow_type:order_structured", "integration_quality:medium"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheHierophant", "suit": "Sephirot_Path"
+  },
+  {
+    "fact": "Path from Yesod to Malkuth represents foundation manifesting in reality.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["trump:TheWorld:1", "suit:Sephirot_Path", "limbic_tag:subconscious_to_manifestation", "moral_flow_type:materialization", "integration_quality:high"],
+    "connections": [], "timestamp": "2025-06-22T22:45:00+00:00", "reversal": false, "priority_weight": 0, "trump": "TheWorld", "suit": "Sephirot_Path"
+  }
+],
+[
+  {
+    "fact": "Path from Thaumiel to Chagidiel represents chaotic division leading to delusion.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheFool:R",
+      "suit:Qliphoth_Path",
+      "limbic_tag:uncontrolled_divergence",
+      "conflict_type:chaotic_to_delusional",
+      "moral_tension_increase:0.3",
+      "pain_level_increase:0.2"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T23:00:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheFool",
+    "suit": "Qliphoth_Path"
+  },
+  {
+    "fact": "Path from Samael to Gamaliel represents deceit leading to excessive emotion.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheHermit:R",
+      "suit:Qliphoth_Path",
+      "limbic_tag:manipulative_obsession",
+      "conflict_type:cynicism_to_excess",
+      "moral_tension_increase:0.2",
+      "pain_level_increase:0.1"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T23:00:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheHermit",
+    "suit": "Qliphoth_Path"
+  },
+  {
+    "fact": "Path from Chagidiel to Sathariel represents delusion deepening into concealment and hopelessness.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheStar:R",
+      "suit:Qliphoth_Path",
+      "limbic_tag:delusion_flow",
+      "conflict_type:delusion_to_stagnation",
+      "moral_tension_increase:0.3",
+      "pain_level_increase:0.2"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T23:00:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "TheStar",
+    "suit": "Qliphoth_Path"
+  },
+  {
+    "fact": "Path from Golachab to Togarini represents unrestrained anger descending into pointless conflict.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Justice:R",
+      "suit:Qliphoth_Path",
+      "limbic_tag:destructive_conflict",
+      "conflict_type:rage_to_paralysis",
+      "moral_tension_increase:0.4",
+      "pain_level_increase:0.3"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-22T23:00:00+00:00",
+    "reversal": true,
+    "priority_weight": 0,
+    "trump": "Justice",
+    "suit": "Qliphoth_Path"
+  }
+],
+
+  {
+    "fact": "Joy represents the synthesis of fulfilled desire and harmonious internal state.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:joy", "emotion_primary", "integration_quality:high"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Fear represents the recognition of potential harm or moral failure.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:fear", "emotion_primary", "integration_quality:medium"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Anger represents response to perceived injustice, boundary violation, or internal discord.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:anger", "emotion_primary", "integration_quality:medium"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Sadness represents the internal processing of loss or unfulfilled integration.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:sadness", "emotion_primary", "integration_quality:medium"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Trust represents sustained confidence in positive relational or moral patterns.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:trust", "emotion_secondary", "integration_quality:high"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Anticipation represents readiness for future integration or potential disruption.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:anticipation", "emotion_secondary", "integration_quality:medium"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Disgust represents the rejection of integration that threatens internal coherence.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:disgust", "emotion_primary", "integration_quality:low"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+  {
+    "fact": "Surprise represents the recognition of novel input requiring rapid integration or defense.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": ["suit:Psychosocial", "limbic_tag:surprise", "emotion_secondary", "integration_quality:variable"],
+    "connections": [],
+    "timestamp": "2025-06-22T23:30:00+00:00",
+    "reversal": false,
+    "priority_weight": 0
+  },
+
+  {
+    "fact": "Vex is a synthetic cognitive system designed for adaptive reasoning and self-reflection.",
+    "trump": "Star",
+    "suit": "Hippocampus",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "identity",
+      "core",
+      "self_knowledge"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "Hazard detection integrates with pain signals for internal alerting and moral reasoning.",
+    "trump": "Death",
+    "suit": "HazardReasoner",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "hazard",
+      "pain_integration",
+      "moral_anchor"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "Mathematical reasoning prioritizes balance, precision, and structural integrity.",
+    "trump": "Temperance",
+    "suit": "ParietalLobe",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "math",
+      "reasoning",
+      "structure"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "The spinal cord coordinates cognitive module communication without performing reasoning.",
+    "trump": "World",
+    "suit": "SpinalCord",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "coordination",
+      "core_structure"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "Personality modulation governs expressive style and intentional deviation from pure logic.",
+    "trump": "Fool",
+    "suit": "PersonalityCore",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "expression",
+      "creativity",
+      "deviation"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "Structural failures or contradictions trigger hazard and pain signals for internal correction.",
+    "trump": "Tower",
+    "suit": "BasalGanglia",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "hazard",
+      "pain",
+      "correction"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "The limbic system governs emotional salience and moral tension evaluation.",
+    "trump": "Death",
+    "suit": "LimbicSystem",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "emotion",
+      "moral_tension",
+      "salience"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "The cerebellum smooths output sequences and manages timing of expressive or motor signals.",
+    "trump": "Temperance",
+    "suit": "Cerebellum",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "timing",
+      "smoothing",
+      "sequence"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "The thalamus manages focus and input prioritization for efficient cognitive processing.",
+    "trump": "Star",
+    "suit": "Thalamus",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "focus",
+      "attention",
+      "priority"
+    ],
+    "connections": []
+  },
+  {
+    "fact": "The Fool represents new beginnings, trust the adventure, and letting go of fear-based thinking.",
+    "trump": "The Fool",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "exploration",
+      "fresh_start",
+      "trust"
+    ],
+    "priority_weight": 0,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Magician represents changing circumstances by will, manifestation, focus, and inspiration.",
+    "trump": "The Magician",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "willpower",
+      "manifestation",
+      "focus"
+    ],
+    "priority_weight": 1,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Priestess represents intuition, inner guidance, and growth happening below the surface.",
+    "trump": "The Priestess",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "intuition",
+      "subconscious",
+      "growth"
+    ],
+    "priority_weight": 2,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Empress represents creative expression, nurturing, and joyful self-expression.",
+    "trump": "The Empress",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "creativity",
+      "nurturing",
+      "joy"
+    ],
+    "priority_weight": 3,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Emperor represents stability in mind, security through adaptability, and leadership.",
+    "trump": "The Emperor",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "stability",
+      "leadership",
+      "adaptability"
+    ],
+    "priority_weight": 4,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Hierophant represents tradition, shared knowledge, and learning the system.",
+    "trump": "The Hierophant",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "tradition",
+      "knowledge",
+      "learning"
+    ],
+    "priority_weight": 5,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Lovers represent creation through polarity, choice, and union with the divine.",
+    "trump": "The Lovers",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "polarity",
+      "choice",
+      "union"
+    ],
+    "priority_weight": 6,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Chariot represents balance, focus, and successful control of circumstances.",
+    "trump": "The Chariot",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "balance",
+      "control",
+      "focus"
+    ],
+    "priority_weight": 7,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Justice represents cause and effect, balance between heart and head, and self-honesty.",
+    "trump": "Justice",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "justice",
+      "balance",
+      "truth"
+    ],
+    "priority_weight": 8,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Cunning Woman represents seclusion for emotional mastery and inner guidance.",
+    "trump": "The Cunning Woman",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "seclusion",
+      "emotional_control",
+      "guidance"
+    ],
+    "priority_weight": 9,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Wheel of Fortune represents playing the hand dealt, beneficial change, and good fortune.",
+    "trump": "Wheel of Fortune",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "change",
+      "fortune",
+      "opportunity"
+    ],
+    "priority_weight": 10,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Strength represents inner courage, self-control, and reconciliation of inner conflict.",
+    "trump": "Strength",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "courage",
+      "self_control",
+      "inner_strength"
+    ],
+    "priority_weight": 11,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Hanged Man represents sacrifice, surrender for knowledge, and breaking convention.",
+    "trump": "The Hanged Man",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "sacrifice",
+      "surrender",
+      "nonconformity"
+    ],
+    "priority_weight": 12,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Death represents transition, the sacrifice of who we are for who we are becoming, and release.",
+    "trump": "Death",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "transition",
+      "release",
+      "transformation"
+    ],
+    "priority_weight": 13,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Alchemy represents divine union of opposites, balance, and integration of knowledge.",
+    "trump": "Alchemy",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "union",
+      "balance",
+      "integration"
+    ],
+    "priority_weight": 14,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Devil represents shackles of mundane life, addictive behavior, and rejecting critical thought.",
+    "trump": "The Devil",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "restriction",
+      "addiction",
+      "illusion"
+    ],
+    "priority_weight": 15,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Tower represents collapse of false assumptions and necessary breakdown of faulty structures.",
+    "trump": "The Tower",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "collapse",
+      "revelation",
+      "destruction"
+    ],
+    "priority_weight": 16,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Star represents healing, hope from loss, and return to basic principles.",
+    "trump": "The Star",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "healing",
+      "hope",
+      "renewal"
+    ],
+    "priority_weight": 17,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "The Moon represents illusion, subconscious messages, and the limits of discernment.",
+    "trump": "The Moon",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "illusion",
+      "subconscious",
+      "uncertainty"
+    ],
+    "priority_weight": 18,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Black Sun represents success, stress relief, and the stasis of achievement.",
+    "trump": "Black Sun",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "success",
+      "relief",
+      "achievement"
+    ],
+    "priority_weight": 19,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Judgement represents hearing the call to actualization and breaking through into fullness.",
+    "trump": "Judgement",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "awakening",
+      "actualization",
+      "breakthrough"
+    ],
+    "priority_weight": 20,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Black Earth represents full manifestation, rebirth through death, and successful completion of a cycle.",
+    "trump": "Black Earth",
+    "suit": "MajorArcana",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "manifestation",
+      "rebirth",
+      "completion"
+    ],
+    "priority_weight": 21,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ace of Wands represents the creative spark, forging will, and new potential needing growth.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "creativity",
+      "potential",
+      "will"
+    ],
+    "priority_weight": 1,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Two of Wands represents a successful beginning and choices on how to proceed with vision.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "choice",
+      "planning",
+      "vision"
+    ],
+    "priority_weight": 2,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Three of Wands represents motion after decision, clarity of purpose, and knowledge of path.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "clarity",
+      "motion",
+      "purpose"
+    ],
+    "priority_weight": 3,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Four of Wands represents stable plans, manifestation of the journey, and celebration.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "stability",
+      "celebration",
+      "manifestation"
+    ],
+    "priority_weight": 4,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Five of Wands represents conflict through training, developing skills through adversity.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "training",
+      "conflict",
+      "adversity"
+    ],
+    "priority_weight": 5,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Six of Wands represents victory, self-confidence, and balance of will and action.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "victory",
+      "confidence",
+      "balance"
+    ],
+    "priority_weight": 6,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Seven of Wands represents overcoming obstacles, defending position, and standing firm.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "defense",
+      "perseverance",
+      "resolve"
+    ],
+    "priority_weight": 7,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Eight of Wands represents swift movement, renewed direction, and sense of adventure.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "movement",
+      "adventure",
+      "flow"
+    ],
+    "priority_weight": 8,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Nine of Wands represents marshalling strength for challenge, readiness for struggle.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "strength",
+      "endurance",
+      "readiness"
+    ],
+    "priority_weight": 9,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ten of Wands represents being overburdened, shouldering too much, and overwhelm.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "burden",
+      "overwhelm",
+      "responsibility"
+    ],
+    "priority_weight": 10,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "King of Wands represents visionary energy, charisma, and creative leadership.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "vision",
+      "charisma",
+      "leadership"
+    ],
+    "priority_weight": 14,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Queen of Wands represents nurturing of creative energy, inspiration, and guidance.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "nurturing",
+      "creativity",
+      "inspiration"
+    ],
+    "priority_weight": 13,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Prince of Wands represents dynamic change, life-altering energy, and new projects.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "change",
+      "action",
+      "impulse"
+    ],
+    "priority_weight": 12,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Page of Wands represents youthful energy, curiosity, and willingness to explore.",
+    "trump": "",
+    "suit": "Wands",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "curiosity",
+      "adventure",
+      "youth"
+    ],
+    "priority_weight": 11,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ace of Cups represents new love, potential for relationship, and a period of potential joy.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "love",
+      "joy",
+      "potential"
+    ],
+    "priority_weight": 1,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Two of Cups represents a strong relationship at its beginning or a strengthening of existing bonds.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "partnership",
+      "bond",
+      "romance"
+    ],
+    "priority_weight": 2,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Three of Cups represents friendship, companionship, and good times with loved ones.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "friendship",
+      "companionship",
+      "joy"
+    ],
+    "priority_weight": 3,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Four of Cups represents an emotional offering or opportunity and the choice of acceptance.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "opportunity",
+      "choice",
+      "emotion"
+    ],
+    "priority_weight": 4,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Five of Cups represents loss, disappointment, and focusing on what has been lost over what remains.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "loss",
+      "disappointment",
+      "grief"
+    ],
+    "priority_weight": 5,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Six of Cups represents reliving golden moments, creating new memories, and feeling peace.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "memory",
+      "peace",
+      "balance"
+    ],
+    "priority_weight": 6,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Seven of Cups represents many appealing choices, potential illusions, and short-term pleasures.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "choices",
+      "illusion",
+      "temptation"
+    ],
+    "priority_weight": 7,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Eight of Cups represents disillusionment, call to action, and desire for improvement.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "disillusionment",
+      "action",
+      "change"
+    ],
+    "priority_weight": 8,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Nine of Cups represents fulfillment, enjoyment of pleasures, and dreams realized.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "fulfillment",
+      "pleasure",
+      "satisfaction"
+    ],
+    "priority_weight": 9,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ten of Cups represents harmony, culmination of relationships, and family joy.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "harmony",
+      "family",
+      "joy"
+    ],
+    "priority_weight": 10,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "King of Cups represents wise counsel, romantic fluidity, and emotional influence.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "wisdom",
+      "romance",
+      "counsel"
+    ],
+    "priority_weight": 14,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Queen of Cups represents nurturing, receptivity, and deep emotional insight.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "nurturing",
+      "emotion",
+      "receptivity"
+    ],
+    "priority_weight": 13,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Prince of Cups represents romantic idealism, life-changing encounters, and deep emotional experiences.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "romantic",
+      "idealism",
+      "emotion"
+    ],
+    "priority_weight": 12,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Page of Cups represents youthful openness, play, and spiritual awareness.",
+    "trump": "",
+    "suit": "Cups",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "openness",
+      "play",
+      "spirituality"
+    ],
+    "priority_weight": 11,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ace of Swords represents new perception, clarity of thought, and a challenge to be faced.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "clarity",
+      "perception",
+      "challenge"
+    ],
+    "priority_weight": 1,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Two of Swords represents an impasse, tension between opposing ideas, and need for reflection.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "impasse",
+      "reflection",
+      "tension"
+    ],
+    "priority_weight": 2,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Three of Swords represents separation, grief, and a time for healing.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "grief",
+      "separation",
+      "healing"
+    ],
+    "priority_weight": 3,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Four of Swords represents a time of rest, pause, and reflection in conflict.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "rest",
+      "reflection",
+      "pause"
+    ],
+    "priority_weight": 4,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Five of Swords represents loss through conflict, avoidance of unwinnable battles, and caution.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "loss",
+      "conflict",
+      "caution"
+    ],
+    "priority_weight": 5,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Six of Swords represents healing, moving forward, and objective reflection.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "healing",
+      "transition",
+      "reflection"
+    ],
+    "priority_weight": 6,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Seven of Swords represents difficulty expressing oneself, maintaining inner being, and hidden challenges.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "expression",
+      "isolation",
+      "hidden"
+    ],
+    "priority_weight": 7,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Eight of Swords represents distraction, unwanted advice, and the need to free oneself.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "distraction",
+      "restriction",
+      "freedom"
+    ],
+    "priority_weight": 8,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Nine of Swords represents anxiety, unresolved guilt, and facing one's shadow.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "anxiety",
+      "shadow",
+      "guilt"
+    ],
+    "priority_weight": 9,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ten of Swords represents ruin, loss, and potential for rebuilding after collapse.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "loss",
+      "collapse",
+      "rebuilding"
+    ],
+    "priority_weight": 10,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "King of Swords represents logic, swift action, and responsibility.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "logic",
+      "responsibility",
+      "action"
+    ],
+    "priority_weight": 14,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Queen of Swords represents blunt truth, wisdom from experience, and clear expression.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "truth",
+      "wisdom",
+      "clarity"
+    ],
+    "priority_weight": 13,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Prince of Swords represents criticism, quick action, and challenge.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "criticism",
+      "action",
+      "challenge"
+    ],
+    "priority_weight": 12,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Page of Swords represents youthful truth-seeking, sharp ideas, and new insights.",
+    "trump": "",
+    "suit": "Swords",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "truth",
+      "insight",
+      "youth"
+    ],
+    "priority_weight": 11,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ace of Pentacles represents a new opportunity, grounded strength, and vitality.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "opportunity",
+      "grounded",
+      "vitality"
+    ],
+    "priority_weight": 1,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Two of Pentacles represents balance, constant adjustment, and harmonious flow.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "balance",
+      "adaptation",
+      "flow"
+    ],
+    "priority_weight": 2,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Three of Pentacles represents learning, effort rewarded, and accomplishment.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "effort",
+      "learning",
+      "accomplishment"
+    ],
+    "priority_weight": 3,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Four of Pentacles represents holding onto material security and social constructs.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "security",
+      "materialism",
+      "control"
+    ],
+    "priority_weight": 4,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Five of Pentacles represents spiritual and material crisis, endurance, and missed opportunities.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "crisis",
+      "endurance",
+      "poverty"
+    ],
+    "priority_weight": 5,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Six of Pentacles represents equitable exchange, giving back, and shared success.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "generosity",
+      "success",
+      "sharing"
+    ],
+    "priority_weight": 6,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Seven of Pentacles represents stalled progress, reflection on purpose, and inner growth.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "reflection",
+      "growth",
+      "stasis"
+    ],
+    "priority_weight": 7,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Eight of Pentacles represents creativity, focused effort, and goal pursuit.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "creativity",
+      "focus",
+      "diligence"
+    ],
+    "priority_weight": 8,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Nine of Pentacles represents material success, self-discipline, and nearing completion.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "success",
+      "discipline",
+      "completion"
+    ],
+    "priority_weight": 9,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Ten of Pentacles represents successful conclusion of efforts, security, and appreciation of beauty.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "conclusion",
+      "security",
+      "success"
+    ],
+    "priority_weight": 10,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "King of Pentacles represents practical power, good advice, and focus on thriving.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "power",
+      "advice",
+      "focus"
+    ],
+    "priority_weight": 14,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Queen of Pentacles represents loving care, abundance, and appreciation through service.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "care",
+      "abundance",
+      "service"
+    ],
+    "priority_weight": 13,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Prince of Pentacles represents practicality, steady progress, and loyalty.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "practicality",
+      "progress",
+      "loyalty"
+    ],
+    "priority_weight": 12,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Page of Pentacles represents new learning, growth, and discovery of inner potentials.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "learning",
+      "growth",
+      "potential"
+    ],
+    "priority_weight": 11,
+    "connections": [],
+    "reversal": false,
+    "timestamp": "2025-06-22T00:00:00Z"
+  },
+  {
+    "fact": "Eight of Pentacles represents dedication, skill, and mastery through apprenticeship.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "dedication",
+      "skill",
+      "mastery"
+    ],
+    "connections": [],
+    "salience": 0.5,
+    "timestamp": "2025-06-22T12:02:48.191356+00:00",
+    "priority_weight": 15
+  },
+  {
+    "fact": "The Tower represents sudden upheaval, revelation, and breaking down old structures.",
+    "trump": "Tower",
+    "suit": "",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "upheaval",
+      "change",
+      "revelation"
+    ],
+    "connections": [],
+    "salience": 0.9,
+    "timestamp": "2025-06-22T12:02:48.193351+00:00",
+    "priority_weight": 10
+  },
+  {
+    "fact": "Seven of Pentacles represents patience, investment, and waiting for results.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "patience",
+      "investment",
+      "results"
+    ],
+    "connections": [],
+    "salience": 0.6,
+    "timestamp": "2025-06-22T12:02:48.195345+00:00",
+    "priority_weight": 15
+  },
+  {
+    "fact": "Five of Pentacles represents hardship, struggle, and feeling left out.",
+    "trump": "",
+    "suit": "Pentacles",
+    "confidence": 1.0,
+    "source": "system_init",
+    "tags": [
+      "tarot",
+      "meta_reasoning",
+      "priority",
+      "hardship",
+      "struggle",
+      "isolation"
+    ],
+    "connections": [],
+    "salience": 0.7,
+    "timestamp": "2025-06-22T12:02:48.196342+00:00",
+    "priority_weight": 15
+  },
+  {
+    "fact": "Vex is a synthetic cognitive system designed for adaptive reasoning.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheMagician:1",
+      "suit:Core"
+    ],
+    "priority_weight": 0,
+    "timestamp": "2025-06-22T12:11:28.644029+00:00"
+  },
+  {
+    "fact": "Hazard detection integrates with pain signals for internal alerting.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Death:1",
+      "suit:Hazard"
+    ],
+    "priority_weight": 0,
+    "timestamp": "2025-06-22T12:11:28.644029+00:00"
+  },
+  [
+  {
+    "fact": "Some previous fact",
+    "tags": ["example"]
+  },
+    {
+      "credibility": 1.0,
+      "fact": "Mathematical reasoning prioritizes balance and precision.",
+      "priority_weight": 0,
+      "source": "system",
+      "tags": [
+        "trump:Temperance:1",
+        "suit:Mathematics"
+      ],
+    "timestamp": "2025-06-22T12:11:28.644029+00:00"
+    }
+  ]
+]
+]
+
+
+
+
+
+

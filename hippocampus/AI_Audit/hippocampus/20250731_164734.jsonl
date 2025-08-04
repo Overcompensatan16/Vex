@@ -1,0 +1,12 @@
+{"timestamp": "2025-07-31T16:47:34.894048+00:00", "type": "store_record", "data": {"summary": "Generic general fact"}}
+{"timestamp": "2025-07-31T16:47:34.897045+00:00", "type": "write_success", "data": {"category": "linguistic", "path": ".\\external_memory.jsonl"}}
+{"timestamp": "2025-07-31T16:47:34.899034+00:00", "type": "store_record", "data": {"summary": "Opinionated insight"}}
+{"timestamp": "2025-07-31T16:47:34.900032+00:00", "type": "write_success", "data": {"category": "opinions", "path": ".\\opinions.jsonl"}}
+{"timestamp": "2025-07-31T16:47:34.969949+00:00", "type": "store_record", "data": {"summary": "Math conclusion: 2+2=4"}}
+{"timestamp": "2025-07-31T16:47:34.994886+00:00", "type": "write_success", "data": {"category": "math", "path": ".\\math_facts.jsonl"}}
+{"timestamp": "2025-07-31T16:47:35.064695+00:00", "type": "store_record", "data": {"summary": "Emotional expression"}}
+{"timestamp": "2025-07-31T16:47:35.065693+00:00", "type": "write_success", "data": {"category": "emotion", "path": ".\\emotion_facts.jsonl"}}
+{"timestamp": "2025-07-31T16:47:35.122541+00:00", "type": "store_record", "data": {"summary": "Historical insight"}}
+{"timestamp": "2025-07-31T16:47:35.124540+00:00", "type": "write_success", "data": {"category": "history", "path": ".\\historical_facts.jsonl"}}
+{"timestamp": "2025-07-31T16:47:35.181384+00:00", "type": "store_record", "data": {"summary": "Fallback to linguistic"}}
+{"timestamp": "2025-07-31T16:47:35.182381+00:00", "type": "write_success", "data": {"category": "linguistic", "path": ".\\external_memory.jsonl"}}

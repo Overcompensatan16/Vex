@@ -1,0 +1,8 @@
+{"action": "core_fact_added", "fact_summary": "Vex is a synthetic cognitive system designed for adaptive reasoning.", "trump": "Star", "suit": "Hippocampus", "timestamp": "2025-06-22T05:28:33.090773"}
+{"action": "core_fact_added", "fact_summary": "Hazard detection integrates with pain signals for internal alerting.", "trump": "Death", "suit": "HazardReasoner", "timestamp": "2025-06-22T05:28:33.091943"}
+{"action": "core_fact_added", "fact_summary": "Mathematical reasoning prioritizes balance and precision.", "trump": "Temperance", "suit": "ParietalLobe", "timestamp": "2025-06-22T05:28:33.091943"}
+{"action": "duplicate_core_fact_skipped", "fact_summary": "Vex is a synthetic cognitive system designed for adaptive reasoning.", "trump": "Star", "suit": "Hippocampus", "timestamp": "2025-06-22T05:28:33.092973"}
+{"action": "duplicate_core_fact_skipped", "fact_summary": "Vex is a synthetic cognitive system designed for adaptive reasoning.", "trump": "Star", "suit": "Hippocampus", "timestamp": "2025-06-22T05:32:15.039863+00:00"}
+{"action": "duplicate_core_fact_skipped", "fact_summary": "Hazard detection integrates with pain signals for internal alerting.", "trump": "Death", "suit": "HazardReasoner", "timestamp": "2025-06-22T05:32:15.039863+00:00"}
+{"action": "duplicate_core_fact_skipped", "fact_summary": "Mathematical reasoning prioritizes balance and precision.", "trump": "Temperance", "suit": "ParietalLobe", "timestamp": "2025-06-22T05:32:15.039863+00:00"}
+{"action": "duplicate_core_fact_skipped", "fact_summary": "Vex is a synthetic cognitive system designed for adaptive reasoning.", "trump": "Star", "suit": "Hippocampus", "timestamp": "2025-06-22T05:32:15.040861+00:00"}
