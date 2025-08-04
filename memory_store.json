@@ -1,0 +1,49 @@
+[
+  {
+    "fact": "Vex is a synthetic cognitive system designed for adaptive reasoning.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:TheMagician:1",
+      "suit:Core"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-24T07:00:09.557588+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "TheMagician",
+    "suit": "Core"
+  },
+  {
+    "fact": "Hazard detection integrates with pain signals for internal alerting.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Death:1",
+      "suit:Hazard",
+      "hazard"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-24T07:00:09.557588+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "Death",
+    "suit": "Hazard"
+  },
+  {
+    "fact": "Mathematical reasoning prioritizes balance and precision.",
+    "source": "system",
+    "credibility": 1.0,
+    "tags": [
+      "trump:Temperance:1",
+      "suit:Mathematics",
+      "mathematics"
+    ],
+    "connections": [],
+    "timestamp": "2025-06-24T07:00:09.557588+00:00",
+    "reversal": false,
+    "priority_weight": 0,
+    "trump": "Temperance",
+    "suit": "Mathematics"
+  }
+]

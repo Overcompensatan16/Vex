@@ -1,0 +1,14 @@
+Downloads - arXiv: 0 | Wikipedia: 0
+Transformations - success: 0 | errors: 0
+Routed records: 0
+Total facts processed: 0
+Elapsed time: 0.04sDownloads - arXiv: 50 | Wikipedia: 50
+Transformations - success: 283 | errors: 1
+Routed records: 283
+Total facts processed: 283
+Elapsed time: 13.72s
+Downloads - arXiv: 50 | Wikipedia: 50
+Transformations - success: 283 | errors: 1
+Routed records: 283
+Total facts processed: 283
+Elapsed time: 12.28s
