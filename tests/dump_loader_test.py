@@ -1,193 +1,161 @@
-"""Test harness for dump loader system."""
-import argparse
-import time
+"""Unified dump pipeline harness for wiki and arXiv sources.
+
+This script exercises the download, preprocessing, and routing modules
+using local sample dumps. It replaces the previous ad-hoc wiki/arxiv
+tests with a single harness that runs a couple of batches through the
+full pipeline while routing facts into the existing test memory store.
+"""
+
+from __future__ import annotations
+
+import os
+import sys
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from tempfile import TemporaryDirectory
+from typing import Dict, Iterable, List
 
-from urllib import request, parse
-import json
+# Ensure repository root on path for module imports
+ROOT_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
-from mock_memory_router import MockMemoryRouter
+# Lightweight stubs for optional heavy dependencies
+import types
+if "spacy" not in sys.modules:
+    sys.modules["spacy"] = types.SimpleNamespace(load=lambda name: None)
+    sys.modules["spacy"].cli = types.SimpleNamespace(download=lambda name: None)
+sys.modules.setdefault("pygetwindow", types.ModuleType("pygetwindow"))
+sys.modules.setdefault("pyautogui", types.ModuleType("pyautogui"))
+temporal_stub = types.ModuleType("cerebral_cortex.temporal_lobe")
+chemistry_stub = types.ModuleType("cerebral_cortex.temporal_lobe.chemistry_parser")
+chemistry_stub.parse_chemistry_text = lambda text: []
+temporal_stub.chemistry_parser = chemistry_stub
+temporal_stub.__path__ = []
+sys.modules.setdefault("cerebral_cortex.temporal_lobe", temporal_stub)
+sys.modules.setdefault("cerebral_cortex.temporal_lobe.chemistry_parser", chemistry_stub)
 
+from mock_memory_router import MockMemoryRouter, TEST_MEMORY_PATH
 
-# -------- Helpers ---------
-
-def read_lines(path: Path) -> List[str]:
-    """Return non-empty lines from a text file."""
-    with open(path, "r", encoding="utf-8") as f:
-        return [line.strip() for line in f if line.strip()]
-
-
-def download_arxiv(subjects: List[str], limit: int) -> List[Dict]:
-    """Download articles from arXiv by subject."""
-    results: List[Dict] = []
-    per_subject = max(1, limit // len(subjects))
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
-    for subj in subjects:
-        start = 0
-        retrieved = 0
-        while retrieved < per_subject:
-            batch = min(50, per_subject - retrieved)
-            url = (
-                "http://export.arxiv.org/api/query?search_query=cat:" f"{subj}" f"&start={start}&max_results={batch}"
-            )
-            try:
-                with request.urlopen(url, timeout=10) as resp:
-                    data = resp.read()
-            except Exception:
-                break
-            from xml.etree import ElementTree as ET
-
-            root = ET.fromstring(data)
-            entries = root.findall("atom:entry", ns)
-            if not entries:
-                break
-            for entry in entries:
-                title = entry.findtext("atom:title", default="", namespaces=ns).strip()
-                summary = entry.findtext("atom:summary", default="", namespaces=ns).strip()
-                results.append(
-                    {
-                        "title": title,
-                        "summary": summary,
-                        "source": "arxiv",
-                        "category": subj,
-                    }
-                )
-                retrieved += 1
-                if retrieved >= per_subject:
-                    break
-            start += batch
-    return results
+import cerebral_cortex.source_handlers.external_loaders.batch_scheduler as sched
+from cerebral_cortex.source_handlers.download_utils import download_files
+from cerebral_cortex.source_handlers.external_loaders.preprocessor import process_batch
+import cerebral_cortex.memory_router as memory_router
+import cerebral_cortex.source_handlers.external_loaders.preprocessor as preprocessor
 
 
-def download_wikipedia(categories: List[str], limit: int) -> List[Dict]:
-    """Download pages from Wikipedia categories."""
-    results: List[Dict] = []
-    per_category = max(1, limit // len(categories))
-    for cat in categories:
-        cont = None
-        retrieved = 0
-        while retrieved < per_category:
-            params = {
-                "action": "query",
-                "list": "categorymembers",
-                "cmtitle": f"Category:{cat}",
-                "cmlimit": min(50, per_category - retrieved),
-                "format": "json",
-            }
-            if cont:
-                params["cmcontinue"] = cont
-            url = "https://en.wikipedia.org/w/api.php?" + parse.urlencode(params)
-            try:
-                with request.urlopen(url, timeout=10) as resp:
-                    data = json.load(resp)
-            except Exception:
-                break
-            members = data.get("query", {}).get("categorymembers", [])
-            if not members:
-                break
-            for mem in members:
-                pageid = mem["pageid"]
-                page_params = {
-                    "action": "query",
-                    "prop": "extracts",
-                    "explaintext": 1,
-                    "format": "json",
-                    "pageids": pageid,
-                }
-                page_url = "https://en.wikipedia.org/w/api.php?" + parse.urlencode(page_params)
-                try:
-                    with request.urlopen(page_url, timeout=10) as p_resp:
-                        pdata = json.load(p_resp)
-                except Exception:
-                    continue
-                pages = pdata.get("query", {}).get("pages", {})
-                extract = pages.get(str(pageid), {}).get("extract", "")
-                results.append(
-                    {
-                        "title": mem.get("title", ""),
-                        "summary": extract,
-                        "source": "wikipedia",
-                        "category": cat,
-                    }
-                )
-                retrieved += 1
-                if retrieved >= per_category:
-                    break
-            cont = data.get("continue", {}).get("cmcontinue")
-            if not cont:
-                break
-    return results
+# --- Patch memory router to use the test memory store -----------------
+
+_mock_router = MockMemoryRouter()
 
 
-def transform(records: Iterable[Dict]) -> Tuple[List[Dict], int]:
-    """Transform raw records into structured facts."""
-    facts: List[Dict] = []
-    errors = 0
-    for rec in records:
-        text = rec.get("summary", "")
-        sentences = [s.strip() for s in text.split(".") if s.strip()]
-        if not sentences:
-            errors += 1
-            continue
-        for s in sentences[:3]:
-            facts.append(
-                {
-                    "subject": rec.get("title", "unknown"),
-                    "predicate": "says",
-                    "value": s,
-                    "source": rec.get("source"),
-                    "category": rec.get("category"),
-                }
-            )
-    return facts, errors
+def _mock_store_facts(facts: Iterable[Dict]) -> Dict[str, Dict[str, int]]:
+    """Route ``facts`` through ``MockMemoryRouter`` and collect stats."""
+
+    stats: Dict[str, Dict[str, int]] = {}
+    for fact in facts:
+        record = {
+            "subject": fact.get("subject", "unknown"),
+            "predicate": fact.get("predicate", "states"),
+            "value": fact.get("value") or fact.get("fact", ""),
+            "category": fact.get("source", "general"),
+        }
+        stored = _mock_router.route(record)
+        path = os.path.join(TEST_MEMORY_PATH, f"{record['category'].replace('/', '_')}.jsonl")
+        entry = stats.setdefault(path, {"stored": 0, "skipped": 0})
+        if stored:
+            entry["stored"] += 1
+        else:
+            entry["skipped"] += 1
+    return stats
 
 
-def route(records: Iterable[Dict], router: MockMemoryRouter) -> Tuple[int, int]:
-    success = 0
+memory_router.store_facts = _mock_store_facts  # type: ignore
+preprocessor.store_facts = _mock_store_facts  # type: ignore
+
+
+def _memory_count() -> int:
+    """Return total number of records written to the mock memory store."""
+
     total = 0
-    for rec in records:
-        total += 1
-        if router.route(rec):
-            success += 1
-    return success, total - success
+    base = Path(TEST_MEMORY_PATH)
+    for path in base.glob("*.jsonl"):
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                total += sum(1 for _ in fh)
+        except OSError:
+            pass
+    return total
+
+
+# --- Helpers -----------------------------------------------------------
+
+
+def _create_sample_dumps(base: Path) -> List[Dict]:
+    """Write minimal wiki and arXiv dumps under ``base`` and return records."""
+
+    arxiv_xml = """<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+  <entry>
+    <title>Sample Paper</title>
+    <summary>This is a test summary about AI.</summary>
+    <category term='cs.AI'/>
+  </entry>
+</feed>
+"""
+
+    wiki_text = "== Heading ==\n\nThis is a sample paragraph from wikipedia.\nAnother sentence."
+
+    arxiv_path = base / "arxiv_sample.xml"
+    wiki_path = base / "wiki_sample.txt"
+    arxiv_path.write_text(arxiv_xml, encoding="utf-8")
+    wiki_path.write_text(wiki_text, encoding="utf-8")
+
+    return [
+        {
+            "id": "wiki_1",
+            "name": "Wiki Sample",
+            "url": wiki_path.as_uri(),
+            "source": "wiki",
+        },
+        {
+            "id": "arxiv_1",
+            "name": "arXiv Sample",
+            "url": arxiv_path.as_uri(),
+            "source": "arxiv",
+            "subject": "cs.AI",
+        },
+        {
+            "id": "wiki_2",
+            "name": "Wiki Sample 2",
+            "url": wiki_path.as_uri(),
+            "source": "wiki",
+        },
+    ]
+
+
+# --- Main harness ------------------------------------------------------
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Dump loader system test harness")
-    parser.add_argument("--max-files", type=int, default=50, help="Files per source")
-    parser.add_argument("--verbose", action="store_true")
-    args = parser.parse_args()
+    """Run the pipeline on a couple of batches of sample data."""
 
-    base = Path(__file__).parent
-    arxiv_subjects = read_lines(base / "configs" / "arxiv_subjects.txt")
-    wiki_categories = read_lines(base / "configs" / "wikipedia_categories.txt")
+    with TemporaryDirectory() as src_dir, TemporaryDirectory() as dump_dir:
+        src_base = Path(src_dir)
+        dump_base = Path(dump_dir)
 
-    log_file = base / "output_log.txt"
+        records = _create_sample_dumps(src_base)
 
-    def log(msg: str) -> None:
-        print(msg)
-        with open(log_file, "a", encoding="utf-8") as f:
-            f.write(msg + "\n")
+        # Partition into batches using scheduler helper
+        batches = [
+            (i, i + len(b), b) for i, b in enumerate(sched._partition(records, 1))
+        ]
 
-    t0 = time.time()
-    arxiv_records = download_arxiv(arxiv_subjects, args.max_files)
-    wiki_records = download_wikipedia(wiki_categories, args.max_files)
-    log(f"Downloads - arXiv: {len(arxiv_records)} | Wikipedia: {len(wiki_records)}")
+        for start, end, batch in batches:
+            downloaded = download_files(batch, dump_base=str(dump_base))
+            result = process_batch(downloaded, dump_base=str(dump_base))
+            print(f"Batch {start}-{end}: {result}")
 
-    arxiv_facts, arxiv_err = transform(arxiv_records)
-    wiki_facts, wiki_err = transform(wiki_records)
-    facts = arxiv_facts + wiki_facts
-    transform_errors = arxiv_err + wiki_err
-    log(f"Transformations - success: {len(facts)} | errors: {transform_errors}")
-
-    router = MockMemoryRouter(verbose=args.verbose)
-    routed, _ = route(facts, router)
-    log(f"Routed records: {routed}")
-    log(f"Total facts processed: {router.summary()}")
-
-    elapsed = time.time() - t0
-    log(f"Elapsed time: {elapsed:.2f}s")
+        print(f"Total facts stored: {_memory_count()}")
 
 
 if __name__ == "__main__":
