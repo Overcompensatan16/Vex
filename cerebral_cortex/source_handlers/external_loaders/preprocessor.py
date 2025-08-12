@@ -11,6 +11,8 @@ from cerebral_cortex.source_handlers.transformer_fact_extractor import (
     transform_text,
 )
 
+AUDIT_LOG = os.path.join(os.path.dirname(__file__), "preprocess_audit.jsonl")
+
 
 _LOGGERS = {}
 _DUMP_BASE = DEFAULT_DUMP_BASE
@@ -184,3 +186,4 @@ def process_batch(records: List[Dict], dump_base: str = DEFAULT_DUMP_BASE) -> Di
     total = sum(r.get("count", 0) for r in results)
     files = sum(1 for r in results if r.get("count", 0) > 0)
     return {"files": files, "total": total}
+
