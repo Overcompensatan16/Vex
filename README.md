@@ -10,537 +10,322 @@ Standard Library so far. No external packages needed.
 
 This project was designed around NASA's Power of 10 Safety Standards
 
-FILE DOWNLOADING UPDATE
+Biomimetic Spinal Cord Design (Detailed)
+1. High-Level Anatomy
+spinal_cord/
+    __init__.py
+    dorsal_root.py        # afferent sensory signals in
+    ventral_root.py       # efferent motor signals out
+    dorsal_horn.py        # sensory relay + nociceptors
+    ventral_horn.py       # motor neuron pools
+    reflex_arc.py         # core reflex loop
+    nociception.py        # pain handling (fast ion channels)
+    ion_channels.py       # sodium, potassium, calcium dynamics
+    ascending_signals.py  # forward to thalamus/brainstem
+    audit_hooks.py        # log reflex, motor, pain events
 
 
-FACT GENERATION OVERHAUL (Transformer-Assisted, Lightweight)
+2. Dorsal Horn (Sensory Integration)
+Where sensory signals enter.
 
-🔧 1. Sentence Preprocessing (Tokenizer: nltk, spacy, or tinybert)
-Use:
-python
-CopyEdit
-from nltk.tokenize import sent_tokenize
-sentences = sent_tokenize(text)
 
-➡️ Justification: no model inference, fast, proven.
+Subdivisions handle touch, proprioception, pain, temperature.
 
-🤖 2. Replace Regex with SPO Triplet Extractor (Tiny Transformer)
-🔍 Use rebel-large or fine-tuned T5:
-Model: Babelscape/rebel-large (110M, not LLM-size)
 
+Ion channel model: nociceptors open sodium/calcium channels → depolarization → threshold = action potential.
 
-Task: turn sentence into one or more SPO triplets
 
+Pseudo-code:
+# dorsal_horn.py
+from .ion_channels import IonChannel
 
-Example usage:
-python
-CopyEdit
-from transformers import pipeline
-extractor = pipeline("text2text-generation", model="Babelscape/rebel-large")
-output = extractor(f"extract relations: {sentence}")[0]['generated_text']
+class DorsalHorn:
+    def __init__(self):
+        self.nociceptor = IonChannel("nociceptor", threshold=-55)
+        self.mechanoreceptor = IonChannel("touch", threshold=-60)
 
-Then post-process output into:
-python
-CopyEdit
-{
-  "subject": "...",
-  "predicate": "...",
-  "value": "...",
-}
+    def process_input(self, signal):
+        # Example: {"type": "pain", "intensity": 70}
+        if signal["type"] == "pain":
+            fired = self.nociceptor.activate(signal["intensity"])
+            if fired:
+                return {"reflex": "withdraw", "severity": "high"}
+        elif signal["type"] == "touch":
+            fired = self.mechanoreceptor.activate(signal["intensity"])
+            if fired:
+                return {"reflex": "light_contact", "severity": "low"}
+        return None
 
-➡️ One pass per sentence. Skip if sentence is too short.
 
-🧠 3. Light NER Tagging (Transformer NER)
-Use:
-python
-CopyEdit
-ner = pipeline("ner", model="dslim/bert-base-NER", aggregation_strategy="simple")
-entities = ner(sentence)
+3. Ventral Horn (Motor Neuron Pools)
+Where motor neurons live.
 
-Map entity_group to topic tags:
-ORG, MISC → science, tech
 
+Pools of neurons → redundancy for smoother response.
 
-PER, LOC → history, geography
 
+Output = symbolic motor action (e.g., move hand, flex leg).
 
-Update tags list accordingly.
 
-📚 4. Type Inference (Topic from Entities/Keywords)
-python
-CopyEdit
-if not rec["type"]:
-    for k, words in TOPIC_KEYWORDS.items():
-        if any(w in sentence.lower() for w in words):
-            rec["type"] = k
-            break
+Pseudo-code:
+# ventral_horn.py
+class VentralHorn:
+    def __init__(self):
+        self.motor_pools = {
+            "withdraw": ["alpha_motor_neuron_1", "alpha_motor_neuron_2"],
+            "flex_leg": ["motor_neuron_3"]
+        }
 
-But also boost based on:
-Entity tags
+    def trigger_action(self, reflex_command):
+        if reflex_command in self.motor_pools:
+            return {
+                "action": reflex_command,
+                "neurons_fired": self.motor_pools[reflex_command]
+            }
+        return {"action": "none"}
 
 
-Subject text content
+4. Reflex Arc (Direct Loop)
+Dorsal horn receives input → if threshold crossed → ventral horn triggers reflex.
 
 
+Parallel path sends copy upward via ascending_signals.
 
-🚦 5. Avoid "general" flood
-If rec["type"] == "fact" and not rec["tags"], assign "general".
-Track ratio of "general" facts vs. total — log warning if >80%.
 
-⚙️ Model Summary (All Below LLM-Threshold)
-Purpose
-Model
-Size
-Role
-Sentence tokenizing
-nltk / spacy
--
-Sentence splitting
-SPO Extraction
-Babelscape/rebel-large
-~110M
-Subject–predicate–object triples
-NER Tagging
-dslim/bert-base-NER
-~110M
-Lightweight named entity tagging
+Pseudo-code:
+# reflex_arc.py
+from .dorsal_horn import DorsalHorn
+from .ventral_horn import VentralHorn
+from .ascending_signals import AscendingSignals
 
-No GPT, no LLaMA, no LLMs — all sub-150M and offline runnable.
+class ReflexArc:
+    def __init__(self):
+        self.dorsal = DorsalHorn()
+        self.ventral = VentralHorn()
+        self.ascend = AscendingSignals()
 
-✅ Final Output
-Each generate_facts(text) call now:
-Breaks paragraph to sentences
+    def process_signal(self, signal):
+        reflex = self.dorsal.process_input(signal)
+        if reflex:
+            motor = self.ventral.trigger_action(reflex["reflex"])
+            self.ascend.forward(signal, reflex)
+            return motor
+        return None
 
 
-Runs SPO extractor on each
+5. Ion Channels (Biomimetic Signal Dynamics)
+Simulate sodium/potassium depolarization with thresholds.
 
 
-Classifies fact type via lightweight tags + keyword match
+Simplified Hodgkin-Huxley style.
 
 
-Emits structured, tagged, route-ready facts
+Pseudo-code:
+# ion_channels.py
+class IonChannel:
+    def __init__(self, channel_type, threshold=-55):
+        self.channel_type = channel_type
+        self.membrane_potential = -70  # resting
+        self.threshold = threshold
 
+    def activate(self, stimulus_strength):
+        # stimulus_strength shifts membrane potential
+        self.membrane_potential += stimulus_strength * 0.5
+        if self.membrane_potential >= self.threshold:
+            self.membrane_potential = -70  # reset after firing
+            return True  # action potential
+        return False
 
 
+6. Nociception (Fast Pain Pathway)
+Pain signals bypass delay → reflex immediately.
 
 
+Prioritized before higher brain sees it.
 
-🧪 3. TESTING + EVALUATION
-✅ Write unit tests:
-For:
-extract_spo(text)
 
+Pseudo-code:
+# nociception.py
+from .ion_channels import IonChannel
 
-generate_from_language()
+class Nociception:
+    def __init__(self):
+        self.fast_pain = IonChannel("fast_pain", threshold=-55)
 
+    def detect(self, stimulus):
+        if stimulus["type"] == "pain":
+            if self.fast_pain.activate(stimulus["intensity"]):
+                return {"reflex": "withdraw", "severity": "high"}
+        return None
 
-generate_facts(text) using Wikipedia paragraphs and ArXiv abstracts
 
+7. Ascending Pathways
+Sends copy of the signal to higher centers (thalamus, limbic).
 
-✅ Add test samples:
-https://en.wikipedia.org/wiki/Number_theory
 
+Reflex still executes instantly.
 
-https://en.wikipedia.org/wiki/Organic_chemistry
 
+Pseudo-code:
+# ascending_signals.py
+class AscendingSignals:
+    def forward(self, original_signal, reflex):
+        return {
+            "to_thalamus": original_signal,
+            "reflex_copy": reflex
+        }
 
-https://en.wikipedia.org/wiki/Indian_philosophy
 
 
-ArXiv physics.bio-ph summary
 
 
 
-📁 4. CODE ORGANIZATION
-🧼 Modularize:
-Move extract_spo(), tagging, and keyword maps to a fact_utils.py or fact_nlp.py
 
 
-Separate chemistry tag logic into chemistry_classifier.py
 
 
 
 
-SUBJECT PARSERS
 
-# parsers/template_parser.py
 
-from __future__ import annotations
 
-import os
-import re
-import json
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Literal, Optional, Tuple
 
-# Optional: plug into your transformer layer
-try:
-    from transformers import pipeline
-    rebel_pipe = pipeline("text2text-generation", model="Babelscape/rebel-large")
-except ImportError:
-    rebel_pipe = None
 
-AUDIT_PATH = os.path.join("external_store", "audit", "<domain>_audit.jsonl")
 
-# --- Known terms/config ---
-KNOWN_CONSTANTS = {"<const_symbol>": "<const_name>"}
-<DOMAIN>_KEYWORDS = ["<term1>", "<term2>", "<term3>"]
-NAMED_LAWS = ["<Law Name 1>", "<Law Name 2>"]
 
-# --- Regex primitives ---
-EQUATION_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9]*)\s*=\s*([^\s=]+(?:\s*[^\s=]+)*)\b")
-SPO_RE = re.compile(r"^(?P<subject>.+?)\s+(is|are|was|means|describes|states|defines|equals)\s+(?P<object>.+)$")
 
 
-# --- Audit storage (optional) ---
-def _write_audit(record: Dict[str, Any]) -> None:
-    os.makedirs(os.path.dirname(AUDIT_PATH), exist_ok=True)
-    with open(AUDIT_PATH, "a", encoding="utf-8") as f:
-        f.write(json.dumps(record) + "\n")
 
 
-# --- Domain classifier ---
-def classify_equation(lhs: str, rhs: str, sentence: str) -> Literal["<domain>", "math"]:
-    if any(unit in rhs for unit in ["<unit1>", "<unit2>"]) or any(k in sentence for k in KNOWN_CONSTANTS):
-        return "<domain>"
-    if any(op in rhs for op in ["\u222B", "\u2211", "^", "lim"]) or "function" in sentence:
-        return "math"
-    return "<domain>"  # Default to <domain>
 
 
-# --- Transformer SPO fallback ---
-def extract_spo_transformer(text: str) -> List[Dict]:
-    if not rebel_pipe:
-        return []
-    out = rebel_pipe("extract relations: " + text, max_length=128)[0]["generated_text"]
-    triples = []
-    for match in re.finditer(r"\(.*?\)", out):
-        parts = match.group(0).strip("()").split(";")
-        if len(parts) == 3:
-            triples.append({
-                "subject": parts[0].strip(),
-                "predicate": parts[1].strip(),
-                "value": parts[2].strip(),
-                "confidence": 0.85,
-                "source": "transformer",
-            })
-    return triples
+Spinal Cord Connection Stubs (Biomimetic)
+Each of these is a lightweight “stub” interface that sits at the edge of the spinal cord and forwards signals to other modules when they’re ready. They don’t need full logic yet — just symbolic handshakes.
 
+1. Thalamus Stub
+Function: Receives ascending sensory signals (touch, pain, proprioception) for routing.
 
-# --- Main entrypoint ---
-def parse_<domain>_text(
-    text: str,
-    *,
-    use_transformer: bool = False,
-    context: Optional[Dict] = None,
-) -> List[Dict[str, Any]]:
-    """Extract structured <domain> facts from raw text."""
-    sentences = [s.strip() for s in re.split(r"[.!?]+", text) if len(s.strip()) > 8]
-    results: List[Dict] = []
 
-    for sent in sentences:
-        if use_transformer:
-            results.extend(extract_spo_transformer(sent))
-            continue
+Connection: From ascending_signals.py → thalamus_stub.py.
 
-        for law in NAMED_LAWS:
-            if law.lower() in sent.lower():
-                results.append({
-                    "subject": law,
-                    "predicate": "states that",
-                    "value": sent.replace(law, "").strip(": ."),
-                    "subtype": "law",
-                    "domain": "<domain>",
-                    "origin_sentence": sent,
-                    "confidence": 0.9,
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "source": "<domain>_parser",
-                    "context": context or {},
-                })
 
-        match = EQUATION_RE.search(sent)
-        if match:
-            lhs, rhs = match.group(1), match.group(2)
-            domain = classify_equation(lhs, rhs, sent)
-            results.append({
-                "subject": lhs,
-                "predicate": "equals",
-                "value": rhs,
-                "subtype": "equation",
-                "domain": domain,
-                "constants": [k for k in KNOWN_CONSTANTS if k in sent],
-                "origin_sentence": sent,
-                "confidence": 0.8,
-                "symbolic": True,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "source": "<domain>_parser",
-                "context": context or {},
-            })
+# thalamus_stub.py
+class ThalamusStub:
+    def receive(self, signal):
+        # For now, just log reception
+        print(f"[ThalamusStub] Received: {signal}")
+        return True
 
-        spo = SPO_RE.match(sent)
-        if spo and any(k in sent.lower() for k in <DOMAIN>_KEYWORDS):
-            results.append({
-                "subject": spo.group("subject"),
-                "predicate": "is",
-                "value": spo.group("object"),
-                "subtype": "concept",
-                "domain": "<domain>",
-                "origin_sentence": sent,
-                "confidence": 0.7,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "source": "<domain>_parser",
-                "context": context or {},
-            })
 
-    for r in results:
-        _write_audit(r)
+2. Brainstem Stub
+Function: Primitive autonomic control, reflex modulation.
 
-    return results
 
+Connection: nociception.py and reflex_arc.py forward survival-level events.
 
 
-🔬 CORE SCIENCE PARSERS
-1. physics_parser.py
-Covers: astrophysics, quantum, optics, etc.
- Detects: laws, constants, principles, physical quantities
- Patterns: "<X> states that <Y>", "The <law> describes..."
+# brainstem_stub.py
+class BrainstemStub:
+    def regulate(self, reflex_event):
+        print(f"[BrainstemStub] Reflex event routed: {reflex_event}")
+        return True
 
-2. math_parser.py
-Covers: algebra, geometry, number theory, etc.
- Detects: definitions, theorems, equations
- Patterns: "<term> is defined as...", "Theorem: <statement>"
 
-3. chemistry_parser.py ✅ (already exists)
-Covers: compounds, reactions, periodic elements
- Detects: formulas, naming patterns, reaction types
+3. Cerebellum Stub
+Function: Motor fine-tuning and coordination.
 
-4. bio_parser.py
-Covers: biology, physiology, genetics, neuroscience
- Detects: structures, processes, systems
- Patterns: "X is part of Y", "X regulates Y"
 
-5. environment_parser.py
-Covers: ecology, climate, sustainability
- Detects: processes (e.g., carbon cycle), systems (biosphere), regulations
- Patterns: "X affects Y", "The ecosystem includes..."
+Connection: From ventral_horn.py (motor pool outputs).
 
-6. conservation_parser.py
-Covers: wildlife, endangered species, protection methods
- Detects: organizations (WWF, IUCN), species protection status
- NER: conservation orgs, species names, treaties
 
+# cerebellum_stub.py
+class CerebellumStub:
+    def adjust_motor(self, motor_output):
+        print(f"[CerebellumStub] Adjusting motor: {motor_output}")
+        return motor_output
 
 
+4. Limbic System Stub
+Function: Emotional tagging of pain and survival events.
 
 
+Connection: From nociception.py (pain severity).
 
 
+# limbic_stub.py
+class LimbicStub:
+    def tag_emotion(self, pain_signal):
+        print(f"[LimbicStub] Emotional tag: Pain -> {pain_signal}")
+        return {"emotion": "fear", "source": pain_signal}
 
 
+5. Prefrontal Cortex (PFC) Stub
+Function: Executive override of reflexes (voluntary suppression).
 
 
+Connection: From reflex_arc.py → check for PFC inhibition before triggering motor.
 
 
+# pfc_stub.py
+class PFCStub:
+    def override(self, reflex):
+        # Placeholder logic: always allow
+        print(f"[PFCStub] Reflex override check: {reflex}")
+        return reflex
 
-🧠 ABSTRACT / SOCIAL SCIENCE PARSERS
-7. philosophy_parser.py
-Covers: ethics, epistemology, metaphysics
- Detects: abstract concepts, named philosophers, "is a branch of"
- Patterns: "X is the study of Y"
 
+6. Auditory & Visual Cortex Stubs (future sensory tie-ins)
+Function: Forward primitive orientation cues.
 
-psychology_parser.py
-🧠 Domain: Psychology
-Covers:
-Cognitive psychology
 
+Connection: From midbrain (later) but stubbed now.
 
-Behavioral psychology
 
+# occipital_stub.py
+class OccipitalStub:
+    def orient_visual(self, stimulus):
+        print(f"[OccipitalStub] Orient to visual stimulus: {stimulus}")
+        return True
 
-Emotions, motivation
+# auditory_stub.py
+class AuditoryStub:
+    def orient_sound(self, stimulus):
+        print(f"[AuditoryStub] Orient to auditory stimulus: {stimulus}")
+        return True
 
 
-Mental disorders (DSM-5 terms)
+✅ Integration Example (Reflex Arc with Stubs)
+# reflex_arc.py (modified to use stubs)
+from .dorsal_horn import DorsalHorn
+from .ventral_horn import VentralHorn
+from .ascending_signals import AscendingSignals
+from .pfc_stub import PFCStub
+from .cerebellum_stub import CerebellumStub
+from .limbic_stub import LimbicStub
+from .brainstem_stub import BrainstemStub
+from .thalamus_stub import ThalamusStub
 
+class ReflexArc:
+    def __init__(self):
+        self.dorsal = DorsalHorn()
+        self.ventral = VentralHorn()
+        self.ascend = AscendingSignals()
+        self.pfc = PFCStub()
+        self.cerebellum = CerebellumStub()
+        self.limbic = LimbicStub()
+        self.brainstem = BrainstemStub()
+        self.thalamus = ThalamusStub()
 
-Learning & memory theories
-
-
-Detects:
-"X is a mental disorder characterized by..."
-
-
-"Y theory explains learning as..."
-
-
-NER patterns:
-Named psychologists (e.g., Freud, Piaget, Skinner)
-
-
-Mental states (e.g., anxiety, motivation, memory)
-
-
-Common terms: reinforcement, stimulus, therapy, unconscious, cognition
-
-
-Example fact:
-json
-CopyEdit
-{
-  "subject": "Classical conditioning",
-  "predicate": "is a learning process involving",
-  "value": "association between a neutral stimulus and a stimulus that evokes a response",
-  "tags": ["psychology"]
-}
-
-
-➕ Addendum: sociology_parser.py
-🌐 Domain: Sociology
-Covers:
-Social structures and stratification
-
-
-Race, gender, class
-
-
-Culture and norms
-
-
-Institutions (family, religion, education)
-
-
-Sociological theories (e.g., functionalism, conflict theory)
-
-
-Detects:
-"X is a social institution that..."
-
-
-"Y refers to the process of..."
-
-
-NER patterns:
-Group behavior terms: class, norms, roles, deviance
-
-
-Founders and theorists: Durkheim, Weber, Marx
-
-
-Theories: symbolic interactionism, functionalism
-
-
-Example fact:
-{
-  "subject": "Socialization",
-  "predicate": "is the process through which",
-  "value": "individuals learn the norms and values of their society",
-  "tags": ["sociology"]
-}
-
-
-8. history_parser.py
-Covers: major events, leaders, time periods
- Detects: "X occurred in Y", "The Battle of Z..."
- NER: places, dates, names
-
-9. geo_parser.py
-Covers: rivers, countries, borders, continents
- Detects: "X is located in Y", "capital of"
- Sources: use infobox-friendly entries
-
-10. law_parser.py
-Covers: US Constitution, SCOTUS, federal laws
- Detects: "The First Amendment guarantees..."
- Tags: amendment, clause, act, decision
-
-11. econ_parser.py
-Covers: macroeconomics, markets, models, trade
- Detects: "Inflation is...", "GDP measures..."
- Patterns: definition + causal relationships
-
-12. game_theory_parser.py
-Covers: strategies, equilibrium, payoff matrices
- Detects: "Nash equilibrium is...", "dominant strategy"
- NER: Prisoner's Dilemma, zero-sum
-
-💻 COMPUTING / ENGINEERING PARSERS
-13. cs_parser.py
-Covers: AI, ML, cryptography, programming, HCI
- Detects: model types, algorithmic patterns
- NER: Transformer, SHA-256, gradient descent
-
-14. stats_parser.py
-Covers: probability, regression, inference
- Detects: statistical laws, distributions, test types
- NER: Bayes, mean, standard deviation
-
-15. eess_parser.py
-Covers: signal processing, hardware systems
- Detects: "X amplifies Y", "A circuit performs..."
-
-🗃️ Summary: Parsers to Implement
-Parser File
-Domain Focus
-physics_parser.py
-Classical & quantum physics
-math_parser.py
-All math branches
-chemistry_parser.py
-Chemical facts & formulas
-bio_parser.py
-Biology & physiology
-environment_parser.py
-Environmental science
-conservation_parser.py
-Wildlife & policy
-philosophy_parser.py
-Metaphysics, ethics
-geo_parser.py
-Geography, borders, places
-history_parser.py
-Timelines & historic events
-law_parser.py
-US Constitution, Supreme Court
-econ_parser.py
-Economics & finance
-game_theory_parser.py
-Game-theoretic strategies
-cs_parser.py
-AI, ML, software & crypto
-stats_parser.py
-Statistics & inference
-eess_parser.py
-Electrical Engineering & Systems
-
-
-
-
-📦 Deployment Steps
-Refactor generate_facts() and helpers as per above
-
-
-Add test cases for generate_facts(), extract_spo(), and classify_fact()
-
-
-Run your existing pipeline (manual_inspector.py, batch_scheduler.py) on a small dataset
-
-
-Monitor output ratios — goal: <50% into general, >30% into target domains
-
-
-Gradually expand topic tagging dictionary and refine SPO patterns
-
-
-
-Update the following test script to print any warnings that are triggered during the execution of `generate_facts` or `tag_facts`, instead of ignoring them.
-
-Ensure:
-- Any warnings from the standard `warnings` module (e.g., DeprecationWarning, UserWarning) are captured.
-- Each test prints a clear message if a warning was raised, including the warning message and where it came from.
-- The structure of the current tests is preserved.
-- Output still includes assert failures as normal, but also prints captured warnings even if the test passes.
-
-Use `warnings.catch_warnings(record=True)` and `warnings.simplefilter("always")` to capture warnings during each test.
+    def process_signal(self, signal):
+        reflex = self.dorsal.process_input(signal)
+        if reflex:
+            reflex = self.pfc.override(reflex)   # PFC check
+            motor = self.ventral.trigger_action(reflex["reflex"])
+            motor = self.cerebellum.adjust_motor(motor)  # refine motor
+            self.brainstem.regulate(reflex)              # send to brainstem
+            self.limbic.tag_emotion(reflex)              # emotional tag
+            self.ascend.forward(signal, reflex)          # thalamic forwarding
+            return motor
+        return None
 
 
