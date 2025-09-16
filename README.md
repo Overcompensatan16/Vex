@@ -10,322 +10,304 @@ Standard Library so far. No external packages needed.
 
 This project was designed around NASA's Power of 10 Safety Standards
 
-Biomimetic Spinal Cord Design (Detailed)
-1. High-Level Anatomy
-spinal_cord/
-    __init__.py
-    dorsal_root.py        # afferent sensory signals in
-    ventral_root.py       # efferent motor signals out
-    dorsal_horn.py        # sensory relay + nociceptors
-    ventral_horn.py       # motor neuron pools
-    reflex_arc.py         # core reflex loop
-    nociception.py        # pain handling (fast ion channels)
-    ion_channels.py       # sodium, potassium, calcium dynamics
-    ascending_signals.py  # forward to thalamus/brainstem
-    audit_hooks.py        # log reflex, motor, pain events
+Biomimetic Spinal Cord Design (Event-Driven, Full Integration, Expanded)
 
 
-2. Dorsal Horn (Sensory Integration)
-Where sensory signals enter.
+---
 
+1. High-Level Structure
 
-Subdivisions handle touch, proprioception, pain, temperature.
+The spinal cord module mimics real physiology while staying efficient:
 
+Dorsal root → sensory input (afferents).
 
-Ion channel model: nociceptors open sodium/calcium channels → depolarization → threshold = action potential.
+Dorsal horn → integration + thresholding.
 
+Reflex circuits → fast loops for survival.
 
-Pseudo-code:
-# dorsal_horn.py
-from .ion_channels import IonChannel
+Ventral horn → motor pools (efferents).
 
-class DorsalHorn:
-    def __init__(self):
-        self.nociceptor = IonChannel("nociceptor", threshold=-55)
-        self.mechanoreceptor = IonChannel("touch", threshold=-60)
+Ventral root → symbolic motor actions.
 
-    def process_input(self, signal):
-        # Example: {"type": "pain", "intensity": 70}
-        if signal["type"] == "pain":
-            fired = self.nociceptor.activate(signal["intensity"])
-            if fired:
-                return {"reflex": "withdraw", "severity": "high"}
-        elif signal["type"] == "touch":
-            fired = self.mechanoreceptor.activate(signal["intensity"])
-            if fired:
-                return {"reflex": "light_contact", "severity": "low"}
-        return None
+Ascending pathways → copies to higher centers.
 
+Integration stubs → placeholders for brain modules.
 
-3. Ventral Horn (Motor Neuron Pools)
-Where motor neurons live.
+Scheduler → event-driven, only runs when spikes occur.
 
 
-Pools of neurons → redundancy for smoother response.
 
+---
 
-Output = symbolic motor action (e.g., move hand, flex leg).
+2. Event-Driven Scheduler
 
+Keeps a priority queue of (time, priority, fn, args).
 
-Pseudo-code:
-# ventral_horn.py
-class VentralHorn:
-    def __init__(self):
-        self.motor_pools = {
-            "withdraw": ["alpha_motor_neuron_1", "alpha_motor_neuron_2"],
-            "flex_leg": ["motor_neuron_3"]
-        }
+Idle baseline, bursts only when events fire.
 
-    def trigger_action(self, reflex_command):
-        if reflex_command in self.motor_pools:
-            return {
-                "action": reflex_command,
-                "neurons_fired": self.motor_pools[reflex_command]
-            }
-        return {"action": "none"}
 
+def schedule(time_ms, priority, fn, *args):
+    # Insert into queue
+    event_q.push((time_ms, priority, fn, args))
 
-4. Reflex Arc (Direct Loop)
-Dorsal horn receives input → if threshold crossed → ventral horn triggers reflex.
+def run_until(t_stop):
+    while queue_not_empty and next_event.time <= t_stop:
+        t, pri, fn, args = pop_next_event()
+        fn(t, *args)   # fire the event handler
 
 
-Parallel path sends copy upward via ascending_signals.
+---
 
+3. Sensory Afferents (Dorsal Root Fibers)
 
-Pseudo-code:
-# reflex_arc.py
-from .dorsal_horn import DorsalHorn
-from .ventral_horn import VentralHorn
-from .ascending_signals import AscendingSignals
+A-β: touch/pressure.
 
-class ReflexArc:
-    def __init__(self):
-        self.dorsal = DorsalHorn()
-        self.ventral = VentralHorn()
-        self.ascend = AscendingSignals()
+Ia/II: muscle spindle (length/velocity).
 
-    def process_signal(self, signal):
-        reflex = self.dorsal.process_input(signal)
-        if reflex:
-            motor = self.ventral.trigger_action(reflex["reflex"])
-            self.ascend.forward(signal, reflex)
-            return motor
-        return None
+Ib: Golgi tendon (force/tension).
 
+A-δ: fast sharp pain (15 m/s).
 
-5. Ion Channels (Biomimetic Signal Dynamics)
-Simulate sodium/potassium depolarization with thresholds.
+C: slow dull pain (1 m/s).
 
 
-Simplified Hodgkin-Huxley style.
+Conduction modeled by distance / velocity → ms delay.
 
+def afferent_fire(fiber, distance_cm, weight, target):
+    velocity = fiber_velocity[fiber]   # e.g. Aδ=15 m/s
+    delay_ms = (distance_cm/100)/velocity * 1000
+    schedule(now + delay_ms, 0, target, weight, fiber)
 
-Pseudo-code:
-# ion_channels.py
-class IonChannel:
-    def __init__(self, channel_type, threshold=-55):
-        self.channel_type = channel_type
-        self.membrane_potential = -70  # resting
-        self.threshold = threshold
 
-    def activate(self, stimulus_strength):
-        # stimulus_strength shifts membrane potential
-        self.membrane_potential += stimulus_strength * 0.5
-        if self.membrane_potential >= self.threshold:
-            self.membrane_potential = -70  # reset after firing
-            return True  # action potential
-        return False
+---
 
+4. Dorsal Horn (Integration)
 
-6. Nociception (Fast Pain Pathway)
-Pain signals bypass delay → reflex immediately.
+Uses leaky integrate-and-fire (LIF) style neurons.
 
+Only crosses threshold when stimulus is strong enough.
 
-Prioritized before higher brain sees it.
+Generates symbolic reflex triggers.
 
 
-Pseudo-code:
-# nociception.py
-from .ion_channels import IonChannel
+if signal.type == "pain":
+    if nociceptor.integrate(weight=signal.intensity):
+        return {"reflex":"withdraw", "fiber":"Aδ", "severity":"high"}
+elif signal.type == "touch":
+    if mechanoreceptor.integrate(weight=signal.intensity):
+        return {"reflex":"light_contact", "fiber":"Aβ", "severity":"low"}
 
-class Nociception:
-    def __init__(self):
-        self.fast_pain = IonChannel("fast_pain", threshold=-55)
 
-    def detect(self, stimulus):
-        if stimulus["type"] == "pain":
-            if self.fast_pain.activate(stimulus["intensity"]):
-                return {"reflex": "withdraw", "severity": "high"}
-        return None
+---
 
+5. Nociception (Pain Specialization)
 
-7. Ascending Pathways
-Sends copy of the signal to higher centers (thalamus, limbic).
+Fast A-δ pain → instant withdrawal.
 
+Slow C pain → delayed, persistent, limbic tagging.
 
-Reflex still executes instantly.
+Wind-up: repeated C input within window → amplify severity.
 
 
-Pseudo-code:
-# ascending_signals.py
-class AscendingSignals:
-    def forward(self, original_signal, reflex):
-        return {
-            "to_thalamus": original_signal,
-            "reflex_copy": reflex
-        }
+if fiber == "C":
+    c_event_log.append(now)
+    if len(events_within(1500_ms)) >= 5:
+        reflex["severity"] = "high"   # wind-up effect
 
 
+---
 
+6. Ventral Horn (Motor Pools)
 
+Pools of α-motor neurons grouped per action.
 
+Each action = redundant neurons for smooth firing.
 
 
+motor_pools = {
+  "withdraw_arm": ["alpha1","alpha2","alpha3"],
+  "flex_leg": ["alpha4","alpha5"]
+}
 
+def trigger_action(reflex_cmd):
+    return {"action": reflex_cmd, "neurons_fired": motor_pools.get(reflex_cmd, [])}
 
 
+---
 
+7. Reflex Circuits (Core Loops)
 
+Stretch reflex: spindle → α agonist.
 
+Reciprocal inhibition: antagonist suppressed.
 
+Golgi tendon reflex: too much force → agonist inhibited.
 
+Withdrawal reflex: flexor excite, extensor inhibit.
 
+Crossed extensor reflex: contralateral extensor excite.
 
+Renshaw cells: α collateral → inhibition of same pool to stop runaway bursts.
 
 
+if reflex == "withdraw":
+    excite("flexor_pool")
+    inhibit("extensor_pool")          
+    excite("contralateral_extensors") 
+    renshaw_feedback("flexor_pool")   # recurrent inhibition
 
 
+---
 
+8. Ascending Pathways
 
+Always forward a copy of input + reflex upward.
 
+Adds fiber metadata for context.
 
-Spinal Cord Connection Stubs (Biomimetic)
-Each of these is a lightweight “stub” interface that sits at the edge of the spinal cord and forwards signals to other modules when they’re ready. They don’t need full logic yet — just symbolic handshakes.
 
-1. Thalamus Stub
-Function: Receives ascending sensory signals (touch, pain, proprioception) for routing.
+forward = {
+  "to_thalamus": original_signal,
+  "reflex_copy": reflex,
+  "fiber": reflex.get("fiber","unknown")
+}
 
 
-Connection: From ascending_signals.py → thalamus_stub.py.
+---
 
+9. Integration Stubs
 
-# thalamus_stub.py
-class ThalamusStub:
-    def receive(self, signal):
-        # For now, just log reception
-        print(f"[ThalamusStub] Received: {signal}")
-        return True
+Symbolic placeholders to wire into future modules:
 
+ThalamusStub: logs reception.
 
-2. Brainstem Stub
-Function: Primitive autonomic control, reflex modulation.
+BrainstemStub: survival-level regulation.
 
+CerebellumStub: fine-tunes motor outputs.
 
-Connection: nociception.py and reflex_arc.py forward survival-level events.
+LimbicStub: tags pain with emotions.
 
+PFCStub: allows voluntary override.
 
-# brainstem_stub.py
-class BrainstemStub:
-    def regulate(self, reflex_event):
-        print(f"[BrainstemStub] Reflex event routed: {reflex_event}")
-        return True
+OccipitalStub / AuditoryStub: orienting reflexes.
 
 
-3. Cerebellum Stub
-Function: Motor fine-tuning and coordination.
-
-
-Connection: From ventral_horn.py (motor pool outputs).
-
-
-# cerebellum_stub.py
-class CerebellumStub:
-    def adjust_motor(self, motor_output):
-        print(f"[CerebellumStub] Adjusting motor: {motor_output}")
-        return motor_output
-
-
-4. Limbic System Stub
-Function: Emotional tagging of pain and survival events.
-
-
-Connection: From nociception.py (pain severity).
-
-
-# limbic_stub.py
 class LimbicStub:
     def tag_emotion(self, pain_signal):
-        print(f"[LimbicStub] Emotional tag: Pain -> {pain_signal}")
-        return {"emotion": "fear", "source": pain_signal}
+        return {"emotion":"fear", "source":pain_signal}
 
 
-5. Prefrontal Cortex (PFC) Stub
-Function: Executive override of reflexes (voluntary suppression).
+---
+
+10. Audit & Logging
+
+Each event written to AuditLoggerFactory:
+
+Timestamp
+
+Fiber type & delay
+
+Reflex type
+
+Motor pool output
+
+Ascending copies + emotional tags
 
 
-Connection: From reflex_arc.py → check for PFC inhibition before triggering motor.
+logger.log({
+  "t": now,
+  "fiber": "Aδ",
+  "reflex": "withdraw",
+  "motor_pool": ["alpha1","alpha2"],
+  "ascending": ["thalamus","limbic"],
+  "emotion": "fear"
+})
 
 
-# pfc_stub.py
-class PFCStub:
-    def override(self, reflex):
-        # Placeholder logic: always allow
-        print(f"[PFCStub] Reflex override check: {reflex}")
-        return reflex
+---
+
+11. Biomimetic Efficiency Principles
+
+Always alive, rarely active — idle ionic baseline until input arrives.
+
+Event-driven — compute only on spikes/reflexes.
+
+Delays & refractory periods — natural timing + reduced compute.
+
+Procedural reflex rules — symbolic state machines instead of dense sim.
+
+Integration stubs — allow future modules to expand without rewriting.
 
 
-6. Auditory & Visual Cortex Stubs (future sensory tie-ins)
-Function: Forward primitive orientation cues.
+
+Addendum: Reflex Timing (A-δ vs C fibers)
+
+Fast Pain (A-δ fiber)
+
+Stimulus: pinprick to finger.
+
+Conduction: ~15 m/s, distance 1 m → ~67 ms delay.
+
+Dorsal horn: threshold crossed quickly → reflex generated.
+
+Ventral horn: flexor pool fires → withdrawal before brain notices.
+
+Ascending copy: thalamus & limbic receive context within ~100 ms total.
 
 
-Connection: From midbrain (later) but stubbed now.
+Pseudo-code timing sketch:
+
+afferent_fire("Aδ", distance=100, weight=80, target=dorsal_horn)  
+# ~67 ms later → dorsal_horn triggers withdrawal reflex
+# reflex_arc completes + ascending copy sent ~100 ms
 
 
-# occipital_stub.py
-class OccipitalStub:
-    def orient_visual(self, stimulus):
-        print(f"[OccipitalStub] Orient to visual stimulus: {stimulus}")
-        return True
+---
 
-# auditory_stub.py
-class AuditoryStub:
-    def orient_sound(self, stimulus):
-        print(f"[AuditoryStub] Orient to auditory stimulus: {stimulus}")
-        return True
+Slow Pain (C fiber)
+
+Stimulus: burn to hand.
+
+Conduction: ~1 m/s, distance 1 m → ~1000 ms delay.
+
+Dorsal horn: slow arrival, weaker signal, but sustained.
+
+Ventral horn: reflex may still fire, but delayed & weaker.
+
+Ascending copy: limbic tagging stronger (“fear/ache”), arrives much later.
 
 
-✅ Integration Example (Reflex Arc with Stubs)
-# reflex_arc.py (modified to use stubs)
-from .dorsal_horn import DorsalHorn
-from .ventral_horn import VentralHorn
-from .ascending_signals import AscendingSignals
-from .pfc_stub import PFCStub
-from .cerebellum_stub import CerebellumStub
-from .limbic_stub import LimbicStub
-from .brainstem_stub import BrainstemStub
-from .thalamus_stub import ThalamusStub
+Pseudo-code timing sketch:
 
-class ReflexArc:
-    def __init__(self):
-        self.dorsal = DorsalHorn()
-        self.ventral = VentralHorn()
-        self.ascend = AscendingSignals()
-        self.pfc = PFCStub()
-        self.cerebellum = CerebellumStub()
-        self.limbic = LimbicStub()
-        self.brainstem = BrainstemStub()
-        self.thalamus = ThalamusStub()
+afferent_fire("C", distance=100, weight=60, target=dorsal_horn)  
+# ~1000 ms later → dorsal_horn processes
+# reflex delayed, limbic tagging amplified
 
-    def process_signal(self, signal):
-        reflex = self.dorsal.process_input(signal)
-        if reflex:
-            reflex = self.pfc.override(reflex)   # PFC check
-            motor = self.ventral.trigger_action(reflex["reflex"])
-            motor = self.cerebellum.adjust_motor(motor)  # refine motor
-            self.brainstem.regulate(reflex)              # send to brainstem
-            self.limbic.tag_emotion(reflex)              # emotional tag
-            self.ascend.forward(signal, reflex)          # thalamic forwarding
-            return motor
-        return None
+
+---
+
+Key Takeaway
+
+A-δ fibers = sharp, immediate withdrawal → ~0.1 sec.
+
+C fibers = dull, aching pain → ~1 sec or more, adds emotional weight.
+
+
+
+---
+
+✅ Result: A spinal cord that runs like biology —
+
+Fast local reflexes, modulated by higher centers.
+
+Minimal compute (event-driven bursts).
+
+Symbolic hooks for Vex’s larger architecture.
+
+Full logging for audit and override.
+
+
+
+
 
 
