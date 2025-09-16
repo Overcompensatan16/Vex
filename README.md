@@ -307,6 +307,113 @@ Symbolic hooks for Vex’s larger architecture.
 Full logging for audit and override.
 
 
+Nervous System Junctions Plan
+
+(for integration with spinal cord stubs)
+
+1. Peripheral Nervous System (PNS) Split
+
+Somatic nerves (voluntary): link muscles & skin → spinal cord via dorsal/ventral roots.
+
+Autonomic nerves (involuntary): split into sympathetic / parasympathetic trunks.
+
+Stub structure:
+
+somatic_stub.py → takes in sensory/motor events outside CNS.
+
+autonomic_stub.py → takes relay from spinal cord and routes toward ganglia.
+
+2. Sympathetic Chain Ganglia (fight/flight relay)
+
+Connected to spinal cord via ventral root + rami.
+
+Junction that boosts signal intensity, redirects to heart, lungs, pupils, etc.
+
+Stub: sympathetic_chain_stub.py
+
+receive_from_spinal(signal)
+
+amplify_and_forward(targets)
+
+3. Parasympathetic Ganglia (rest/digest relay)
+
+Mostly cranial & sacral outputs.
+
+Opposite effect: down-regulates, calms, routes to gut, glands, bladder.
+
+Stub: parasympathetic_ganglia_stub.py
+
+receive_from_spinal(signal)
+
+dampen_and_forward(targets)
+
+4. Enteric Nervous System (gut brain)
+
+Semi-independent but loops into parasympathetic.
+
+Symbolically modeled as its own stub for digestion reflexes.
+
+Stub: enteric_stub.py
+
+process_digestive(signal)
+
+Forwards status back to spinal cord or brainstem.
+
+5. Cranial Nerve Junctions
+
+Not all route through spinal cord, but you should leave connectors.
+
+For now, stub the important ones that matter for “body routing”:
+
+Optic nerve stub → forwards to occipital.
+
+Auditory nerve stub → forwards to temporal.
+
+Vagus nerve stub → ties into parasympathetic.
+
+6. Brainstem Autonomic Centers
+
+Already stubbed in your spinal cord plan, but now add outputs to autonomic ganglia.
+
+Stub: brainstem_autonomic_stub.py
+
+coordinate_heartbeat
+
+coordinate_breathing
+
+Forwards instructions to sympathetic/parasympathetic stubs.
+
+7. Motor Endplates (muscle junctions)
+
+Final junction for efferent pathways.
+
+Each motor neuron pool in ventral horn should stub to a neuromuscular_stub.py.
+
+Example:
+
+trigger_contraction(muscle, strength)
+
+8. Sensory End Organs
+
+Match dorsal horn inputs: nociceptors, mechanoreceptors, thermoceptors, proprioceptors.
+
+Each gets its own stub to simulate peripheral detection.
+
+Example stubs:
+
+skin_sense_stub.py
+
+joint_proprio_stub.py
+
+pain_receptor_stub.py
+
+🔗 Integration Strategy
+
+All these stubs should be glued onto the spinal cord via ascending/descending signal classes you already have.
+
+Each stub only needs to print/log right now (like your thalamus/limbic stubs do).
+
+When you expand later, you just swap the stub body for real processing logic.
 
 
 
