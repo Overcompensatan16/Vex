@@ -1,0 +1,546 @@
+{
+  "system": {
+    "anesthesia.engaged": {
+      "baseline": false,
+      "location": "global shutdown",
+      "type": "digital",
+      "units": "state"
+    },
+    "analgesia.level": {
+      "location": "descending modulation",
+      "range": [0.0, 1.0],
+      "type": "analog",
+      "units": "au"
+    }
+  },
+
+  "autonomic.reflex": {
+    "baroreceptor": {
+      "latency": "200ms",
+      "location": "carotid sinus → medulla",
+      "neurotransmitter": "norepinephrine",
+      "type": "analog",
+      "units": "mmHg"
+    },
+    "breathing.rhythm": {
+      "latency": "continuous",
+      "location": "pre-Bötzinger complex (medulla)",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "bronchoconstriction": {
+      "latency": "continuous",
+      "location": "CN X parasympathetic efferents",
+      "type": "analog",
+      "units": "airway diameter"
+    },
+    "chemorespiratory": {
+      "location": "carotid and aortic bodies → medullary respiratory center",
+      "type": "analog",
+      "units": "pO2/pCO2"
+    },
+    "cough": {
+      "latency": "250ms",
+      "location": "CN X vagal afferents → medullary cough center",
+      "type": "digital",
+      "units": "state"
+    },
+    "defecation": {
+      "location": "sacral spinal cord S2–S4 → anal sphincters",
+      "type": "composite",
+      "units": "rectal pressure"
+    },
+    "digestive_motility": {
+      "latency": "continuous",
+      "location": "enteric nervous system → smooth muscle",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "heart_rate_accel": {
+      "latency": "continuous",
+      "location": "sympathetic cardiac nerves",
+      "type": "analog",
+      "units": "bpm"
+    },
+    "heart_rate_brake": {
+      "latency": "continuous",
+      "location": "vagal parasympathetic inputs",
+      "type": "analog",
+      "units": "bpm"
+    },
+    "micturition": {
+      "location": "sacral spinal cord S2–S4 → detrusor muscle + sphincters",
+      "type": "composite",
+      "units": "ml bladder volume"
+    },
+    "piloerection": {
+      "latency": "continuous",
+      "location": "sympathetic arrector pili fibers",
+      "type": "digital",
+      "units": "state"
+    },
+    "pupil_dilation": {
+      "latency": "200ms",
+      "location": "sympathetic superior cervical ganglion",
+      "type": "analog",
+      "units": "diameter"
+    },
+    "salivation": {
+      "latency": "continuous",
+      "location": "CN VII, IX parasympathetics",
+      "type": "analog",
+      "units": "ml/min"
+    },
+    "sexual.arousal": {
+      "location": "parasympathetic pelvic nerves",
+      "type": "composite",
+      "units": "blood flow"
+    },
+    "sexual.arousal_female": {
+      "latency": "continuous",
+      "location": "sacral parasympathetic outflow (pelvic splanchnic nerves) → clitoral/vestibular vasculature",
+      "neurotransmitter": "nitric oxide",
+      "type": "composite",
+      "units": "blood flow"
+    },
+    "sexual.lubrication_female": {
+      "latency": "continuous",
+      "location": "parasympathetic pelvic nerves → Bartholin’s glands and vestibular glands",
+      "neurotransmitter": "acetylcholine",
+      "type": "analog",
+      "units": "ml/min"
+    },
+    "sexual.orgasmic_female": {
+      "latency": "burst (seconds)",
+      "location": "sacral parasympathetic afferents + pudendal somatic efferents → pelvic floor and vaginal musculature",
+      "neurotransmitter": "oxytocin/acetylcholine",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "sexual.uterine_contraction": {
+      "latency": "event-driven",
+      "location": "sympathetic hypogastric nerves → uterine smooth muscle",
+      "neurotransmitter": "norepinephrine",
+      "type": "digital",
+      "units": "state"
+    },
+    "sneeze": {
+      "latency": "250ms",
+      "location": "CN V afferents → medullary sneeze center",
+      "type": "digital",
+      "units": "state"
+    },
+    "swallow": {
+      "location": "CN IX, X afferents → nucleus ambiguus → pharyngeal muscles",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "vomiting": {
+      "location": "area postrema → vagal and spinal outputs",
+      "type": "composite",
+      "units": "pattern"
+    }
+  },
+
+  "brainstem.reflex": {
+    "accommodation": {
+      "latency": "300ms",
+      "location": "retina → ciliary muscle",
+      "type": "analog",
+      "units": "diopters"
+    },
+    "blink": {
+      "latency": "100ms",
+      "location": "CN V (afferent) → CN VII (efferent)",
+      "type": "digital",
+      "units": "state"
+    },
+    "corneal": {
+      "latency": "50ms",
+      "location": "CN V ophthalmic branch → CN VII orbicularis oculi",
+      "type": "digital",
+      "units": "state"
+    },
+    "doll_eye": {
+      "latency": "50ms",
+      "location": "vestibular apparatus → ocular motor nuclei",
+      "type": "digital",
+      "units": "state"
+    },
+    "gag": {
+      "latency": "100ms",
+      "location": "CN IX sensory → CN X motor",
+      "type": "digital",
+      "units": "state"
+    },
+    "jaw_jerk": {
+      "latency": "30ms",
+      "location": "CN V sensory → CN V motor nucleus",
+      "type": "digital",
+      "units": "state"
+    },
+    "pupillary_light.motor_output": {
+      "location": "CN III oculomotor → sphincter pupillae",
+      "type": "analog",
+      "units": "pupil diameter"
+    },
+    "pupillary_light.receptor": {
+      "latency": "200ms",
+      "location": "retina → pretectal nucleus",
+      "type": "analog",
+      "units": "lux"
+    },
+    "vestibulo_ocular": {
+      "latency": "20ms",
+      "location": "vestibular nuclei → CN III, IV, VI",
+      "type": "composite",
+      "units": "angular velocity"
+    }
+  },
+
+  "cranial.reflex": {
+    "auditory_startle": {
+      "latency": "40ms",
+      "location": "CN VIII (cochlea) → reticular formation → CN VII & spinal motor neurons",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "facial.blink": {
+      "latency": "50ms",
+      "location": "CN VII orbicularis oculi",
+      "type": "digital",
+      "units": "state"
+    },
+    "facial.smile": {
+      "latency": "80ms",
+      "location": "CN VII zygomatic muscles",
+      "type": "digital",
+      "units": "state"
+    },
+    "optokinetic": {
+      "latency": "continuous",
+      "location": "CN II (optic) → CN III/IV/VI ocular muscles",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "swallow": {
+      "latency": "continuous",
+      "location": "CN IX/X pharyngeal afferents → nucleus ambiguus",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "tongue_protrusion": {
+      "latency": "40ms",
+      "location": "CN XII hypoglossal → genioglossus muscle",
+      "type": "digital",
+      "units": "state"
+    },
+    "trigeminal_masseter": {
+      "latency": "30ms",
+      "location": "CN V motor nucleus → masseter muscle",
+      "type": "digital",
+      "units": "state"
+    }
+  },
+
+  "postural.reflex": {
+    "balance": {
+      "latency": "continuous",
+      "location": "vestibular apparatus → spinal cord",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "chewing": {
+      "location": "trigeminal motor nucleus → jaw muscles",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "head_righting": {
+      "latency": "50ms",
+      "location": "vestibular nuclei → neck muscles",
+      "type": "digital",
+      "units": "state"
+    },
+    "locomotor_cpg": {
+      "location": "spinal central pattern generators (lumbar cord)",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "positive_support": {
+      "latency": "continuous",
+      "location": "plantar mechanoreceptors → extensor tone",
+      "type": "digital",
+      "units": "state"
+    },
+    "righting_response": {
+      "latency": "continuous",
+      "location": "vestibular input → axial muscles",
+      "type": "digital",
+      "units": "state"
+    },
+    "step_initiation": {
+      "latency": "continuous",
+      "location": "mesencephalic locomotor region → lumbar CPGs",
+      "type": "oscillatory",
+      "units": "Hz"
+    },
+    "tonic_neck": {
+      "latency": "continuous",
+      "location": "neck proprioceptors → limb tone",
+      "type": "composite",
+      "units": "pattern"
+    }
+  },
+
+  "protective.reflex": {
+    "blink_airpuff": {
+      "latency": "60ms",
+      "location": "CN V → CN VII orbicularis oculi",
+      "type": "digital",
+      "units": "state"
+    },
+    "blink_threat": {
+      "latency": "80ms",
+      "location": "optic nerve → superior colliculus → CN VII",
+      "type": "digital",
+      "units": "state"
+    },
+    "flexor_crossed_extensor": {
+      "latency": "90ms",
+      "location": "spinal cord interneurons",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "flexor_withdrawal": {
+      "latency": "80ms",
+      "location": "cutaneous nociceptors → limb flexors",
+      "type": "digital",
+      "units": "state"
+    },
+    "head_turn_to_sound": {
+      "latency": "90ms",
+      "location": "CN VIII cochlear → superior colliculus → CN XI",
+      "type": "digital",
+      "units": "state"
+    },
+    "neck_dorsiflexion": {
+      "latency": "60ms",
+      "location": "cervical interneurons → trapezius/neck extensors",
+      "type": "digital",
+      "units": "state"
+    },
+    "startle": {
+      "latency": "50ms",
+      "location": "reticular formation → spinal motor neurons",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "withdrawal": {
+      "latency": "80ms",
+      "location": "cutaneous nociceptors → spinal interneurons",
+      "type": "digital",
+      "units": "state"
+    }
+  },
+
+  "somatic.reflex": {
+    "sexual.clitoral_guarding": {
+      "latency": "fast (100ms)",
+      "location": "pudendal nerve afferents → reflexive contraction of pelvic floor",
+      "type": "digital",
+      "units": "state"
+    },
+    "sexual.vaginal_tightening": {
+      "latency": "fast (100–200ms)",
+      "location": "pudendal efferents → bulbospongiosus and pelvic floor muscles",
+      "type": "digital",
+      "units": "state"
+    }
+  },
+
+  "spinal_cord.reflex": {
+    "abdominal": {
+      "latency": "80ms",
+      "location": "abdominal wall → spinal segments T8–T12",
+      "type": "digital",
+      "units": "state"
+    },
+    "ankle_jerk.motor_output": {
+      "latency": "45ms",
+      "location": "tibial nerve → gastrocnemius",
+      "neurotransmitter": "acetylcholine",
+      "type": "digital",
+      "units": "state"
+    },
+    "ankle_jerk.receptor": {
+      "latency": "35ms",
+      "location": "Achilles tendon spindle",
+      "neurotransmitter": "glutamate",
+      "type": "analog",
+      "units": "mV"
+    },
+    "babinski": {
+      "latency": "100ms",
+      "location": "plantar surface of foot → corticospinal tract",
+      "type": "digital",
+      "units": "state"
+    },
+    "biceps.motor_output": {
+      "latency": "35ms",
+      "location": "musculocutaneous nerve → biceps",
+      "type": "digital",
+      "units": "state"
+    },
+    "biceps.receptor": {
+      "latency": "25ms",
+      "location": "biceps tendon spindle",
+      "type": "analog",
+      "units": "mV"
+    },
+    "crossed_extensor": {
+      "latency": "80ms",
+      "location": "bilateral interneurons in spinal cord",
+      "type": "composite",
+      "units": "pattern"
+    },
+    "eversion": {
+      "latency": "90ms",
+      "location": "fibular nerve → peroneals",
+      "type": "digital",
+      "units": "state"
+    },
+    "finger_grasp": {
+      "latency": "40ms",
+      "location": "cervical spinal interneurons → hand flexors",
+      "type": "digital",
+      "units": "state"
+    },
+    "gluteal": {
+      "latency": "50ms",
+      "location": "inferior gluteal nerve → gluteus maximus",
+      "type": "digital",
+      "units": "state"
+    },
+    "hip_flexion": {
+      "latency": "40ms",
+      "location": "lumbar spinal interneurons → iliopsoas",
+      "type": "digital",
+      "units": "state"
+    },
+    "inversion": {
+      "latency": "90ms",
+      "location": "tibialis anterior activation",
+      "type": "digital",
+      "units": "state"
+    },
+    "knee_jerk.motor_output": {
+      "latency": "40ms",
+      "location": "femoral nerve → quadriceps",
+      "neurotransmitter": "acetylcholine",
+      "type": "digital",
+      "units": "state"
+    },
+    "knee_jerk.receptor": {
+      "latency": "30ms",
+      "location": "quadriceps muscle spindle",
+      "neurotransmitter": "glutamate",
+      "type": "analog",
+      "units": "mV"
+    },
+    "patellar": {
+      "latency": "30ms",
+      "location": "femoral nerve → quadriceps",
+      "type": "digital",
+      "units": "state"
+    },
+    "plantar": {
+      "latency": "80ms",
+      "location": "tibial nerve → foot flexors",
+      "type": "digital",
+      "units": "state"
+    },
+    "supinator.brachioradialis": {
+      "latency": "30ms",
+      "location": "radial nerve → brachioradialis",
+      "type": "digital",
+      "units": "state"
+    },
+    "triceps.motor_output": {
+      "latency": "35ms",
+      "location": "radial nerve → triceps",
+      "type": "digital",
+      "units": "state"
+    },
+    "triceps.receptor": {
+      "latency": "25ms",
+      "location": "triceps tendon spindle",
+      "type": "analog",
+      "units": "mV"
+    },
+    "withdrawal.flexor": {
+      "latency": "70ms",
+      "location": "cutaneous nociceptors (pain receptors)",
+      "neurotransmitter": "substance P",
+      "type": "analog",
+      "units": "mV"
+    },
+    "wrist_extensor": {
+      "latency": "35ms",
+      "location": "radial nerve → wrist extensors",
+      "type": "analog",
+      "units": "mV"
+    },
+    "wrist_flexor": {
+      "latency": "35ms",
+      "location": "median nerve → wrist flexors",
+      "type": "analog",
+      "units": "mV"
+    }
+  },
+
+  "spinal_cord.signal": {
+    "right_leg.flexor.contraction": {
+      "latency": "80ms",
+      "location": "lumbar interneurons → hamstrings",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_leg.extensor.inhibition": {
+      "latency": "80ms",
+      "location": "lumbar interneurons → quadriceps suppression",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_arm.flexor.contraction": {
+      "latency": "80ms",
+      "location": "cervical interneurons → forearm flexors",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_arm.extensor.inhibition": {
+      "latency": "80ms",
+      "location": "cervical interneurons → triceps suppression",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_arm.biceps.activation": {
+      "latency": "30ms",
+      "location": "musculocutaneous nerve → biceps",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_arm.biceps.contraction": {
+      "latency": "30ms",
+      "location": "biceps motor neurons → biceps fibers",
+      "type": "digital",
+      "units": "state"
+    },
+    "right_arm.triceps.inhibition": {
+      "latency": "30ms",
+      "location": "radial nerve interneurons → triceps suppression",
+      "type": "digital",
+      "units": "state"
+    }
+  }
+}
+
