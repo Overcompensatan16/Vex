@@ -1,0 +1,78 @@
+{
+  "somatosensory.dcml.touch.R.index.SA1.pressure": {
+    "type": "analog",
+    "units": "kPa",
+    "range": [
+      0.0,
+      2.5
+    ],
+    "baseline": 0.02,
+    "latency_ms": [
+      10,
+      30
+    ],
+    "fiber_type": "Abeta",
+    "segment": "c7",
+    "side": "right",
+    "region": "index_pad",
+    "joint": "mcp",
+    "notes": "Slowly-adapting mechanoreceptor for grip force control; feeds reflexive slip compensation."
+  },
+  "somatosensory.dcml.touch.R.index.RA.slip_rate": {
+    "type": "analog",
+    "units": "mm/s",
+    "range": [
+      -50.0,
+      50.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      10,
+      30
+    ],
+    "fiber_type": "Abeta",
+    "segment": "c7",
+    "side": "right",
+    "region": "index_pad",
+    "joint": "mcp",
+    "notes": "Rapidly-adapting receptor capturing micro-slip events used for grip phase modulation."
+  },
+  "somatosensory.dcml.proprio.R.index_DIP.Ia.rate": {
+    "type": "analog",
+    "units": "spikes/s",
+    "range": [
+      0.0,
+      500.0
+    ],
+    "baseline": 12.0,
+    "latency_ms": [
+      12,
+      32
+    ],
+    "fiber_type": "Ia",
+    "segment": "c8",
+    "side": "right",
+    "region": "index",
+    "joint": "dip",
+    "notes": "Dynamic spindle discharge for index distal interphalangeal joint; supports stretch reflex gain tuning."
+  },
+  "somatosensory.dcml.proprio.R.index_DIP.II.rate": {
+    "type": "analog",
+    "units": "spikes/s",
+    "range": [
+      0.0,
+      350.0
+    ],
+    "baseline": 18.0,
+    "latency_ms": [
+      12,
+      32
+    ],
+    "fiber_type": "II",
+    "segment": "c8",
+    "side": "right",
+    "region": "index",
+    "joint": "dip",
+    "notes": "Static spindle channel shaping posture sense for finger micro-control."
+  }
+}

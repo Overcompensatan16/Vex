@@ -1,0 +1,15 @@
+{
+  "required_fields": [
+    "type",
+    "units",
+    "range",
+    "baseline",
+    "latency_ms",
+    "fiber_type",
+    "segment",
+    "side",
+    "region",
+    "joint"
+  ],
+  "notes": "All biomimetic registry entries conform to this minimal metadata contract to facilitate rapid inspection and routing."
+}

@@ -1,0 +1,117 @@
+{
+  "memory.spinal.task.pinch": {
+    "type": "composite",
+    "units": "parameters",
+    "range": [
+      0,
+      0
+    ],
+    "baseline": {
+      "g_Ia": 0.85,
+      "g_rec": 0.35,
+      "delays_ms": 18,
+      "basal_tone": 0.04
+    },
+    "latency_ms": [
+      0,
+      0
+    ],
+    "fiber_type": "memory",
+    "segment": "c8",
+    "side": "right",
+    "region": "hand",
+    "joint": "mcp",
+    "notes": "Spinal lookup for precision pinch reflex gains."
+  },
+  "memory.spinal.task.toe_push": {
+    "type": "composite",
+    "units": "parameters",
+    "range": [
+      0,
+      0
+    ],
+    "baseline": {
+      "g_Ia": 0.9,
+      "g_rec": 0.25,
+      "delays_ms": 22,
+      "basal_tone": 0.05
+    },
+    "latency_ms": [
+      0,
+      0
+    ],
+    "fiber_type": "memory",
+    "segment": "s1",
+    "side": "right",
+    "region": "foot",
+    "joint": "mtp",
+    "notes": "Spinal lookup for hallux push-off tuning."
+  },
+  "memory.cerebellar.trace.index_DIP": {
+    "type": "composite",
+    "units": "parameters",
+    "range": [
+      0,
+      0
+    ],
+    "baseline": {
+      "phase_bias": 0.0,
+      "timing_tau": 120.0
+    },
+    "latency_ms": [
+      0,
+      0
+    ],
+    "fiber_type": "memory",
+    "segment": "cerebellum",
+    "side": "right",
+    "region": "hand",
+    "joint": "dip",
+    "notes": "Cerebellar timing trace for finger phase correction."
+  },
+  "memory.cerebellar.trace.hallux_MTP": {
+    "type": "composite",
+    "units": "parameters",
+    "range": [
+      0,
+      0
+    ],
+    "baseline": {
+      "phase_bias": 0.0,
+      "timing_tau": 160.0
+    },
+    "latency_ms": [
+      0,
+      0
+    ],
+    "fiber_type": "memory",
+    "segment": "cerebellum",
+    "side": "right",
+    "region": "foot",
+    "joint": "mtp",
+    "notes": "Cerebellar timing trace for gait push-off."
+  },
+  "memory.cortical.sequence.pinch": {
+    "type": "composite",
+    "units": "sequence",
+    "range": [
+      0,
+      0
+    ],
+    "baseline": [
+      "preload",
+      "approximate",
+      "clamp"
+    ],
+    "latency_ms": [
+      0,
+      0
+    ],
+    "fiber_type": "memory",
+    "segment": "cortex",
+    "side": "bilateral",
+    "region": "hand",
+    "joint": "mcp",
+    "notes": "High-level pinch habit that biases spinal engram selection."
+  }
+}

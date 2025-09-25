@@ -1,0 +1,46 @@
+{
+  "timebase": {
+    "physics_rig_hz": [240, 480],
+    "spinal_internal_tick_hz": 1000,
+    "rig_emit_hz": [120, 240],
+    "notes": "Timebase contract derived from biomimetic plan; 1 kHz spinal integrator drives higher fidelity sampling."
+  },
+  "latency_profiles": {
+    "ia_abeta": {
+      "fiber_types": ["Ia", "Abeta"],
+      "latency_ms": [10, 30],
+      "scaling": "limb_length",
+      "description": "Rapid discriminative touch and spindle afferents routed via dorsal column-medial lemniscus."
+    },
+    "adelta": {
+      "fiber_types": ["Adelta"],
+      "latency_ms": [40, 70],
+      "description": "Fast nociceptors for withdrawal and threat escalation."
+    },
+    "c": {
+      "fiber_types": ["C"],
+      "latency_ms": [200, 800],
+      "description": "Slow polymodal nociceptors driving lingering affective state."
+    },
+    "trigeminal_abeta": {
+      "fiber_types": ["Abeta"],
+      "latency_ms": [8, 15],
+      "description": "Facial touch relays prioritised for blink and bite regulation."
+    }
+  },
+  "sampling_contracts": {
+    "ascending": {
+      "minimum_emit_hz": 240,
+      "burst_mode": "event_driven",
+      "comment": "Ascending afferents share scheduler with dorsal horn; the registry ensures consistent metadata."
+    },
+    "motor_micro": {
+      "minimum_emit_hz": 500,
+      "comment": "Micro-motor pools sample at high rate to stabilise fast twitch profiles."
+    },
+    "vocal": {
+      "minimum_emit_hz": 200,
+      "comment": "Phonation loops require tight coupling with respiratory drive."
+    }
+  }
+}

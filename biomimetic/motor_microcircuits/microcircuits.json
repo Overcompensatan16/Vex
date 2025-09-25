@@ -1,0 +1,185 @@
+{
+  "motor.alpha.R.index.FDS.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.04,
+    "latency_ms": [
+      15,
+      25
+    ],
+    "fiber_type": "alpha",
+    "segment": "c8",
+    "side": "right",
+    "region": "hand",
+    "joint": "pip",
+    "twitch_profile": {
+      "tau_rise_ms": 20,
+      "tau_decay_ms": 70
+    },
+    "reflex_links": {
+      "ia_homonymous": "somatosensory.dcml.proprio.r.index_dip.ia.rate",
+      "reciprocal_inhibition": "motor.alpha.r.index.edc.activation",
+      "cutaneous_slip": "somatosensory.dcml.touch.r.index.ra.slip_rate"
+    },
+    "notes": "Flexor digitorum superficialis pool for index finger pinch and slip compensation."
+  },
+  "motor.alpha.R.index.FDS.torque": {
+    "type": "analog",
+    "units": "N\u00b7m",
+    "range": [
+      -0.8,
+      0.8
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      20,
+      30
+    ],
+    "fiber_type": "alpha",
+    "segment": "c8",
+    "side": "right",
+    "region": "hand",
+    "joint": "pip",
+    "notes": "Signed torque feed to external rig for high-fidelity control."
+  },
+  "motor.alpha.R.index.EDC.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.03,
+    "latency_ms": [
+      18,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "c7",
+    "side": "right",
+    "region": "hand",
+    "joint": "mcp",
+    "twitch_profile": {
+      "tau_rise_ms": 22,
+      "tau_decay_ms": 80
+    },
+    "reflex_links": {
+      "reciprocal_inhibition": "motor.alpha.R.index.FDS.activation"
+    },
+    "notes": "Extensor digitorum communis pool supporting release and nociceptive withdrawal."
+  },
+  "motor.alpha.R.index.FDI.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.02,
+    "latency_ms": [
+      18,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "c8",
+    "side": "right",
+    "region": "hand",
+    "joint": "mcp",
+    "twitch_profile": {
+      "tau_rise_ms": 18,
+      "tau_decay_ms": 65
+    },
+    "reflex_links": {
+      "cutaneous_grip": "somatosensory.dcml.touch.r.index.sa1.pressure"
+    },
+    "notes": "First dorsal interosseous for pinch stability and lateral force regulation."
+  },
+  "motor.alpha.R.hallux.FHL.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      20,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "s1",
+    "side": "right",
+    "region": "foot",
+    "joint": "mtp",
+    "twitch_profile": {
+      "tau_rise_ms": 25,
+      "tau_decay_ms": 90
+    },
+    "notes": "Flexor hallucis longus pool providing push-off tone."
+  },
+  "motor.alpha.R.hallux.EHL.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.04,
+    "latency_ms": [
+      20,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "l5",
+    "side": "right",
+    "region": "foot",
+    "joint": "mtp",
+    "twitch_profile": {
+      "tau_rise_ms": 24,
+      "tau_decay_ms": 85
+    },
+    "notes": "Extensor hallucis longus for toe clearance and nociceptive release."
+  },
+  "reflex.slip_grip.R.index.flexor_burst": {
+    "type": "digital",
+    "units": "state",
+    "range": [
+      0,
+      1
+    ],
+    "baseline": 0,
+    "latency_ms": [
+      15,
+      25
+    ],
+    "fiber_type": "Abeta",
+    "segment": "c7",
+    "side": "right",
+    "region": "hand",
+    "joint": "mcp",
+    "notes": "Phase-gated burst triggered by rapid slip to tighten grasp."
+  },
+  "reflex.nociceptive.R.index.withdrawal": {
+    "type": "digital",
+    "units": "state",
+    "range": [
+      0,
+      1
+    ],
+    "baseline": 0,
+    "latency_ms": [
+      40,
+      70
+    ],
+    "fiber_type": "Adelta",
+    "segment": "c8",
+    "side": "right",
+    "region": "hand",
+    "joint": "mcp",
+    "notes": "Fast withdrawal reflex adding transient extensor burst to release objects."
+  }
+}

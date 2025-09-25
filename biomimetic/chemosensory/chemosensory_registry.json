@@ -1,0 +1,363 @@
+{
+  "olfactory.epithelium.feature.00": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 0 (e.g., floral)."
+  },
+  "olfactory.epithelium.feature.01": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 1 (e.g., savory)."
+  },
+  "olfactory.epithelium.feature.02": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 2 (e.g., smoke)."
+  },
+  "olfactory.epithelium.feature.03": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 3 (e.g., decay)."
+  },
+  "olfactory.epithelium.feature.04": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 4."
+  },
+  "olfactory.epithelium.feature.05": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 5."
+  },
+  "olfactory.epithelium.feature.06": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 6."
+  },
+  "olfactory.epithelium.feature.07": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "olfactory",
+    "segment": "i",
+    "side": "bilateral",
+    "region": "epithelium",
+    "joint": null,
+    "notes": "Volatile feature channel 7."
+  },
+  "gustation.taste.sweet": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      80,
+      120
+    ],
+    "fiber_type": "gustatory",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Sweet taste detection."
+  },
+  "gustation.taste.salty": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      80,
+      120
+    ],
+    "fiber_type": "gustatory",
+    "segment": "ix",
+    "side": "bilateral",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Salty taste detection."
+  },
+  "gustation.taste.sour": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      80,
+      120
+    ],
+    "fiber_type": "gustatory",
+    "segment": "ix",
+    "side": "bilateral",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Sour taste detection."
+  },
+  "gustation.taste.bitter": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      80,
+      120
+    ],
+    "fiber_type": "gustatory",
+    "segment": "ix",
+    "side": "bilateral",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Bitter taste detection prompting withdrawal reflex."
+  },
+  "gustation.taste.umami": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      80,
+      120
+    ],
+    "fiber_type": "gustatory",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Umami taste detection for feeding reinforcement."
+  },
+  "autonomic.salivation.drive": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.1,
+    "latency_ms": [
+      200,
+      400
+    ],
+    "fiber_type": "parasympathetic",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "salivary",
+    "joint": null,
+    "notes": "Salivation motor scalar boosted by appetitive olfactory/taste inputs."
+  },
+  "resp.sniff.oscillation_gain": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.0,
+      2.0
+    ],
+    "baseline": 1.0,
+    "latency_ms": [
+      100,
+      200
+    ],
+    "fiber_type": "respiratory",
+    "segment": "brainstem",
+    "side": "midline",
+    "region": "respiratory",
+    "joint": null,
+    "notes": "Sniff modulation engaged when olfactory features rise."
+  },
+  "vision.okr.gain_mod": {
+    "type": "analog",
+    "units": "fraction",
+    "range": [
+      0.5,
+      1.5
+    ],
+    "baseline": 1.0,
+    "latency_ms": [
+      150,
+      250
+    ],
+    "fiber_type": "modulatory",
+    "segment": "brainstem",
+    "side": "midline",
+    "region": "visual",
+    "joint": null,
+    "notes": "Olfaction-driven tweak to OKR/VOR gain for exploratory microsaccades."
+  },
+  "motor.alpha.jaw.open_reflex.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      120,
+      160
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "jaw",
+    "joint": "tmj",
+    "notes": "Bitter-driven jaw opening reflex."
+  },
+  "motor.alpha.tongue.retract_reflex.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      120,
+      160
+    ],
+    "fiber_type": "alpha",
+    "segment": "xii",
+    "side": "midline",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Rapid tongue retraction upon bitter taste."
+  },
+  "motor.alpha.lips.seal_reflex.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      120,
+      160
+    ],
+    "fiber_type": "alpha",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "lips",
+    "joint": null,
+    "notes": "Sweet/umami triggered lip seal priming chew reflex."
+  }
+}

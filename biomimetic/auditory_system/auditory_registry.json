@@ -1,0 +1,154 @@
+{
+  "auditory.cochlea.ERB01.power": {
+    "type": "analog",
+    "units": "dB SPL",
+    "range": [
+      0.0,
+      120.0
+    ],
+    "baseline": 20.0,
+    "latency_ms": [
+      8,
+      12
+    ],
+    "fiber_type": "auditory",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "cochlea",
+    "joint": null,
+    "notes": "0.25 kHz band power for self-monitor reference."
+  },
+  "auditory.cochlea.ERB04.power": {
+    "type": "analog",
+    "units": "dB SPL",
+    "range": [
+      0.0,
+      120.0
+    ],
+    "baseline": 20.0,
+    "latency_ms": [
+      8,
+      12
+    ],
+    "fiber_type": "auditory",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "cochlea",
+    "joint": null,
+    "notes": "1 kHz band for speech monitoring."
+  },
+  "auditory.cochlea.ERB08.power": {
+    "type": "analog",
+    "units": "dB SPL",
+    "range": [
+      0.0,
+      120.0
+    ],
+    "baseline": 20.0,
+    "latency_ms": [
+      8,
+      12
+    ],
+    "fiber_type": "auditory",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "cochlea",
+    "joint": null,
+    "notes": "4 kHz band capturing sibilants."
+  },
+  "auditory.cochlea.ERB12.power": {
+    "type": "analog",
+    "units": "dB SPL",
+    "range": [
+      0.0,
+      120.0
+    ],
+    "baseline": 18.0,
+    "latency_ms": [
+      8,
+      12
+    ],
+    "fiber_type": "auditory",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "cochlea",
+    "joint": null,
+    "notes": "8 kHz band for fricatives and environmental cues."
+  },
+  "auditory.brainstem.CN.onset_rate": {
+    "type": "analog",
+    "units": "spikes/s",
+    "range": [
+      0.0,
+      600.0
+    ],
+    "baseline": 10.0,
+    "latency_ms": [
+      6,
+      10
+    ],
+    "fiber_type": "auditory",
+    "segment": "brainstem",
+    "side": "bilateral",
+    "region": "cochlear_nucleus",
+    "joint": null,
+    "notes": "Cochlear nucleus onset detector for reflex timing."
+  },
+  "motor.alpha.midline.stapedius.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.1,
+    "latency_ms": [
+      50,
+      80
+    ],
+    "fiber_type": "alpha",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "middle_ear",
+    "joint": null,
+    "notes": "Stapedius reflex attenuating high SPL."
+  },
+  "motor.alpha.midline.tensor_tympani.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.08,
+    "latency_ms": [
+      50,
+      80
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "middle_ear",
+    "joint": null,
+    "notes": "Tensor tympani reflex working with stapedius."
+  },
+  "auditory.efference.copy": {
+    "type": "composite",
+    "units": "state",
+    "range": [
+      0,
+      1
+    ],
+    "baseline": 0,
+    "latency_ms": [
+      0,
+      5
+    ],
+    "fiber_type": "efference",
+    "segment": "brainstem",
+    "side": "midline",
+    "region": "auditory",
+    "joint": null,
+    "notes": "Efference copy published during phonation for sensory attenuation."
+  }
+}

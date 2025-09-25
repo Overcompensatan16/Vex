@@ -1,0 +1,60 @@
+{
+  "viscero.NTS.stomach.stretch": {
+    "type": "analog",
+    "units": "percent",
+    "range": [
+      0.0,
+      100.0
+    ],
+    "baseline": 5.0,
+    "latency_ms": [
+      120,
+      200
+    ],
+    "fiber_type": "visceral",
+    "segment": "x",
+    "side": "midline",
+    "region": "stomach",
+    "joint": null,
+    "notes": "Gastric distension relayed to nucleus tractus solitarius for appetite and breath coupling."
+  },
+  "viscero.NTS.bladder.stretch": {
+    "type": "analog",
+    "units": "percent",
+    "range": [
+      0.0,
+      100.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      150,
+      250
+    ],
+    "fiber_type": "visceral",
+    "segment": "s2",
+    "side": "midline",
+    "region": "bladder",
+    "joint": null,
+    "notes": "Bladder filling state for urgency estimation and autonomic gating."
+  },
+  "viscero.NTS.carotid.baroreflex": {
+    "type": "analog",
+    "units": "mmHg",
+    "range": [
+      40.0,
+      180.0
+    ],
+    "baseline": 90.0,
+    "latency_ms": [
+      120,
+      180
+    ],
+    "fiber_type": "Abeta",
+    "segment": "ix",
+    "side": "bilateral",
+    "region": "carotid",
+    "joint": null,
+    "notes": "Carotid baroreceptor tension shaping heart-rate reflex arcs."
+  }
+}
+}

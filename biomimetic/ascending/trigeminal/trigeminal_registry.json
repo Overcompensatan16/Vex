@@ -1,0 +1,66 @@
+{
+  "nociception.stt.R.foot.Adelta.intensity": {
+    "type": "analog",
+    "units": "a.u.",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      40,
+      70
+    ],
+    "fiber_type": "Adelta",
+    "segment": "l5",
+    "side": "right",
+    "region": "dorsum_foot",
+    "joint": "mtp",
+    "couplings": [
+      "brainstem.reticular.arousal",
+      "midbrain.pag.threat"
+    ],
+    "notes": "Sharp nociceptive drive for foot withdrawal and arousal bump."
+  },
+  "nociception.stt.R.foot.C.intensity": {
+    "type": "analog",
+    "units": "a.u.",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      200,
+      800
+    ],
+    "fiber_type": "C",
+    "segment": "l5",
+    "side": "right",
+    "region": "plantar_foot",
+    "joint": "mtp",
+    "couplings": [
+      "brainstem.reticular.arousal"
+    ],
+    "notes": "Slow burning nociception shaping affective tone and protective unloading."
+  },
+  "nociception.stt.R.foot.temp": {
+    "type": "analog",
+    "units": "\u00b0C",
+    "range": [
+      0.0,
+      60.0
+    ],
+    "baseline": 32.0,
+    "latency_ms": [
+      40,
+      70
+    ],
+    "fiber_type": "Adelta",
+    "segment": "l5",
+    "side": "right",
+    "region": "dorsum_foot",
+    "joint": "mtp",
+    "notes": "Thermoreceptive relay co-routed with pain for protective reflex gating."
+  }
+}

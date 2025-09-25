@@ -1,0 +1,287 @@
+{
+  "vestibular.head.angvel.yaw": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -500.0,
+      500.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      5,
+      10
+    ],
+    "fiber_type": "vestibular",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "labyrinth",
+    "joint": null,
+    "notes": "Head angular velocity for VOR computation."
+  },
+  "vestibular.head.angvel.pitch": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -500.0,
+      500.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      5,
+      10
+    ],
+    "fiber_type": "vestibular",
+    "segment": "viii",
+    "side": "bilateral",
+    "region": "labyrinth",
+    "joint": null,
+    "notes": "Pitch component for VOR."
+  },
+  "oculomotor.eye.R.yaw": {
+    "type": "analog",
+    "units": "deg",
+    "range": [
+      -45.0,
+      45.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      6,
+      12
+    ],
+    "fiber_type": "proprio",
+    "segment": "iii",
+    "side": "right",
+    "region": "eye",
+    "joint": null,
+    "notes": "Right eye yaw position surrogate."
+  },
+  "oculomotor.eye.R.pitch": {
+    "type": "analog",
+    "units": "deg",
+    "range": [
+      -30.0,
+      30.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      6,
+      12
+    ],
+    "fiber_type": "proprio",
+    "segment": "iii",
+    "side": "right",
+    "region": "eye",
+    "joint": null,
+    "notes": "Right eye pitch position surrogate."
+  },
+  "vision.retina.slip.yaw": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -200.0,
+      200.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      12,
+      20
+    ],
+    "fiber_type": "retinal",
+    "segment": "ii",
+    "side": "bilateral",
+    "region": "retina",
+    "joint": null,
+    "notes": "Image motion relative to eye for OKR."
+  },
+  "vision.retina.slip.pitch": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -200.0,
+      200.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      12,
+      20
+    ],
+    "fiber_type": "retinal",
+    "segment": "ii",
+    "side": "bilateral",
+    "region": "retina",
+    "joint": null,
+    "notes": "Vertical slip feed for OKR."
+  },
+  "motor.alpha.oculomotor.RLR.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "vi",
+    "side": "right",
+    "region": "lateral_rectus",
+    "joint": null,
+    "notes": "Lateral rectus activation for horizontal VOR."
+  },
+  "motor.alpha.oculomotor.RMR.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "iii",
+    "side": "right",
+    "region": "medial_rectus",
+    "joint": null,
+    "notes": "Medial rectus activation for horizontal VOR."
+  },
+  "motor.alpha.oculomotor.RSR.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "iii",
+    "side": "right",
+    "region": "superior_rectus",
+    "joint": null,
+    "notes": "Superior rectus for vertical VOR."
+  },
+  "motor.alpha.oculomotor.RIR.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "iii",
+    "side": "right",
+    "region": "inferior_rectus",
+    "joint": null,
+    "notes": "Inferior rectus for vertical VOR."
+  },
+  "motor.alpha.oculomotor.RIO.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "iv",
+    "side": "right",
+    "region": "inferior_oblique",
+    "joint": null,
+    "notes": "Inferior oblique for torsional/vertical alignment."
+  },
+  "motor.alpha.oculomotor.RSO.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "alpha",
+    "segment": "iv",
+    "side": "right",
+    "region": "superior_oblique",
+    "joint": null,
+    "notes": "Superior oblique for torsional/vertical alignment."
+  },
+  "vision.okr.velocity_command": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -100.0,
+      100.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      30,
+      60
+    ],
+    "fiber_type": "okr",
+    "segment": "brainstem",
+    "side": "bilateral",
+    "region": "visual",
+    "joint": null,
+    "notes": "Optokinetic slow-phase drive blending with VOR."
+  },
+  "motor.alpha.face.levator_palpebrae.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.2,
+    "latency_ms": [
+      30,
+      60
+    ],
+    "fiber_type": "alpha",
+    "segment": "iii",
+    "side": "bilateral",
+    "region": "eyelid",
+    "joint": null,
+    "notes": "Levator palpebrae tone countered during blink reflex."
+  },
+  "motor.alpha.face.orbicularis_oculi.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.1,
+    "latency_ms": [
+      40,
+      70
+    ],
+    "fiber_type": "alpha",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "eyelid",
+    "joint": null,
+    "notes": "Orbicularis oculi burst for blink closure."
+  }
+}

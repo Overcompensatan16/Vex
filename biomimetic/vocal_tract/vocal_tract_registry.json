@@ -1,0 +1,363 @@
+{
+  "resp.subglottal.cmH2O": {
+    "type": "analog",
+    "units": "cmH2O",
+    "range": [
+      -5.0,
+      50.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      20,
+      40
+    ],
+    "fiber_type": "pressure",
+    "segment": "thoracic",
+    "side": "midline",
+    "region": "subglottal",
+    "joint": null,
+    "notes": "Subglottal pressure monitor driving phonation reflex loops."
+  },
+  "somatosensory.dcml.proprio.midline.larynx.Ia.rate": {
+    "type": "analog",
+    "units": "spikes/s",
+    "range": [
+      0.0,
+      400.0
+    ],
+    "baseline": 20.0,
+    "latency_ms": [
+      10,
+      25
+    ],
+    "fiber_type": "Ia",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Intrinsic laryngeal proprioception stabilising SPL and f0."
+  },
+  "trigeminal.touch.oral.Abeta.intensity": {
+    "type": "analog",
+    "units": "a.u.",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      8,
+      15
+    ],
+    "fiber_type": "Abeta",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "oral",
+    "joint": null,
+    "notes": "Oral tactile feedback for articulation and swallow safety triggers."
+  },
+  "motor.alpha.midline.larynx.TA.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.2,
+    "latency_ms": [
+      15,
+      30
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Thyroarytenoid drive for vocal fold tensioning."
+  },
+  "motor.alpha.midline.larynx.LCA.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.15,
+    "latency_ms": [
+      15,
+      30
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Lateral cricoarytenoid adduction command balancing airflow."
+  },
+  "motor.alpha.midline.larynx.PCA.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.1,
+    "latency_ms": [
+      15,
+      30
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Posterior cricoarytenoid abductor for airway opening."
+  },
+  "motor.alpha.midline.larynx.CT.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.1,
+    "latency_ms": [
+      18,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Cricothyroid lengthening for f0 control."
+  },
+  "motor.alpha.midline.larynx.IA.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.12,
+    "latency_ms": [
+      15,
+      30
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "larynx",
+    "joint": null,
+    "notes": "Interarytenoid closure for swallow protection."
+  },
+  "motor.alpha.midline.velum.levator.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      18,
+      35
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "velum",
+    "joint": null,
+    "notes": "Velum elevation for swallow closure and speech nasality control."
+  },
+  "motor.alpha.midline.velum.tensor.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.04,
+    "latency_ms": [
+      18,
+      35
+    ],
+    "fiber_type": "alpha",
+    "segment": "x",
+    "side": "midline",
+    "region": "velum",
+    "joint": null,
+    "notes": "Tensor veli palatini activity for Eustachian pressure and swallow."
+  },
+  "motor.alpha.midline.tongue.genioglossus.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.08,
+    "latency_ms": [
+      16,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "xii",
+    "side": "midline",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Tongue protrusion for airway patency and vowel shaping."
+  },
+  "motor.alpha.midline.tongue.hyoglossus.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.06,
+    "latency_ms": [
+      16,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "xii",
+    "side": "midline",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Tongue retraction for swallow safety."
+  },
+  "motor.alpha.midline.tongue.styloglossus.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      16,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "xii",
+    "side": "midline",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Tongue elevation/backing for consonant targets."
+  },
+  "motor.alpha.midline.tongue.intrinsics.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.07,
+    "latency_ms": [
+      16,
+      32
+    ],
+    "fiber_type": "alpha",
+    "segment": "xii",
+    "side": "midline",
+    "region": "tongue",
+    "joint": null,
+    "notes": "Bundled intrinsic muscle control for contour shaping."
+  },
+  "motor.alpha.midline.lips.orbicularis_oris.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.08,
+    "latency_ms": [
+      16,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "vii",
+    "side": "bilateral",
+    "region": "lips",
+    "joint": null,
+    "notes": "Lip seal and rounding control for phonation reflex loops."
+  },
+  "motor.alpha.midline.jaw.masseter.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.05,
+    "latency_ms": [
+      14,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "jaw",
+    "joint": "tmj",
+    "notes": "Jaw elevation control for bite and consonant closure."
+  },
+  "motor.alpha.midline.jaw.temporalis.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.04,
+    "latency_ms": [
+      14,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "jaw",
+    "joint": "tmj",
+    "notes": "Assists masseter in vertical jaw control."
+  },
+  "motor.alpha.midline.jaw.medial_pterygoid.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.03,
+    "latency_ms": [
+      14,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "jaw",
+    "joint": "tmj",
+    "notes": "Medial pterygoid for elevation and side-to-side control."
+  },
+  "motor.alpha.midline.jaw.lateral_pterygoid.activation": {
+    "type": "analog",
+    "units": "activation",
+    "range": [
+      0.0,
+      1.0
+    ],
+    "baseline": 0.02,
+    "latency_ms": [
+      14,
+      28
+    ],
+    "fiber_type": "alpha",
+    "segment": "v",
+    "side": "bilateral",
+    "region": "jaw",
+    "joint": "tmj",
+    "notes": "Jaw protrusion for opening and speech transitions."
+  }
+}

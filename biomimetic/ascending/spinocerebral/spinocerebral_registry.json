@@ -1,0 +1,40 @@
+{
+  "spinocerebellar.DSCT.R.ankle.position_rate": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -720.0,
+      720.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      12,
+      28
+    ],
+    "fiber_type": "Ia",
+    "segment": "l4",
+    "side": "right",
+    "region": "ankle",
+    "joint": "talocrural",
+    "notes": "Dorsal spinocerebellar tract copy for stance-swing phase estimation."
+  },
+  "spinocerebellar.CCT.R.wrist.position_rate": {
+    "type": "analog",
+    "units": "deg/s",
+    "range": [
+      -720.0,
+      720.0
+    ],
+    "baseline": 0.0,
+    "latency_ms": [
+      14,
+      32
+    ],
+    "fiber_type": "Ia",
+    "segment": "c8",
+    "side": "right",
+    "region": "wrist",
+    "joint": "radiocarpal",
+    "notes": "Cuneocerebellar tract feed for anticipatory hand posture adjustment."
+  }
+}
