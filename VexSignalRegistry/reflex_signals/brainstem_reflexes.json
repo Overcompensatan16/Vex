@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "subsystem": "brainstem",
+    "description": "Brainstem coordination hubs orchestrating multisystem reflex interactions.",
+    "schema_version": "1.0",
+    "notes": "Summarizes integrative reflex centers replacing the prior monolithic map."
+  },
+  "reflex_arcs": {
+    "swallowing": {
+      "stimulus": "Bolus contact within oropharynx.",
+      "afferent": "Glossopharyngeal and vagal afferents to nucleus tractus solitarius.",
+      "integration": "Swallowing central pattern generator linking nucleus ambiguus and reticular formation.",
+      "efferent": "Vagal, glossopharyngeal, trigeminal, and hypoglossal motor outputs.",
+      "effector": "Sequential oral, pharyngeal, and esophageal contractions moving bolus safely.",
+      "response_type": "coordinated"
+    },
+    "breathing_swallow_coupling": {
+      "stimulus": "Concurrent respiratory cycle and swallow initiation.",
+      "afferent": "Respiratory stretch receptors and oropharyngeal sensory input.",
+      "integration": "Brainstem gating ensuring swallow occurs during expiratory pause.",
+      "efferent": "Respiratory motor neurons inhibited while swallow motor pattern proceeds.",
+      "effector": "Brief apnea with protected airway during swallow.",
+      "response_type": "integrative"
+    },
+    "vestibular_integration": {
+      "stimulus": "Head movement and body sway sensed by vestibular apparatus.",
+      "afferent": "Vestibular afferents to vestibular nuclei.",
+      "integration": "Interconnection with cerebellum, ocular motor nuclei, and spinal tracts.",
+      "efferent": "Signals dispatched to ocular, cervical, and postural effectors.",
+      "effector": "Unified gaze and posture stabilization responses.",
+      "response_type": "integrative"
+    },
+    "reticular_startle": {
+      "stimulus": "Unexpected multimodal sensory burst.",
+      "afferent": "Auditory, visual, and somatosensory inputs to pontine reticular formation.",
+      "integration": "Reticular circuitry distributing activation to cranial and spinal motor systems.",
+      "efferent": "Diffuse projections triggering axial and limb muscle activation.",
+      "effector": "Generalized startle posture with rapid readiness.",
+      "response_type": "coordinated"
+    }
+  }
+}

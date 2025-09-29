@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "subsystem": "autonomic_digestive",
+    "description": "Enteric and autonomic reflexes coordinating gastrointestinal motility and evacuation.",
+    "schema_version": "1.0",
+    "notes": "Qualitative representation of digestive reflex cascades only."
+  },
+  "reflex_arcs": {
+    "enterogastric": {
+      "stimulus": "Duodenal distension or acidic chyme presence.",
+      "afferent": "Enteric sensory neurons and vagal afferents to brainstem.",
+      "integration": "Enteric inhibitory circuits with vagal modulation reducing gastric motility.",
+      "efferent": "Intrinsic enteric pathways and vagal efferents.",
+      "effector": "Delayed gastric emptying and pyloric constriction.",
+      "response_type": "autonomic"
+    },
+    "vomiting": {
+      "stimulus": "Toxin detection, visceral irritation, or vestibular disruption.",
+      "afferent": "Area postrema chemosensors, vagal visceral afferents, and vestibular inputs.",
+      "integration": "Medullary vomiting center orchestrating respiratory and gastrointestinal muscles.",
+      "efferent": "Phrenic, spinal, and vagal motor outputs.",
+      "effector": "Coordinated retching and expulsion of gastric contents.",
+      "response_type": "protective"
+    },
+    "defecation": {
+      "stimulus": "Rectal wall stretch from fecal mass.",
+      "afferent": "Pelvic nerve afferents to sacral spinal cord and enteric plexus.",
+      "integration": "Sacral parasympathetic nuclei collaborating with enteric circuits.",
+      "efferent": "Pelvic parasympathetic efferents and somatic pudendal pathways.",
+      "effector": "Rectal contraction with internal sphincter relaxation and voluntary control of external sphincter.",
+      "response_type": "autonomic"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "subsystem": "torso_core",
+    "description": "Core respiratory and visceral reflexes linking diaphragm, intercostals, and abdominal pressurization.",
+    "schema_version": "1.0",
+    "notes": "Focuses on trunk-centric automatic responses distinct from biomimetic respiratory control files."
+  },
+  "reflex_arcs": {
+    "cough": {
+      "stimulus": "Irritation of tracheobronchial mucosa or elevated airway particulate load.",
+      "afferent": "Vagal rapidly adapting receptors \u2192 nucleus tractus solitarius.",
+      "integration": "Medullary cough pattern generator coordinating thoracoabdominal musculature.",
+      "efferent": "Phrenic, intercostal, and abdominal motor pathways.",
+      "effector": "Inspiration followed by glottic closure and explosive expiratory burst.",
+      "response_type": "respiratory",
+      "notes": "Clears airway and resets thoracic pressure."
+    },
+    "sneeze": {
+      "stimulus": "Nasopharyngeal mechanoreceptor or chemoreceptor activation.",
+      "afferent": "Trigeminal afferents \u2192 medullary sneeze center.",
+      "integration": "Brainstem relay recruiting respiratory drive and facial motor nuclei.",
+      "efferent": "Phrenic, spinal expiratory motor neurons, facial nerve branches for eye closure.",
+      "effector": "Forceful expiratory blast with nasal/oral expulsion.",
+      "response_type": "respiratory",
+      "notes": "Expels irritants from upper airway while stabilizing thorax."
+    },
+    "hiccough": {
+      "stimulus": "Sudden gastric distension or diaphragmatic irritation.",
+      "afferent": "Phrenic and vagal afferents \u2192 medullary pattern generator.",
+      "integration": "Rhythmic burst generator producing synchronous diaphragm contractions.",
+      "efferent": "Phrenic motor neurons with transient glottic closure via recurrent laryngeal branch.",
+      "effector": "Brief inspiratory snatch accompanied by momentary glottic closure.",
+      "response_type": "rhythmic",
+      "notes": "Typically self-limited; modulates thoracoabdominal pressure cycles."
+    },
+    "diaphragm_spasm": {
+      "stimulus": "Sustained noxious or metabolic stress on diaphragmatic muscle.",
+      "afferent": "Phrenic sensory collaterals and sympathetic afferents.",
+      "integration": "Medullary respiratory centers with spinal interneuron reinforcement.",
+      "efferent": "Phrenic motor axons firing high-frequency bursts.",
+      "effector": "Tetanic diaphragm contraction reducing tidal exchange.",
+      "response_type": "pathophysiologic",
+      "notes": "Signals overload of respiratory drive and can interrupt normal breathing rhythm."
+    }
+  }
+}

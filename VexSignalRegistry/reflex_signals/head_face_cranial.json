@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "subsystem": "head_face_cranial",
+    "description": "Cranial nerve reflexes mediating facial protection, ocular alignment, and bulbar coordination.",
+    "schema_version": "1.0",
+    "notes": "Captures brainstem-driven cranial reflex pathways with narrative mapping only."
+  },
+  "reflex_arcs": {
+    "jaw_jerk": {
+      "stimulus": "Rapid stretch of masseter muscle via chin tap.",
+      "afferent": "Trigeminal mesencephalic nucleus proprioceptors.",
+      "integration": "Trigeminal motor nucleus monosynaptic loop.",
+      "efferent": "CN V motor fibers to masseter.",
+      "effector": "Quick mandibular elevation restoring bite alignment.",
+      "response_type": "somatic"
+    },
+    "corneal_blink": {
+      "stimulus": "Corneal touch or drying stimulus.",
+      "afferent": "Trigeminal ophthalmic branch to spinal trigeminal nucleus.",
+      "integration": "Interneurons projecting to facial nucleus.",
+      "efferent": "Facial nerve to orbicularis oculi.",
+      "effector": "Bilateral eyelid closure protecting the cornea.",
+      "response_type": "protective"
+    },
+    "pupillary_light": {
+      "stimulus": "Increase in retinal luminance.",
+      "afferent": "Retinal ganglion cells \u2192 pretectal nuclei.",
+      "integration": "Edinger-Westphal nuclei coordinating bilateral constriction.",
+      "efferent": "Parasympathetic fibers within CN III.",
+      "effector": "Sphincter pupillae contraction reducing pupil diameter.",
+      "response_type": "autonomic"
+    },
+    "vestibulo_ocular": {
+      "stimulus": "Angular head acceleration detected by semicircular canals.",
+      "afferent": "Vestibular nerve to vestibular nuclei.",
+      "integration": "Connections to ocular motor nuclei (III, IV, VI).",
+      "efferent": "Coordinated activation of extraocular muscles.",
+      "effector": "Compensatory eye movements stabilizing gaze.",
+      "response_type": "gaze_stabilization"
+    },
+    "gag": {
+      "stimulus": "Contact at posterior pharyngeal wall.",
+      "afferent": "Glossopharyngeal nerve fibers.",
+      "integration": "Nucleus tractus solitarius to nucleus ambiguus.",
+      "efferent": "Vagus nerve motor branches.",
+      "effector": "Pharyngeal constriction and soft palate elevation.",
+      "response_type": "protective"
+    },
+    "facial_grimace": {
+      "stimulus": "Noxious facial stimuli or visceral discomfort cues.",
+      "afferent": "Trigeminal and visceral afferents to reticular formation.",
+      "integration": "Reticular-limbic coupling influencing facial nucleus.",
+      "efferent": "Facial nerve distribution to mimetic muscles.",
+      "effector": "Coordinated contraction producing defensive grimace.",
+      "response_type": "expressive"
+    },
+    "tongue_protrusion": {
+      "stimulus": "Tactile contact on anterior tongue or oropharynx.",
+      "afferent": "Lingual nerve sensory endings to nucleus tractus solitarius.",
+      "integration": "Hypoglossal nucleus patterning.",
+      "efferent": "Hypoglossal nerve to genioglossus.",
+      "effector": "Tongue thrust to clear airway or reposition bolus.",
+      "response_type": "somatic"
+    }
+  }
+}

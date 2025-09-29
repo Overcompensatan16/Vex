@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "subsystem": "neurotransmitters",
+    "description": "Neurotransmitter-mediated modulation of reflex excitability and plasticity.",
+    "schema_version": "1.0",
+    "notes": "Highlights neuromodulator influence on reflex loops separate from biomimetic synapse tables."
+  },
+  "reflex_arcs": {
+    "dopamine": {
+      "stimulus": "Salient motor learning cues or reward prediction errors.",
+      "afferent": "Mesencephalic dopaminergic neurons receiving cortical and limbic input.",
+      "integration": "Nigrostriatal projections adjusting basal ganglia output to spinal centers.",
+      "efferent": "Dopaminergic modulation of striatal circuits.",
+      "effector": "Facilitated initiation and scaling of learned reflex adaptations.",
+      "response_type": "neuromodulatory"
+    },
+    "serotonin": {
+      "stimulus": "Raphe nucleus activation during arousal or locomotion.",
+      "afferent": "Ascending sensory and descending motor feedback to raphe nuclei.",
+      "integration": "Diffuse serotonergic projections enhancing spinal motor neuron responsiveness.",
+      "efferent": "Serotonergic release across spinal cord and brainstem.",
+      "effector": "Increased excitability of postural and locomotor reflex circuits.",
+      "response_type": "neuromodulatory"
+    },
+    "gaba": {
+      "stimulus": "Activation of inhibitory interneurons restraining reflex output.",
+      "afferent": "Interneuronal networks sensing excessive excitatory drive.",
+      "integration": "GABAergic synapses dampening motor neuron firing.",
+      "efferent": "GABA release onto target neurons.",
+      "effector": "Suppression of reflex amplitude and prevention of oscillations.",
+      "response_type": "neuromodulatory"
+    },
+    "glutamate": {
+      "stimulus": "Primary excitatory drive from sensory afferents and descending commands.",
+      "afferent": "Glutamatergic terminals at spinal interneurons and motor neurons.",
+      "integration": "AMPA/NMDA receptor activation amplifying reflex throughput.",
+      "efferent": "Excitatory synaptic transmission across reflex arcs.",
+      "effector": "Rapid propagation of reflex activity enabling timely responses.",
+      "response_type": "neuromodulatory"
+    },
+    "acetylcholine": {
+      "stimulus": "Motor neuron firing and autonomic preganglionic activation.",
+      "afferent": "Segmental circuits requiring neuromuscular transmission.",
+      "integration": "Cholinergic synapses at neuromuscular junctions and autonomic ganglia.",
+      "efferent": "Acetylcholine release onto effectors.",
+      "effector": "Muscle contraction and ganglionic relay sustaining reflex execution.",
+      "response_type": "neuromodulatory"
+    },
+    "endorphins": {
+      "stimulus": "Stress, sustained pain, or rhythmic exercise activating descending modulatory systems.",
+      "afferent": "Spinoreticular and limbic inputs to periaqueductal gray.",
+      "integration": "Endogenous opioid release modulating dorsal horn and brainstem nuclei.",
+      "efferent": "Opioid peptides acting on inhibitory interneurons.",
+      "effector": "Reduction of pain-mediated reflex gain and promotion of analgesic states.",
+      "response_type": "neuromodulatory"
+    }
+  }
+}
