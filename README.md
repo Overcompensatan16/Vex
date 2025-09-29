@@ -444,7 +444,7 @@ reflex_signals/
 
 That’s ~20 JSONs. Each is internally coherent and maps to a biological subsystem.
 
-2. Expanded System Details
+2. Expanded System Details (DO NOT REPEAT ANYTHING FROM THE BIOMIMETIC DIRECTORY REGISTRY)
 🔹 Limbs
 limbs_upper.json
 
@@ -780,6 +780,7 @@ Sleep override (pineal coupling).
 By breaking down limbs, torso, sensory, autonomic into smaller components, plus hormones/neurotransmitters/meta, you end up with:
 ➡️ 20 JSON files (each coherent, detailed, and future-proof).
 This is realistically “everything you’ll need” — further splits would just create too many tiny files with little added clarity.
+
 
 
 
