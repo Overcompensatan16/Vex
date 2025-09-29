@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "subsystem": "sensory_cutaneous",
+    "description": "Cutaneous reflex arcs mediating superficial, withdrawal, and temperature-dependent responses to skin stimuli.",
+    "schema_version": "1.0",
+    "notes": "Catalogues skin-triggered reflex behavior without duplicating actuator tuning from the biomimetic registry."
+  },
+  "reflex_arcs": {
+    "abdominal_skin": {
+      "stimulus": "Light stroking of abdominal dermatomes.",
+      "afferent": "Thoracoabdominal cutaneous afferents to T7-T12 dorsal horn neurons.",
+      "integration": "Segmental interneuron circuits projecting to ipsilateral motor pools.",
+      "efferent": "Intercostal and abdominal motor neurons.",
+      "effector": "Localized abdominal wall contraction drawing umbilicus toward the stimulus.",
+      "response_type": "superficial"
+    },
+    "cremasteric": {
+      "stimulus": "Gentle stroking of the superior inner thigh.",
+      "afferent": "Femoral branch of the genitofemoral nerve to L1-L2 segments.",
+      "integration": "Spinal interneurons coupling sensory input to ipsilateral motor outflow.",
+      "efferent": "Genital branch of the genitofemoral nerve.",
+      "effector": "Elevation of the testis via cremaster muscle contraction.",
+      "response_type": "superficial"
+    },
+    "plantar_surface": {
+      "stimulus": "Cutaneous stimulation along the lateral plantar surface.",
+      "afferent": "S1-S2 tibial nerve cutaneous fibers.",
+      "integration": "Polysynaptic plantar reflex circuitry modulating toe flexors and extensors.",
+      "efferent": "Medial and lateral plantar motor branches.",
+      "effector": "Toe flexion with suppression of extensor hallucis unless corticospinal impairment provokes Babinski extension.",
+      "response_type": "superficial"
+    },
+    "anal_wink": {
+      "stimulus": "Perianal skin touch or pinprick.",
+      "afferent": "Pudendal nerve afferents entering S2-S4 segments.",
+      "integration": "Short-latency sacral interneuron loop.",
+      "efferent": "Pudendal motor fibers.",
+      "effector": "External anal sphincter contraction producing visible wink.",
+      "response_type": "superficial"
+    },
+    "scapular": {
+      "stimulus": "Stroking between the scapulae.",
+      "afferent": "Dorsal thoracic cutaneous nerves to C5-T1 segments.",
+      "integration": "Spinal interneurons linking cutaneous input to scapular stabilizers.",
+      "efferent": "Dorsal scapular and accessory motor pools.",
+      "effector": "Scapular adduction toward the stimulated side.",
+      "response_type": "superficial"
+    },
+    "nociceptive_withdrawal": {
+      "stimulus": "Acute painful cutaneous insult to distal extremity.",
+      "afferent": "A-delta and C nociceptors entering multisegmental interneuron networks.",
+      "integration": "Flexor reflex afferent pathways coordinating limb flexion and inhibition of antagonists.",
+      "efferent": "Segmental flexor motor neurons.",
+      "effector": "Rapid limb withdrawal away from stimulus.",
+      "response_type": "withdrawal"
+    },
+    "crossed_extensor_cutaneous": {
+      "stimulus": "Cutaneous pain afferents triggering ipsilateral withdrawal.",
+      "afferent": "Commissural interneurons distributing nociceptive input to contralateral segments.",
+      "integration": "Spinal networks sustaining contralateral extensor activation while ipsilateral flexors engage.",
+      "efferent": "Contralateral extensor motor pools.",
+      "effector": "Extension and weight support on the opposite limb.",
+      "response_type": "withdrawal"
+    },
+    "flexor_withdrawal_synergy": {
+      "stimulus": "Broad cutaneous noxious stimulation such as stepping on a sharp surface.",
+      "afferent": "High-threshold cutaneous afferents to propriospinal interneurons.",
+      "integration": "Coordinated recruitment of hip, knee, and ankle flexors with suppression of extensors.",
+      "efferent": "Lumbar flexor motor neuron pools.",
+      "effector": "Multijoint flexion removing the limb from danger.",
+      "response_type": "withdrawal"
+    },
+    "cold_withdrawal": {
+      "stimulus": "Sudden contact with freezing or near-freezing surface.",
+      "afferent": "Cold-sensitive A-delta fibers routed through dorsal horn lamina I.",
+      "integration": "Spinal interneuron network biasing flexor activation and autonomic thermogenic responses.",
+      "efferent": "Flexor motor neurons with sympathetic support.",
+      "effector": "Withdrawal of the contacted region accompanied by thermogenic priming.",
+      "response_type": "temperature"
+    },
+    "heat_withdrawal": {
+      "stimulus": "Touching a hot surface above nociceptor threshold.",
+      "afferent": "Heat-sensitive C fibers synapsing in superficial dorsal horn.",
+      "integration": "Fast polysynaptic circuitry engaging flexors while damping extensors.",
+      "efferent": "Segmental flexor motor neurons.",
+      "effector": "Immediate withdrawal from heat source to limit tissue damage.",
+      "response_type": "temperature"
+    },
+    "light_tactile_startle": {
+      "stimulus": "Unexpected light touch to face or distal extremity.",
+      "afferent": "Low-threshold mechanoreceptors projecting via trigeminal or dorsal column pathways.",
+      "integration": "Brainstem reticular circuits coupling cutaneous input to axial motor nuclei.",
+      "efferent": "Facial, cervical, and limb motor neurons.",
+      "effector": "Brief orienting startle-like contraction or blink.",
+      "response_type": "tactile"
+    }
+  }
+}
