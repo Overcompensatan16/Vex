@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "subsystem": "torso_spine",
+    "description": "Spinally mediated trunk reflexes stabilizing vertebral alignment and abdominal wall tone.",
+    "schema_version": "1.0",
+    "notes": "Entries emphasize reflex coordination unique to torso stabilization, excluding biomimetic actuator parameters."
+  },
+  "reflex_arcs": {
+    "abdominal": {
+      "stimulus": "Cutaneous stroking or sudden load across abdominal dermatomes.",
+      "afferent": "T7-T12 intercostal sensory fibers \u2192 dorsal horn.",
+      "integration": "Segmental interneurons recruiting ipsilateral abdominal musculature.",
+      "efferent": "Thoracoabdominal motor branches to external and internal obliques.",
+      "effector": "Localized abdominal wall contraction drawing the umbilicus toward stimulus.",
+      "response_type": "protective",
+      "notes": "Supports visceral shielding and posture adjustments."
+    },
+    "gluteal": {
+      "stimulus": "Tactile input across sacral dermatomes or perturbation of pelvic tilt.",
+      "afferent": "Inferior gluteal cutaneous nerves \u2192 lumbosacral dorsal horn.",
+      "integration": "L4-S2 interneuron pools facilitating hip extensor activation.",
+      "efferent": "Inferior gluteal nerve to gluteus maximus fibers.",
+      "effector": "Brief hip extension and pelvic bracing.",
+      "response_type": "postural",
+      "notes": "Counters destabilizing forces during stance transitions."
+    },
+    "postural_set": {
+      "stimulus": "Proprioceptive signals from paraspinal muscle stretch during trunk flexion.",
+      "afferent": "Muscle spindle feedback from erector spinae \u2192 dorsal horn.",
+      "integration": "Thoracolumbar propriospinal circuits balancing extensor tone.",
+      "efferent": "Lumbar motor neurons to paraspinal extensors.",
+      "effector": "Automatic correction of trunk orientation to upright alignment.",
+      "response_type": "somatic",
+      "notes": "Maintains spinal alignment against gravity and load shifts."
+    }
+  }
+}
