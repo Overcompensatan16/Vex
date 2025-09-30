@@ -2061,7 +2061,350 @@ Torso flexion/extension curves
 
 Rig anchor for whole-body stabilization
 
+Rig Metadata Connection System (Signal Registry → Unreal Rig)
+0) Goals
 
+Make every published signal (e.g., affect.face.smile, motor_overlay.smooth_limb) exportable as rig inputs.
+
+Keep exports data-driven (no graph rewrites when you add a new signal).
+
+Support blendshapes, bones, controls, curves, SpaceWarps/constraints.
+
+Clean unit conversions, clamping, smoothing, and priorities.
+
+Work with Control Rig, Anim Blueprint, MetaHuman Face/Body, or any custom skeleton.
+
+1) Directory & Asset Layout
+/Exports/rig_meta/
+  /Character_Vex/
+    rig_manifest.json                  # One manifest per character
+    mapping/
+      face_blendshapes.json
+      eyes_gaze.json
+      jaw_tongue.json
+      body_posture.json
+      hands_gestures.json
+      locomotion_overlays.json
+      autonomic_micro.json             # pupil, breath rate curves, etc.
+    curves/
+      default_curves.json              # response curves (linear, ease, sigmoid)
+    presets/
+      metahuman_face_preset.json       # optional: AU/MetaHuman mapping
+      ue_ikretarget_preset.json
+    transport/
+      live_link_profile.json           # if streaming at runtime
+      offline_bake_profile.json        # if baking to animation
+
+
+You can split mapping files per subsystem (face, eyes, body, etc.) for clarity and incremental loading.
+
+2) Universal Mapping Schema (JSON)
+
+Each mapping row links one Signal Registry path to one rig target with transforms:
+
+{
+  "schema_version": "1.0.0",
+  "character": "Vex",
+  "defaults": {
+    "sample_rate_hz": 60,
+    "smoothing_ms": 40,
+    "deadzone": 0.02,
+    "units_in": "normalized01",
+    "units_out": "native",
+    "priority": 0
+  },
+  "mappings": [
+    {
+      "signal_path": "affect.face.smile",     // from your registry
+      "target_type": "blendshape",            // bone|control|blendshape|curve
+      "target_name": "CTRL_Mouth_Smile_L",    // morph target or ControlRig control
+      "axis": null,                           // e.g., X/Y/Z for bones/controls
+      "invert": false,
+      "gain": 1.25,                           // multiply after unit conversion
+      "offset": 0.0,                          // add after gain
+      "clamp": [0.0, 1.0],
+      "smoothing_ms": 60,                     // overrides default
+      "deadzone": 0.03,                       // overrides default
+      "curve_ref": "ease_out_soft",           // from curves/default_curves.json
+      "priority": 10,                         // higher wins in conflicts
+      "group": "Face/Smile",
+      "lod": { "min": 0, "max": 2 },          // LOD gating (optional)
+      "condition": {                          // optional gating expression
+        "any_true": [
+          { "signal": "pfc_hint.speech_presence", "gt": 0.2 },
+          { "signal": "limbic_state.Valence", "gt": 0.2 }
+        ],
+        "all_true": [
+          { "signal": "pfc_hint.error_margin", "lt": 0.6 }
+        ]
+      },
+      "fallback": {                           // if driving signal missing
+        "value": 0.0,
+        "hold_last_ms": 100
+      },
+      "notes": "Smile when positive valence or speech present."
+    }
+  ]
+}
+
+Target Types
+
+blendshape: Morph target on SkeletalMesh.
+
+bone: Bone/Joint rotation/translation (requires axis + units).
+
+control: Control Rig control (float/vec/quaternion).
+
+curve: Anim curve value (can later drive anything in AnimBP).
+
+3) Curves & Transforms
+
+/Exports/rig_meta/Character_Vex/curves/default_curves.json
+
+{
+  "schema_version": "1.0.0",
+  "curves": {
+    "linear": { "type": "linear" },
+    "ease_out_soft": { "type": "pow", "exponent": 0.5, "clamp": [0,1] },
+    "sigmoid_centered": { "type": "sigmoid", "k": 6.0, "x0": 0.5, "clamp": [0,1] },
+    "deadzone_linear": { "type": "deadzone_linear", "deadzone": 0.03 }
+  },
+  "filters": {
+    "ema": { "type": "ema", "alpha_ms": 40 },
+    "kalman_light": { "type": "kalman", "q": 0.01, "r": 0.05 }
+  }
+}
+
+
+Curves run after unit conversion and before gain/offset/clamp, unless you specify otherwise. Filters (EMA/Kalman) apply pre-curve to tame jitter.
+
+4) Naming Conventions
+
+Signals (left/right explicit):
+
+affect.face.brow_raise_L, affect.face.brow_raise_R
+
+affect.face.eye_widen, affect.face.squint_L
+
+affect.voice.breathiness
+
+motor_overlay.smooth_limb, gait.rhythm_phase
+
+Blendshapes:
+
+CamelCase or engine preset names. For MetaHuman, prefer official AU-like labels when available.
+
+Bones/Controls:
+
+CTRL_EyeAim_L, CTRL_JawOpen, spine_03, head, neck_01
+
+5) Unit Conventions
+Registry Value	Input Units	Output Target
+Affect & overlays	0–1 normalized	blendshape 0–1
+Pupil dilation (autonomic)	mm or normalized	curve (normalize to 0–1)
+Jaw open	0–1 or degrees	ControlRig float or jaw bone rotation
+Eye saccade/aim	deg	ControlRig 2D control (map deg→units)
+Spine posture correction	ratio	bone rot (deg) or control
+
+Recommended: Store units_in per mapping; add converter tables (deg↔rad, mm↔normalized) so artists don’t touch graphs.
+
+6) Conflict Resolution & Priorities
+
+priority (int): higher wins when two mappings write the same target.
+
+blend rule (optional extension):
+
+additive (default for blendshapes),
+
+max, min, or weighted with weight_signal_path (e.g., use pfc_hint.attention_load as weight).
+
+condition blocks gate writes entirely (e.g., suppress smile when limbic_state.S_stress > 0.8).
+
+7) Runtime Paths (Choose One or Mix)
+A) Control Rig (recommended for precision)
+
+Load manifest JSON at BeginPlay (or via Editor Utility).
+
+A “Rig Router” node/library:
+
+Pull frame of signal values (from Live Link, Data Interface, or a plugin).
+
+Evaluate condition.
+
+Apply filter → curve → gain/offset/clamp.
+
+Write to Controls/Bones/Morph Targets.
+
+Pros: Deterministic, debuggable, animator-friendly.
+
+B) Animation Blueprint + Curves
+
+Use an AnimBP that ingests signals as Anim Curves (Set Curve Value).
+
+Use those curves to drive BlendSpaces, IK, or PoseDrivers.
+
+Good for fast prototyping and mixing with existing locomotion systems.
+
+C) Live Link (streaming)
+
+Stream your real-time signals (60–120 Hz).
+
+A Live Link subject named VexSignals with multiple properties (or multiple subjects by body part).
+
+Map Live Link properties → AnimBP or Control Rig.
+
+Use /Exports/rig_meta/.../transport/live_link_profile.json to describe channels.
+
+D) Offline Bake
+
+Record signals (JSON/CSV), then bake into anim curves or PoseAssets in the editor.
+
+Ideal for cinematics or QA reproductions.
+
+8) Manifest File (ties everything together)
+
+/Exports/rig_meta/Character_Vex/rig_manifest.json
+
+{
+  "schema_version": "1.0.0",
+  "character": "Vex",
+  "skeleton": "SK_Vex",
+  "default_sample_rate_hz": 60,
+  "transport": {
+    "mode": "LiveLink",              // LiveLink | Offline | Direct
+    "subject_names": ["VexSignals"]
+  },
+  "mapping_files": [
+    "mapping/face_blendshapes.json",
+    "mapping/eyes_gaze.json",
+    "mapping/jaw_tongue.json",
+    "mapping/body_posture.json",
+    "mapping/hands_gestures.json",
+    "mapping/locomotion_overlays.json",
+    "mapping/autonomic_micro.json"
+  ],
+  "curve_library": "curves/default_curves.json",
+  "presets": [
+    "presets/metahuman_face_preset.json",
+    "presets/ue_ikretarget_preset.json"
+  ]
+}
+
+9) Example Mappings (snippets)
+Face: Valence → Smile (L/R split)
+{
+  "signal_path": "limbic_state.Valence",
+  "target_type": "blendshape",
+  "target_name": "CTRL_Mouth_Smile_L",
+  "gain": 1.0,
+  "curve_ref": "sigmoid_centered",
+  "clamp": [0.0, 1.0],
+  "priority": 8,
+  "group": "Face/Smile",
+  "condition": { "all_true": [ { "signal": "pfc_hint.error_margin", "lt": 0.7 } ] }
+}
+
+Eyes: Gaze from vestibular head pose compensation
+{
+  "signal_path": "sensory_vestibular.balance_vector",
+  "target_type": "control",
+  "target_name": "CTRL_EyeAim",
+  "axis": "XY",                 // map components
+  "gain": 0.4,
+  "curve_ref": "linear",
+  "smoothing_ms": 30,
+  "group": "Eyes/Gaze"
+}
+
+Posture: Balance refine → spine
+{
+  "signal_path": "motor_overlay.balance_refine",
+  "target_type": "bone",
+  "target_name": "spine_03",
+  "axis": "Pitch",
+  "units_in": "ratio",
+  "units_out": "degrees",
+  "gain": 5.0,
+  "clamp": [-8.0, 8.0],
+  "smoothing_ms": 80,
+  "group": "Body/Posture",
+  "priority": 6
+}
+
+Autonomic: Pupil dilation
+{
+  "signal_path": "autonomic_respiratory.pupil_dilation_norm",
+  "target_type": "curve",
+  "target_name": "PupilSize",
+  "gain": 1.0,
+  "curve_ref": "ease_out_soft",
+  "clamp": [0.1, 1.0],
+  "group": "Autonomic/Eyes"
+}
+
+10) LOD & Performance Strategy
+
+Evaluate Face at full Hz; Body can run at half Hz when off-camera.
+
+Use lod in mappings and camera distance checks to skip non-visible regions.
+
+Batch evaluate signals by group to reduce per-frame JSON lookups.
+
+Prefer EMA smoothing (cheap) over heavy filters.
+
+11) Validation & QA
+
+Static validation (build time):
+
+Ensure all signal_paths exist in the Signal Registry.
+
+Verify target assets exist (morph names, bones, control names).
+
+Check units and axis are specified where required.
+
+Runtime validation (editor utility or rig node):
+
+Print warnings for missing signals/targets (once per session).
+
+Visualize current value per mapping (mini HUD / debug table).
+
+Record a short offline bake to confirm curves match live signals.
+
+Artist mode:
+
+Live sliders that override gain/offset/clamp per mapping for tuning, then write back to JSON.
+
+12) Minimal Integration Steps
+
+Freeze naming for signals you plan to expose now (face, eyes, jaw, posture, gait).
+
+Create /Exports/rig_meta/Character_Vex/rig_manifest.json.
+
+Author first two mapping files: face_blendshapes.json, body_posture.json.
+
+Implement a tiny Rig Router (Control Rig function or AnimBP library) that:
+
+Loads manifest & mappings at BeginPlay.
+
+Pulls a frame of values from your Signal Registry source.
+
+Applies filter → curve → gain/offset/clamp.
+
+Writes to targets.
+
+Test in PIE with synthetic signals (sine/step), then switch to live.
+
+ MetaHuman Face Preset
+
+presets/metahuman_face_preset.json maps your affect.face.* to standard AU/morphs. Keep it separate so you can swap in a non-MetaHuman head without touching the main mapping files.
+
+14) Future-Proof Hooks
+
+Condition language supports AND/OR and thresholds; easy to add time-based hysteresis (hold_ms) per condition.
+
+Blend rules allow weighted mixes (e.g., weight_signal_path: "pfc_hint.attention_load").
+
+Transport abstraction: Live Link vs Offline vs Direct is a manifest flag; graphs don’t change.
 
 🫁 Torso
 (a) Respiratory
@@ -2849,4 +3192,5 @@ It respects your biomimetic ethos (articulators, not viseme guesses).
 
 
 It’s safe (clamps, smoothing, collision avoids) and expandable (JSON-driven).
+
 
