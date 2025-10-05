@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "subsystem": "torso_skin",
+    "description": "Cutaneous torso reflexes translating trunk tactile input into localized protective responses.",
+    "schema_version": "1.0",
+    "notes": "Derived from broader cutaneous maps but scoped to axial dermatomes for faster routing inside torso exports."
+  },
+  "reflex_arcs": {
+    "abdominal_cutaneous": {
+      "stimulus": "Light stroking or sudden contact across abdominal dermatomes.",
+      "afferent": "Thoracoabdominal cutaneous afferents to T7-T12 dorsal horn neurons.",
+      "integration": "Segmental interneuron circuits projecting to ipsilateral motor pools.",
+      "efferent": "Intercostal and abdominal motor neurons.",
+      "effector": "Localized abdominal wall contraction drawing the umbilicus toward the stimulus.",
+      "response_type": "superficial",
+      "notes": "Triggers subtle skin slide and muscle brace signals for abdominal rig sections."
+    },
+    "scapular_retraction": {
+      "stimulus": "Stroking between the scapulae or posterior thoracic shear force.",
+      "afferent": "Dorsal thoracic cutaneous nerves entering C5-T1 segments.",
+      "integration": "Spinal interneurons linking cutaneous input to scapular stabilizers.",
+      "efferent": "Dorsal scapular and accessory motor pools.",
+      "effector": "Scapular adduction and brief thoracic extension to shield the back.",
+      "response_type": "superficial",
+      "notes": "Feeds shoulder blade slide and back skin ripple parameters."
+    },
+    "thoracic_startle": {
+      "stimulus": "Unexpected tap or vibration on sternum or upper thoracic skin.",
+      "afferent": "Low-threshold mechanoreceptors routed via dorsal column pathways.",
+      "integration": "Brainstem reticular circuits coupling cutaneous input to axial motor nuclei.",
+      "efferent": "Cervical and thoracic motor outputs to neck flexors and pectoral stabilizers.",
+      "effector": "Brief flexion of head and shoulders with pectoral tightening.",
+      "response_type": "tactile",
+      "notes": "Provides quick torso flinch metadata without duplicating generalized startle loops."
+    },
+    "cold_trunk_withdrawal": {
+      "stimulus": "Sudden contact with freezing object across torso skin.",
+      "afferent": "Cold-sensitive A-delta fibers routed through dorsal horn lamina I.",
+      "integration": "Spinal interneuron network biasing flexor activation with sympathetic priming.",
+      "efferent": "Thoracic flexor motor neurons with autonomic shiver support.",
+      "effector": "Forward hunch and abdominal guard to minimize exposure.",
+      "response_type": "temperature",
+      "notes": "Integrates thermoregulatory cues for chest and abdominal cloth simulation."
+    }
+  }
+}

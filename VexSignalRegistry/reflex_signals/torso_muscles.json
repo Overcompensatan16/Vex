@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "subsystem": "torso_muscles",
+    "description": "Axial and visceral muscle reflex loops coordinating diaphragm, intercostals, and abdominal wall responses.",
+    "schema_version": "1.0",
+    "notes": "Streamlined from the prior torso core registry to focus purely on muscular efferents for respiratory and postural behaviors."
+  },
+  "reflex_arcs": {
+    "cough_reflex": {
+      "stimulus": "Irritation of tracheobronchial mucosa or elevated airway particulate load.",
+      "afferent": "Vagal rapidly adapting receptors → nucleus tractus solitarius.",
+      "integration": "Medullary cough pattern generator phasing diaphragm, intercostal, and abdominal bursts.",
+      "efferent": "Phrenic, intercostal, and abdominal motor pathways.",
+      "effector": "Inspiratory priming followed by explosive abdominal pressurization and glottic release.",
+      "response_type": "respiratory",
+      "notes": "Clears airway while synchronizing thoracic wall recoil for rig chest compression cues."
+    },
+    "sneeze_reflex": {
+      "stimulus": "Nasopharyngeal mechanoreceptor or chemoreceptor activation.",
+      "afferent": "Trigeminal afferents → medullary sneeze center.",
+      "integration": "Brainstem relay recruiting respiratory drive and facial motor nuclei.",
+      "efferent": "Phrenic, spinal expiratory motor neurons, facial nerve branches for eye closure.",
+      "effector": "Forceful expiratory blast with nasal/oral expulsion and rib cage compression.",
+      "response_type": "respiratory",
+      "notes": "Maintains thoracic pressure balance and face animation sync during expulsive events."
+    },
+    "hiccough_cycle": {
+      "stimulus": "Sudden gastric distension or diaphragmatic irritation.",
+      "afferent": "Phrenic and vagal afferents → medullary rhythm generator.",
+      "integration": "Rhythmic burst generator producing synchronous diaphragm contractions with glottic closure.",
+      "efferent": "Phrenic motor neurons and recurrent laryngeal branches.",
+      "effector": "Brief inspiratory snatch with audible closure and subtle abdominal recoil.",
+      "response_type": "rhythmic",
+      "notes": "Adds stochastic diaphragm tick to breathing loops without reintroducing autonomic metadata duplication."
+    },
+    "diaphragm_guarding": {
+      "stimulus": "Sustained noxious or metabolic stress on diaphragmatic muscle.",
+      "afferent": "Phrenic sensory collaterals and sympathetic afferents.",
+      "integration": "Medullary respiratory centers with spinal interneuron reinforcement.",
+      "efferent": "High-frequency phrenic discharges with accessory muscle co-activation.",
+      "effector": "Tetanic diaphragm contraction reducing tidal exchange and stiffening the abdominal wall.",
+      "response_type": "pathophysiologic",
+      "notes": "Signals respiratory overload and toggles rig safeguards to damp chest excursion."
+    },
+    "postural_set": {
+      "stimulus": "Proprioceptive stretch of paraspinal and abdominal muscles during trunk flexion.",
+      "afferent": "Muscle spindle feedback from erector spinae and abdominal wall → dorsal horn.",
+      "integration": "Thoracolumbar propriospinal circuits balancing flexor-extensor tone.",
+      "efferent": "Lumbar and thoracic motor pools to paraspinal extensors and deep abdominal stabilizers.",
+      "effector": "Automatic correction of trunk orientation with coordinated muscle bracing.",
+      "response_type": "postural",
+      "notes": "Feeds rig posture solver with stabilized axial muscle activation envelopes."
+    }
+  }
+}

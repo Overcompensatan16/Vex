@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "subsystem": "sensory_auditory",
+    "description": "Auditory reflex loops protecting the cochlea and initiating defensive responses to sound.",
+    "schema_version": "1.0",
+    "notes": "Maps qualitative pathways without duplicating biomimetic acoustics modules."
+  },
+  "reflex_arcs": {
+    "cochlear_startle": {
+      "stimulus": "Loud, abrupt acoustic impulse.",
+      "afferent": "Cochlear nerve fibers to cochlear nucleus and pontine reticular formation.",
+      "integration": "Reticular startle circuitry broadcasting to cranial and spinal motor pools.",
+      "efferent": "Facial, accessory, and spinal motor neurons.",
+      "effector": "Blink, head flexion, and body contraction in response to sound.",
+      "response_type": "coordinated"
+    },
+    "stapedius": {
+      "stimulus": "Sustained moderate-to-high intensity sound levels.",
+      "afferent": "Cochlear nucleus projections to superior olivary complex.",
+      "integration": "Brainstem interneurons activating facial motor nucleus.",
+      "efferent": "Facial nerve branch to stapedius muscle.",
+      "effector": "Stiffening of ossicular chain reducing inner ear vibration amplitude.",
+      "response_type": "protective"
+    }
+  }
+}

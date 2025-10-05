@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "subsystem": "torso_ligaments",
+    "description": "Ligamentous reflexes safeguarding spinal, costal, and pelvic junctions within the torso.",
+    "schema_version": "1.0",
+    "notes": "New streamlined registry isolating ligament tension sensors so stability solvers can ingest them without muscular noise."
+  },
+  "reflex_arcs": {
+    "iliolumbar_guard": {
+      "stimulus": "Rapid torsion or lateral flexion stressing the iliolumbar ligaments.",
+      "afferent": "Ligament mechanoreceptors projecting to L3-L5 dorsal horn.",
+      "integration": "Lumbar interneuron matrix gating quadratus lumborum and gluteal activation.",
+      "efferent": "Lumbar motor pools to deep lateral stabilizers and gluteus medius fibers.",
+      "effector": "Counter-rotation and pelvic brace preventing sacroiliac shear.",
+      "response_type": "stabilizing",
+      "notes": "Exposes pelvis brace envelopes for torso/hip rig blending."
+    },
+    "costotransverse_check": {
+      "stimulus": "Excessive posterior rib excursion stretching costotransverse ligaments.",
+      "afferent": "Upper thoracic ligament receptors and intercostal afferents → dorsal horn.",
+      "integration": "Thoracic interneurons modulating extensor inhibition and intercostal balance.",
+      "efferent": "Segmental motor drive biasing rib depressors and limiting erector spinae output.",
+      "effector": "Dampened rib elevation with controlled thoracic rollback.",
+      "response_type": "stabilizing",
+      "notes": "Keeps rib articulation within safe arc for breathing rigs under load."
+    },
+    "sacroiliac_lock": {
+      "stimulus": "Vertical impact transmitted through pelvis compressing sacroiliac ligaments.",
+      "afferent": "Sacroiliac ligament mechanoreceptors entering sacral dorsal roots.",
+      "integration": "Sacral and lower lumbar interneurons co-activating pelvic floor and hip extensors.",
+      "efferent": "Gluteal and pelvic floor motor outputs with sympathetic co-activation.",
+      "effector": "Momentary stiffening of sacroiliac joint with posterior chain engagement.",
+      "response_type": "protective",
+      "notes": "Routes impact buffering cues for seated/landing animations."
+    }
+  }
+}

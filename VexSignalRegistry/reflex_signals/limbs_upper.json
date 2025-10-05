@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "subsystem": "limbs_upper",
+    "description": "Upper limb spinal reflex circuits governing muscle tone, load adaptation, and protective reach reactions.",
+    "schema_version": "1.0",
+    "notes": "Structured for reflex registry consumption; values are qualitative descriptors rather than biomimetic signal maps."
+  },
+  "reflex_arcs": {
+    "stretch": {
+      "stimulus": "Muscle spindle elongation in biceps or wrist extensors during unexpected load.",
+      "afferent": "Group Ia fibers \u2192 dorsal horn interneurons.",
+      "integration": "Cervical spinal segments C5-C7 reinforcing alpha motor neuron pools.",
+      "efferent": "Alpha motor neurons \u2192 homonymous flexor motor units.",
+      "effector": "Rapid contraction of the initially stretched muscle to restore joint angle.",
+      "response_type": "somatic",
+      "notes": "Maintains posture for grasped objects and stabilizes elbow positioning."
+    },
+    "golgi_tendon": {
+      "stimulus": "Excessive tension at Golgi tendon organs during strong grasp or push.",
+      "afferent": "Group Ib afferents \u2192 inhibitory interneurons.",
+      "integration": "C5-C8 inhibitory interneuron network regulating flexor/extensor balance.",
+      "efferent": "Alpha motor neurons \u2192 antagonist muscle groups facilitating load transfer.",
+      "effector": "Reciprocal activation of extensors while dampening overactive flexors.",
+      "response_type": "somatic",
+      "notes": "Protects tendons during forceful lifting or bracing."
+    },
+    "flexor_withdrawal": {
+      "stimulus": "Nociceptive cutaneous input from hand or forearm.",
+      "afferent": "A-delta and C fibers \u2192 multisegmental interneuron chains.",
+      "integration": "C6-T1 propriospinal network assembling patterned withdrawal.",
+      "efferent": "Polysynaptic drive to flexors with inhibition of extensors.",
+      "effector": "Coordinated limb flexion and shoulder abduction to remove the limb from threat.",
+      "response_type": "polysynaptic",
+      "notes": "Pairs with crossed extensor circuits for bilateral coordination."
+    },
+    "crossed_extensor": {
+      "stimulus": "Flexor withdrawal activation in one upper limb.",
+      "afferent": "Interneuronal commissural projections crossing the cervical cord midline.",
+      "integration": "Segmental pattern generators synchronizing contralateral extensors.",
+      "efferent": "Alpha motor neurons \u2192 triceps and wrist extensors of the opposite limb.",
+      "effector": "Stiffening of the contralateral arm to support balance or brace against impact.",
+      "response_type": "coordinated",
+      "notes": "Stabilizes the body during unilateral withdrawal reactions."
+    }
+  }
+}

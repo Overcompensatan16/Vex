@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "subsystem": "autonomic_urogenital",
+    "description": "Urogenital reflexes governing bladder emptying, reproductive arousal, and uterine responses.",
+    "schema_version": "1.0",
+    "notes": "Qualitative mapping of pelvic autonomic circuits for registry reference."
+  },
+  "reflex_arcs": {
+    "micturition": {
+      "stimulus": "Bladder wall stretch detecting fullness.",
+      "afferent": "Pelvic nerve afferents to sacral spinal cord and periaqueductal gray.",
+      "integration": "Pontine micturition center coordinating parasympathetic activation and sphincter relaxation.",
+      "efferent": "Pelvic parasympathetic efferents and inhibition of pudendal somatic outflow.",
+      "effector": "Detrusor contraction with external sphincter relaxation allowing voiding.",
+      "response_type": "autonomic"
+    },
+    "sexual_arousal": {
+      "stimulus": "Genital sensory stimulation or limbic drive.",
+      "afferent": "Pudendal and pelvic afferents to sacral spinal cord.",
+      "integration": "Spinal parasympathetic networks with descending hypothalamic modulation.",
+      "efferent": "Parasympathetic vasodilator pathways and somatic motor activation.",
+      "effector": "Genital vasocongestion and rhythmic muscular contractions supporting copulatory activity.",
+      "response_type": "autonomic"
+    },
+    "uterine_sequence": {
+      "stimulus": "Cervical stretch or hormonal priming during labor.",
+      "afferent": "Uterine and cervical afferents to thoracolumbar and sacral segments.",
+      "integration": "Spinal and supraspinal centers coordinating oxytocin-mediated contractions.",
+      "efferent": "Autonomic efferents and pituitary hormone release.",
+      "effector": "Synchronized uterine contractions facilitating parturition.",
+      "response_type": "autonomic"
+    }
+  }
+}
