@@ -9,4 +9,5 @@ __all__ = [
     "pelvis",
     "torso",
     "neck",
+    "head",
 ]
